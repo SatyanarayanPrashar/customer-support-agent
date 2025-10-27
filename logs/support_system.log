@@ -1,0 +1,67 @@
+2025-10-28 01:30:49,239 - edloops03be - INFO - ✅ Logging initialized automatically
+2025-10-28 01:30:49,241 - edloops03be - INFO - using: gpt-4o-mini
+2025-10-28 01:30:49,793 - edloops03be - INFO - Starting multi-agent support system...
+2025-10-28 01:30:49,793 - edloops03be - INFO - User Query: Hey, my product is not working, also what is the warranty status?
+
+2025-10-28 01:30:49,798 - edloops03be - INFO - 
+=== Conversation Flow ===
+2025-10-28 01:30:49,798 - edloops03be - INFO - User: Hey, my product is not working, also what is the warranty status?
+
+2025-10-28 01:30:49,798 - edloops03be - INFO - Assistant: Let me help you with that. First, I'll troubleshoot the product issue.
+
+2025-10-28 01:30:49,798 - edloops03be - INFO - 
+=== Task Breakdown ===
+2025-10-28 01:30:49,798 - edloops03be - INFO - Task: troubleshoot the product issue
+2025-10-28 01:30:49,799 - edloops03be - INFO -   Agent: AgentType.TROUBLESHOOT
+2025-10-28 01:30:49,799 - edloops03be - INFO -   Status: TaskStatus.IN_PROGRESS
+2025-10-28 01:30:49,799 - edloops03be - INFO -   Result: None
+
+2025-10-28 01:30:49,799 - edloops03be - INFO - Task: check warranty status
+2025-10-28 01:30:49,799 - edloops03be - INFO -   Agent: AgentType.WARRANTY
+2025-10-28 01:30:49,799 - edloops03be - INFO -   Status: TaskStatus.PENDING
+2025-10-28 01:30:49,799 - edloops03be - INFO -   Result: None
+
+2025-10-28 01:31:41,333 - support_system - INFO - ✅ Logging initialized automatically
+2025-10-28 01:31:41,334 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 01:31:41,890 - support_system - INFO - Starting multi-agent support system...
+2025-10-28 01:31:41,890 - support_system - INFO - User Query: Hey, my product is not working, also what is the warranty status?
+
+2025-10-28 01:31:41,896 - support_system - INFO - 
+=== Conversation Flow ===
+2025-10-28 01:31:41,896 - support_system - INFO - User: Hey, my product is not working, also what is the warranty status?
+
+2025-10-28 01:31:41,896 - support_system - INFO - Assistant: Let me help you with that. First, I'll troubleshoot the product issue.
+
+2025-10-28 01:31:41,896 - support_system - INFO - 
+=== Task Breakdown ===
+2025-10-28 01:31:41,896 - support_system - INFO - Task: troubleshoot the product issue
+2025-10-28 01:31:41,896 - support_system - INFO -   Agent: AgentType.TROUBLESHOOT
+2025-10-28 01:31:41,896 - support_system - INFO -   Status: TaskStatus.IN_PROGRESS
+2025-10-28 01:31:41,896 - support_system - INFO -   Result: None
+
+2025-10-28 01:31:41,896 - support_system - INFO - Task: check warranty status
+2025-10-28 01:31:41,896 - support_system - INFO -   Agent: AgentType.WARRANTY
+2025-10-28 01:31:41,896 - support_system - INFO -   Status: TaskStatus.PENDING
+2025-10-28 01:31:41,896 - support_system - INFO -   Result: None
+
+2025-10-28 01:36:14,152 - support_system - INFO - ✅ Logging initialized automatically
+2025-10-28 01:36:14,153 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 01:36:14,444 - support_system - INFO - Starting multi-agent support system...
+2025-10-28 01:36:14,444 - support_system - INFO - User Query: Hey, my product is not working, also what is the warranty status?
+
+2025-10-28 01:36:14,451 - support_system - INFO - === Conversation Flow ===
+2025-10-28 01:36:14,451 - support_system - INFO - User: Hey, my product is not working, also what is the warranty status?
+
+2025-10-28 01:36:14,451 - support_system - INFO - Assistant: Let me help you with that. First, I'll troubleshoot the product issue.
+
+2025-10-28 01:36:14,451 - support_system - INFO - === Task Breakdown ===
+2025-10-28 01:36:14,451 - support_system - INFO - Task: troubleshoot the product issue
+2025-10-28 01:36:14,451 - support_system - INFO -   Agent: AgentType.TROUBLESHOOT
+2025-10-28 01:36:14,451 - support_system - INFO -   Status: TaskStatus.IN_PROGRESS
+2025-10-28 01:36:14,451 - support_system - INFO -   Result: None
+
+2025-10-28 01:36:14,451 - support_system - INFO - Task: check warranty status
+2025-10-28 01:36:14,451 - support_system - INFO -   Agent: AgentType.WARRANTY
+2025-10-28 01:36:14,451 - support_system - INFO -   Status: TaskStatus.PENDING
+2025-10-28 01:36:14,451 - support_system - INFO -   Result: None
+

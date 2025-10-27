@@ -1,7 +1,3 @@
-"""
-Logging utility for Edloops Backend.
-"""
-
 import logging
 import os
 from typing import Optional
@@ -14,51 +10,43 @@ def setup_logger(
 ) -> logging.Logger:
     """
     Set up the logger for the application.
-
-    Args:
-        level: Logging level.
-        log_format: Format string for log messages.
-        log_file: Path to log file. If None, logs will only be sent to stdout.
-
-    Returns:
-        Configured logger instance.
     """
-    # Create logger
-    logger = logging.getLogger("edloops03be")
+    logger = logging.getLogger("support_system")
     logger.setLevel(level)
 
-    # Create formatter
-    formatter = logging.Formatter(log_format)
+    # Only add handlers once
+    if not logger.handlers:
+        formatter = logging.Formatter(log_format)
 
-    # Create console handler
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(level)
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
+        # Console handler
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(level)
+        console_handler.setFormatter(formatter)
+        logger.addHandler(console_handler)
 
-    # Create file handler if log_file is specified
-    if log_file:
-        # Ensure the directory exists
-        log_dir = os.path.dirname(log_file)
-        if log_dir and not os.path.exists(log_dir):
-            os.makedirs(log_dir)
+        # Optional file handler
+        if log_file:
+            log_dir = os.path.dirname(log_file)
+            if log_dir and not os.path.exists(log_dir):
+                os.makedirs(log_dir)
+            file_handler = logging.FileHandler(log_file)
+            file_handler.setLevel(level)
+            file_handler.setFormatter(formatter)
+            logger.addHandler(file_handler)
 
-        file_handler = logging.FileHandler(log_file)
-        file_handler.setLevel(level)
-        file_handler.setFormatter(formatter)
-        logger.addHandler(file_handler)
-
-    # Prevent propagation to the root logger
-    logger.propagate = False
+        logger.propagate = False
 
     return logger
 
 
-def get_logger() -> logging.Logger:
+def get_logger(
+    level: int = logging.INFO,
+    log_file: Optional[str] = "logs/support_system.log"
+) -> logging.Logger:
     """
-    Get the application logger.
-
-    Returns:
-        Logger instance.
+    Get the logger, auto-initializing if it has no handlers.
     """
-    return logging.getLogger("edloops03be")
+    logger = logging.getLogger("support_system")
+    if not logger.handlers:
+        setup_logger(level=level, log_file=log_file)
+    return logger

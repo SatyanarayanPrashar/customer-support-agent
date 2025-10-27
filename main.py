@@ -13,8 +13,10 @@ from utils.logger import get_logger
 from langchain_core.messages import HumanMessage
 
 logger = get_logger()
+logger.info("✅ Logging initialized automatically")
+
 config = load_config("config.yaml")
-print("using: ", config['ai_processing']['model'])
+logger.info("using: %s", config['ai_processing']['model'])
 
 def run_support_system():
     """
@@ -43,24 +45,24 @@ def run_support_system():
     )
     
     # Run the graph
-    print("Starting multi-agent support system...")
-    print(f"User Query: {initial_state['original_query']}\n")
+    logger.info("Starting multi-agent support system...")
+    logger.info(f"User Query: {initial_state['original_query']}\n")
     
     # Execute the graph
     result = graph.invoke(initial_state)
     
-    # Print conversation
-    print("\n=== Conversation Flow ===")
+    # logger.info conversation
+    logger.info("=== Conversation Flow ===")
     for msg in result["messages"]:
         role = "User" if isinstance(msg, HumanMessage) else "Assistant"
-        print(f"{role}: {msg.content}\n")
+        logger.info(f"{role}: {msg.content}\n")
     
-    print("\n=== Task Breakdown ===")
+    logger.info("=== Task Breakdown ===")
     for task in result["subtasks"]:
-        print(f"Task: {task['description']}")
-        print(f"  Agent: {task['agent']}")
-        print(f"  Status: {task['status']}")
-        print(f"  Result: {task.get('result', 'N/A')}\n")
+        logger.info(f"Task: {task['description']}")
+        logger.info(f"  Agent: {task['agent']}")
+        logger.info(f"  Status: {task['status']}")
+        logger.info(f"  Result: {task.get('result', 'N/A')}\n")
     
     return result
 
