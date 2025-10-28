@@ -3,12 +3,13 @@ Multi-Agent Supervisor System with Task Decomposition and Routing
 Handles complex queries by splitting them into subtasks and routing to specialized agents
 """
 
-from typing import Annotated, Literal, TypedDict, List, Optional
-from langgraph.graph import StateGraph, END, START
+from typing import Annotated, TypedDict, List, Optional
+from langgraph.graph import END, START
 from langgraph.graph.message import add_messages
 from langchain_core.messages import BaseMessage
 from enum import Enum
-import operator
+
+from ai_processing.get_response import Get_response
 
 class TaskStatus(str, Enum):
     """Status of individual tasks"""
@@ -40,33 +41,26 @@ class AgentState(TypedDict):
     - Routing decisions
     - Human-in-the-loop requirements
     """
-    # Conversation history
-    messages: Annotated[List[BaseMessage], add_messages]
+    messages: Annotated[List[BaseMessage], add_messages]        # Conversation history
+    original_query: str                                         # Original user query
+
+    subtasks: List[SubTask]                                     # Task decomposition
+    current_task: Optional[SubTask]                             # Current task being processed
     
-    # Original user query
-    original_query: str
+    next_agent: str                                             # Next agent to route to
     
-    # Task decomposition
-    subtasks: List[SubTask]
+    needs_human_input: bool                                     # Human intervention flag
+    human_input_prompt: Optional[str]                           # What to ask the user
     
-    # Current task being processed
-    current_task: Optional[SubTask]
+    agent_context: dict                                         # Context from previous agents (for passing info between agents)
     
-    # Next agent to route to
-    next_agent: str
+    all_tasks_completed: bool                                   # Completion tracking
     
-    # Human intervention flag
-    needs_human_input: bool
-    human_input_prompt: Optional[str]  # What to ask the user
-    
-    # Context from previous agents (for passing info between agents)
-    agent_context: dict
-    
-    # Completion tracking
-    all_tasks_completed: bool
-    
-    # Final response to user
-    final_response: Optional[str]
+    final_response: Optional[str]                               # Final response to user
+    llm_client: Optional[Get_response]                          # LLM client for supervisor
+
+    casual_turn_count: int                                      # Track number of casual exchanges
+    awaiting_real_query: bool                                   # Flag if waiting for actionable request
 
 class AgentType(str, Enum):
     """Available agent types"""
@@ -74,7 +68,7 @@ class AgentType(str, Enum):
     TROUBLESHOOT = "troubleshoot"
     BILLING = "billing"
     WARRANTY = "warranty"
-    RETURNS = "returns"  # Suggested: Handle return requests
-    ACCOUNT = "account"  # Suggested: Account management, password resets
-    TECHNICAL_SPECS = "technical_specs"  # Suggested: Product specifications
-    FEEDBACK = "feedback"  # Suggested: Collect feedback and complaints
+    RETURNS = "returns"                                         # Suggested: Handle return requests
+    ACCOUNT = "account"                                         # Suggested: Account management, password resets
+    TECHNICAL_SPECS = "technical_specs"                         # Suggested: Product specifications
+    FEEDBACK = "feedback"                                       # Suggested: Collect feedback and complaints

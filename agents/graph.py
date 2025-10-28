@@ -7,6 +7,8 @@ from ai_processing.states import AgentState, AgentType
 from langchain_core.messages import AIMessage
 from langgraph.graph import StateGraph, END, START
 
+from utils.logger import get_logger
+logger = get_logger()
 
 def human_input_node(state: AgentState) -> AgentState:
     """
@@ -50,15 +52,13 @@ def create_support_graph():
     workflow = StateGraph(AgentState)
     
     # Add nodes
+    workflow.add_edge(START, "supervisor")
     workflow.add_node("supervisor", supervisor_node)
     workflow.add_node("troubleshoot", troubleshoot_agent)
     workflow.add_node("billing", billing_agent)
     workflow.add_node("warranty", warranty_agent)
     workflow.add_node("returns", returns_agent)
     workflow.add_node("human_input", human_input_node)
-    
-    # Add edges
-    workflow.add_edge(START, "supervisor")
     
     # Add conditional edges from supervisor to all possible next nodes
     workflow.add_conditional_edges(
@@ -82,4 +82,5 @@ def create_support_graph():
     # Human input routes back to supervisor
     workflow.add_edge("human_input", "supervisor")
     
+    logger.info("Support graph created successfully.")
     return workflow.compile()

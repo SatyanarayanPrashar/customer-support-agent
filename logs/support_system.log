@@ -65,3 +65,192 @@
 2025-10-28 01:36:14,451 - support_system - INFO -   Status: TaskStatus.PENDING
 2025-10-28 01:36:14,451 - support_system - INFO -   Result: None
 
+2025-10-28 02:35:00,316 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 02:35:00,317 - support_system - ERROR - Fatal error in chatbot: Get_response.__init__() missing 1 required positional argument: 'logger'
+2025-10-28 02:36:15,831 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 02:36:15,888 - support_system - ERROR - Fatal error in chatbot: 'Get_response' object has no attribute '_load_system_prompt'
+2025-10-28 02:36:41,540 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 02:36:44,653 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 02:36:55,262 - support_system - INFO - Generated 3 subtasks
+2025-10-28 02:36:56,916 - support_system - INFO - Routing to troubleshoot for: Diagnose the reported technical issue
+2025-10-28 02:36:56,919 - support_system - INFO - All tasks completed
+2025-10-28 02:39:50,480 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 02:39:52,561 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 02:39:58,130 - support_system - INFO - Generated 3 subtasks
+2025-10-28 02:39:59,129 - support_system - INFO - Routing to troubleshoot for: Diagnose and resolve the product issue reported by the customer
+2025-10-28 02:39:59,133 - support_system - INFO - All tasks completed
+2025-10-28 02:41:24,624 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 02:41:28,278 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 02:41:33,085 - support_system - INFO - Generated 3 subtasks
+2025-10-28 02:41:34,529 - support_system - INFO - Routing to troubleshoot for: Diagnose and resolve the reported product issue
+2025-10-28 02:41:34,533 - support_system - INFO - All tasks completed
+2025-10-28 02:43:07,434 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 02:43:09,447 - support_system - INFO - Generated 1 subtasks
+2025-10-28 02:43:10,488 - support_system - INFO - Routing to feedback for: Address customer greeting and determine primary need
+2025-10-28 02:43:20,034 - support_system - INFO - All tasks completed
+2025-10-28 02:48:51,778 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 02:48:54,174 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 02:48:55,374 - support_system - INFO - Generated 0 subtasks
+2025-10-28 02:48:55,374 - support_system - WARNING - No subtasks generated
+2025-10-28 02:49:15,476 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 02:49:16,500 - support_system - INFO - Generated 0 subtasks
+2025-10-28 02:49:16,500 - support_system - WARNING - No subtasks generated
+2025-10-28 03:18:44,877 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 03:18:46,427 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 03:18:47,794 - support_system - ERROR - Error in decompose_query_with_llm: string indices must be integers, not 'str'
+2025-10-28 03:18:47,794 - support_system - WARNING - No subtasks generated
+2025-10-28 03:19:06,638 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 03:19:07,643 - support_system - INFO - Generated 0 subtasks
+2025-10-28 03:19:07,643 - support_system - WARNING - No subtasks generated
+2025-10-28 03:19:19,761 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 03:19:26,704 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 03:19:28,233 - support_system - INFO - Generated 0 subtasks
+2025-10-28 03:19:28,233 - support_system - WARNING - No subtasks generated
+2025-10-28 03:43:53,419 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 03:43:58,797 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 03:44:01,153 - support_system - INFO - Generated 0 subtasks
+2025-10-28 03:44:01,153 - support_system - WARNING - No subtasks generated
+2025-10-28 03:48:07,334 - support_system - WARNING - System prompt file not found, using default
+2025-10-28 03:48:07,339 - support_system - INFO - Starting multi-agent support system...
+2025-10-28 03:48:07,339 - support_system - INFO - User Query: Hey, my product is not working, also what is the warranty status?
+
+2025-10-28 03:48:07,343 - support_system - INFO - Analyzing user query
+2025-10-28 03:48:11,312 - support_system - INFO - Generated 2 actionable subtasks
+2025-10-28 03:48:11,312 - support_system - INFO - Generated 2 subtasks
+2025-10-28 03:48:12,061 - support_system - INFO - Routing to troubleshoot for: Diagnose and resolve the product issue reported by the customer.
+2025-10-28 03:48:13,356 - support_system - INFO - Routing to warranty for: Check the warranty status and coverage for the customer's product.
+2025-10-28 03:48:13,359 - support_system - INFO - All tasks completed
+2025-10-28 03:48:55,528 - support_system - WARNING - System prompt file not found, using default
+2025-10-28 03:48:55,533 - support_system - INFO - Starting multi-agent support system...
+2025-10-28 03:48:55,533 - support_system - INFO - User Query: Hey
+
+2025-10-28 03:48:55,536 - support_system - INFO - Analyzing user query
+2025-10-28 03:48:56,700 - support_system - INFO - Empty task list - casual conversation
+2025-10-28 03:48:56,700 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-28 03:50:07,099 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 03:50:08,788 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 03:50:09,887 - support_system - INFO - Generated 0 subtasks
+2025-10-28 03:50:09,887 - support_system - WARNING - No subtasks generated
+2025-10-28 04:18:22,108 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 04:18:24,482 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:18:24,483 - support_system - WARNING - No subtasks generated
+2025-10-28 04:18:31,052 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:18:57,194 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 04:18:58,247 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:18:58,248 - support_system - WARNING - No subtasks generated
+2025-10-28 04:19:55,003 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:20:01,225 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 04:20:02,275 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:20:02,275 - support_system - WARNING - No subtasks generated
+2025-10-28 04:22:05,872 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:22:12,098 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 04:22:13,052 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:22:13,052 - support_system - WARNING - No subtasks generated
+2025-10-28 04:22:50,868 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:22:57,238 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 04:22:58,209 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:22:58,209 - support_system - WARNING - No subtasks generated
+2025-10-28 04:25:11,106 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:25:15,042 - support_system - INFO - Decomposing query into subtasks
+2025-10-28 04:25:16,247 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:25:16,248 - support_system - WARNING - No subtasks generated
+2025-10-28 04:25:50,508 - support_system - WARNING - System prompt file not found, using default
+2025-10-28 04:25:50,513 - support_system - INFO - Starting multi-agent support system...
+2025-10-28 04:25:50,513 - support_system - INFO - User Query: Hey
+
+2025-10-28 04:25:50,516 - support_system - INFO - Analyzing user query
+2025-10-28 04:25:51,372 - support_system - INFO - Empty task list - casual conversation
+2025-10-28 04:25:51,372 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-28 04:26:19,846 - support_system - WARNING - System prompt file not found, using default
+2025-10-28 04:26:19,850 - support_system - INFO - Starting multi-agent support system...
+2025-10-28 04:26:19,850 - support_system - INFO - User Query: Hey, I want to return my product.
+
+2025-10-28 04:26:19,853 - support_system - INFO - Analyzing user query
+2025-10-28 04:26:21,915 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-28 04:26:21,915 - support_system - INFO - Generated 1 subtasks
+2025-10-28 04:26:23,185 - support_system - INFO - Routing to returns for: Process return request for the product
+2025-10-28 04:26:23,187 - support_system - INFO - All tasks completed
+2025-10-28 04:40:46,665 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:40:47,944 - support_system - INFO - Analyzing user query
+2025-10-28 04:40:52,062 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:40:52,063 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 04:44:46,900 - support_system - INFO - Analyzing user query
+2025-10-28 04:44:50,750 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:44:50,750 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 04:48:01,778 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:48:03,375 - support_system - INFO - Analyzing user query
+2025-10-28 04:48:07,370 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:48:07,371 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 04:51:23,163 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:51:24,577 - support_system - INFO - Analyzing user query
+2025-10-28 04:51:27,982 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:51:27,983 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 04:56:25,309 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:56:25,926 - support_system - INFO - Analyzing user query
+2025-10-28 04:56:30,264 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:56:30,264 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 04:57:46,208 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 04:57:46,853 - support_system - INFO - here 0
+2025-10-28 04:57:46,866 - support_system - INFO - Analyzing user query
+2025-10-28 04:58:25,025 - support_system - INFO - Generated 0 subtasks
+2025-10-28 04:58:25,026 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 05:01:16,504 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 05:01:17,102 - support_system - INFO - here 0
+2025-10-28 05:01:17,115 - support_system - INFO - Analyzing user query
+2025-10-28 05:01:20,435 - support_system - INFO - Generated 0 subtasks
+2025-10-28 05:01:20,435 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 05:22:46,394 - support_system - INFO - here 0
+2025-10-28 05:22:46,411 - support_system - INFO - Analyzing user query
+2025-10-28 05:22:47,504 - support_system - INFO - Generated 0 subtasks
+2025-10-28 05:22:47,504 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 05:26:06,009 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 05:26:07,791 - support_system - INFO - here 0
+2025-10-28 05:26:07,805 - support_system - INFO - Analyzing user query
+2025-10-28 05:26:09,139 - support_system - INFO - Generated 0 subtasks
+2025-10-28 05:26:09,139 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 05:30:27,145 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 05:30:27,167 - support_system - INFO - Support graph created successfully.
+2025-10-28 05:30:52,101 - support_system - INFO - here 0
+2025-10-28 05:30:52,115 - support_system - INFO - Analyzing user query
+2025-10-28 05:30:53,199 - support_system - INFO - Generated 0 subtasks
+2025-10-28 05:30:53,199 - support_system - ERROR - Error processing message: not enough values to unpack (expected 2, got 0)
+2025-10-28 05:33:10,542 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 05:33:10,564 - support_system - INFO - Support graph created successfully.
+2025-10-28 05:33:12,793 - support_system - INFO - here 0
+2025-10-28 05:33:12,806 - support_system - INFO - Analyzing user query
+2025-10-28 05:33:14,113 - support_system - INFO - LLM decomposition response: []
+2025-10-28 05:33:14,113 - support_system - INFO - Generated 0 subtasks
+2025-10-28 05:33:14,113 - support_system - INFO - unpacked
+2025-10-28 05:33:14,113 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-28 05:33:14,114 - support_system - ERROR - Error processing message: name 'unactionable_msg' is not defined
+2025-10-28 05:36:49,047 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 05:36:49,067 - support_system - INFO - Support graph created successfully.
+2025-10-28 05:36:50,735 - support_system - INFO - here 0
+2025-10-28 05:36:50,744 - support_system - INFO - Analyzing user query
+2025-10-28 05:36:52,178 - support_system - INFO - Empty task list - casual conversation
+2025-10-28 05:36:52,178 - support_system - INFO - unpacked
+2025-10-28 05:36:52,178 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-28 05:36:52,178 - support_system - INFO - generating welcome
+2025-10-28 05:36:54,018 - support_system - INFO - here 1
+2025-10-28 05:37:12,637 - support_system - INFO - here 0
+2025-10-28 05:37:12,640 - support_system - INFO - Analyzing user query
+2025-10-28 05:37:14,439 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-28 05:37:14,439 - support_system - INFO - unpacked
+2025-10-28 05:37:14,439 - support_system - INFO - Generated 1 subtasks
+2025-10-28 05:37:16,086 - support_system - INFO - Routing to returns for: Assist customer with returning their product
+2025-10-28 05:37:16,089 - support_system - INFO - All tasks completed
+2025-10-28 05:37:18,127 - support_system - INFO - here 1
+2025-10-28 05:38:52,819 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 05:38:52,842 - support_system - INFO - Support graph created successfully.
+2025-10-28 05:39:23,957 - support_system - INFO - Analyzing user query
+2025-10-28 05:39:25,262 - support_system - INFO - Empty task list - casual conversation
+2025-10-28 05:39:25,262 - support_system - INFO - unpacked
+2025-10-28 05:39:25,262 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-28 05:39:25,262 - support_system - INFO - generating welcome
+2025-10-28 05:40:14,439 - support_system - INFO - Analyzing user query
+2025-10-28 05:40:17,338 - support_system - INFO - Generated 2 actionable subtasks
+2025-10-28 05:40:17,339 - support_system - INFO - unpacked
+2025-10-28 05:40:17,339 - support_system - INFO - Generated 2 subtasks
+2025-10-28 05:40:18,248 - support_system - INFO - Routing to troubleshoot for: Check the cause of the red color icon on the machine
+2025-10-28 05:40:19,886 - support_system - INFO - Routing to returns for: Process return request for the machine
+2025-10-28 05:40:19,889 - support_system - INFO - All tasks completed
