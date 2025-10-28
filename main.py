@@ -209,7 +209,6 @@ def run_interactive_chatbot(config: Dict[str, Any]):
         print(f"\nAn error occurred: {e}")
         print("Please restart the chatbot.")
 
-
 if __name__ == "__main__":
     config = load_config("config.yaml")
     run_interactive_chatbot(config)
