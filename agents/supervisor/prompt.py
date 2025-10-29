@@ -16,8 +16,6 @@ Your task:
 2. If CASUAL: Return an empty array []
 3. If ACTIONABLE: Analyze the query and create subtasks
 
-Customer Query: {query}
-
 IMPORTANT RULES:
 - Greetings like "hi", "hello", "hey" → Return []
 - Thank you messages → Return []
@@ -45,14 +43,8 @@ Examples:
 
 Respond ONLY with the JSON array (or empty array), no additional text."""
 
-SUPERVISOR_ROUTING_PROMPT = """You are a supervisor agent routing the next task.
-
-Current situation:
-- Completed tasks: {completed_tasks}
-- Remaining pending tasks: {pending_tasks}
-- Agent context: {agent_context}
-
-Based on the completed tasks and remaining tasks, provide a brief message to the user explaining what will happen next.
+SUPERVISOR_ROUTING_PROMPT = """
+You are a supervisor agent routing the next task.
 
 Keep it conversational and brief (1-2 sentences). Examples:
 - "Let me check that for you."

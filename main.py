@@ -56,21 +56,7 @@ class InteractiveSupportChatbot:
             casual_turn_count=0,
             awaiting_real_query=False
         )
-    
-    def display_welcome(self):
-        """Display welcome message"""
-        print("\n" + "="*70)
-        print("         CUSTOMER SUPPORT CHATBOT")
-        print("="*70)
-        print("\nWelcome! I'm here to help you with:")
-        print("  • Troubleshooting product issues")
-        print("  • Billing and payment questions")
-        print("  • Warranty information")
-        print("  • Returns and exchanges")
-        print("  • Account management")
-        print("\nType 'quit' or 'exit' to end the conversation")
-        print("="*70 + "\n")
-    
+
     def get_user_input(self, prompt: str = "You: ") -> str:
         """
         Get input from user with proper formatting
@@ -88,15 +74,6 @@ class InteractiveSupportChatbot:
             print("\n\nGoodbye!")
             sys.exit(0)
     
-    def display_assistant_message(self, message: str):
-        """
-        Display assistant's message with formatting
-        
-        Args:
-            message: The message to display
-        """
-        print(f"\nAssistant: {message}\n")
-    
     def process_user_message(self, user_message: str) -> bool:
         """
         Process a user message through the multi-agent system
@@ -109,11 +86,11 @@ class InteractiveSupportChatbot:
         """
         # Check for exit commands
         if user_message.lower() in ['quit', 'exit', 'bye', 'goodbye']:
-            self.display_assistant_message("Thank you for contacting support. Have a great day!")
+            print("Thank you for contacting support. Have a great day!")
             return False
         
         # If this is a new conversation or previous tasks are completed
-        if not self.state or self.state.get("all_tasks_completed"):
+        if self.state is None or not self.state.get("original_query"):
             # Check if we were awaiting a real query
             if self.state and self.state.get("awaiting_real_query"):
                 # Continue with existing state to preserve casual_turn_count
@@ -131,6 +108,7 @@ class InteractiveSupportChatbot:
             self.state["messages"].append(HumanMessage(content=user_message))
         
         try:
+            logger.info(f"Before graph.invoke -> original_query: {self.state.get('original_query')}")
             result = self.graph.invoke(self.state)
             self.state = result
             
@@ -152,10 +130,10 @@ class InteractiveSupportChatbot:
                 follow_up = self.get_user_input("Do you need help with anything else? (yes/no): ")
                 
                 if follow_up.lower() in ['no', 'n', 'nope', 'nah']:
-                    self.display_assistant_message("Thank you for contacting support. Have a great day!")
+                    print("Thank you for contacting support. Have a great day!")
                     return False
                 elif follow_up.lower() in ['yes', 'y', 'yeah', 'sure', 'yep']:
-                    self.display_assistant_message("What else can I help you with?")
+                    print("What else can I help you with?")
                     # Reset for new query but preserve conversation
                     self.state["all_tasks_completed"] = False
                     self.state["subtasks"] = []
@@ -166,16 +144,14 @@ class InteractiveSupportChatbot:
             
         except Exception as e:
             logger.error(f"Error processing message: {e}")
-            self.display_assistant_message(
-                "I apologize, but I encountered an error. Could you please rephrase your question?"
-            )
+            print("I apologize, but I encountered an error. Could you please rephrase your question?")
             return True
     
     def run(self):
         """
         Main loop for the interactive chatbot
         """
-        self.display_welcome()
+        print(f"Welcome\n")
         self.initialize_conversation()
         
         while self.conversation_active:
@@ -191,24 +167,14 @@ class InteractiveSupportChatbot:
             if not should_continue:
                 self.conversation_active = False
 
-def run_interactive_chatbot(config: Dict[str, Any]):
-    """
-    Run the interactive chatbot in the terminal
-    
-    Args:
-        config: Configuration dictionary with API keys and model settings
-    """
+if __name__ == "__main__":
+    config = load_config("config.yaml")
     try:
         chatbot = InteractiveSupportChatbot(config)
-        chatbot.run()
-        
+        chatbot.run()  
     except KeyboardInterrupt:
         print("\n\nChatbot terminated by user. Goodbye!")
     except Exception as e:
         logger.error(f"Fatal error in chatbot: {e}")
         print(f"\nAn error occurred: {e}")
         print("Please restart the chatbot.")
-
-if __name__ == "__main__":
-    config = load_config("config.yaml")
-    run_interactive_chatbot(config)

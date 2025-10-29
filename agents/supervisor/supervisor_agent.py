@@ -27,6 +27,8 @@ def supervisor_node(state: AgentState) -> AgentState:
         state["final_response"] = "Error: System not properly configured."
         return state
     
+    logger.debug(f"Supervisor received original_query: {state.get('original_query')}")
+    
     # Initialize casual turn tracking if not present
     if "casual_turn_count" not in state:
         state["casual_turn_count"] = 0
@@ -94,10 +96,10 @@ def supervisor_node(state: AgentState) -> AgentState:
         state["next_agent"] = next_task["agent"]
         
         # Generate routing message using LLM
-        routing_message = generate_routing_message(state, llm_client)
+        # routing_message = generate_routing_message(state, llm_client)
         
         # Add supervisor message explaining what we're doing
-        state["messages"].append(AIMessage(content=routing_message))
+        # state["messages"].append(AIMessage(content=routing_message))
         
         logger.info(f"Routing to {next_task['agent']} for: {next_task['description']}")
     
@@ -114,14 +116,14 @@ def decompose_query_with_llm(query: str, llm_client: Get_response) -> tuple[List
     
     try:
         # Prepare the conversation for LLM
+        print("querr: ", query)
         conversation = [
-            {"role": "system", "content": "You are an expert at analyzing customer support queries and breaking them into actionable tasks."},
-            {"role": "user", "content": SUPERVISOR_DECOMPOSITION_PROMPT.format(query=query)}
+            {"role": "system", "content": SUPERVISOR_DECOMPOSITION_PROMPT},
+            {"role": "user", "content": "Here is the customer Query: " + query}
         ]
         
         # Get LLM response
         response = llm_client.invoke(conversation)
-        logger.debug(f"LLM decomposition response: {response}")
         
         # Clean response - remove markdown code blocks if present
         response = response.strip()
@@ -133,7 +135,6 @@ def decompose_query_with_llm(query: str, llm_client: Get_response) -> tuple[List
             response = response[:-3]
         response = response.strip()
         
-        # Parse JSON response
         data = json.loads(response)
         
         # Case 1: LLM returned an unactionable message (dict with 'response' key)
@@ -177,34 +178,34 @@ def decompose_query_with_llm(query: str, llm_client: Get_response) -> tuple[List
         logger.error(f"Error in decompose_query_with_llm: {e}")
         return ([], None)
 
-def generate_routing_message(state: AgentState, llm_client: Get_response) -> str:
-    """
-    Generate a natural message explaining what the supervisor is doing next.
-    """
+# def generate_routing_message(state: AgentState, llm_client: Get_response) -> str:
+    # """
+    # Generate a natural message explaining what the supervisor is doing next.
+    # """
     
-    try:
-        completed_tasks = [t for t in state["subtasks"] if t["status"] == TaskStatus.COMPLETED]
-        pending_tasks = [t for t in state["subtasks"] if t["status"] == TaskStatus.PENDING]
+    # try:
+    #     completed_tasks = [t for t in state["subtasks"] if t["status"] == TaskStatus.COMPLETED]
+    #     pending_tasks = [t for t in state["subtasks"] if t["status"] == TaskStatus.PENDING]
         
-        completed_desc = [t["description"] for t in completed_tasks]
-        pending_desc = [t["description"] for t in pending_tasks]
+    #     completed_desc = [t["description"] for t in completed_tasks]
+    #     pending_desc = [t["description"] for t in pending_tasks]
         
-        conversation = [
-            {"role": "system", "content": "You are a friendly customer support supervisor."},
-            {"role": "user", "content": SUPERVISOR_ROUTING_PROMPT.format(
-                completed_tasks=completed_desc,
-                pending_tasks=pending_desc,
-                agent_context=state.get("agent_context", {})
-            )}
-        ]
+    #     conversation = [
+    #         {"role": "system", "content": SUPERVISOR_ROUTING_PROMPT},
+    #         {"role": "user", "content": SUPERVISOR_ROUTING_PROMPT.format(
+    #             completed_tasks=completed_desc,
+    #             pending_tasks=pending_desc,
+    #             agent_context=state.get("agent_context", {})
+    #         )}
+    #     ]
         
-        response = llm_client.invoke(conversation)
-        return response.strip()
+    #     response = llm_client.invoke(conversation)
+    #     return response.strip()
         
-    except Exception as e:
-        logger.error(f"Error generating routing message: {e}")
-        # Fallback to simple message
-        return f"Let me {state['current_task']['description']}."
+    # except Exception as e:
+    #     logger.error(f"Error generating routing message: {e}")
+    #     # Fallback to simple message
+    #     return f"Let me {state['current_task']['description']}."
 
 def compile_final_response_with_llm(state: AgentState, llm_client: Get_response) -> str:
     """

@@ -254,3 +254,297 @@
 2025-10-28 05:40:18,248 - support_system - INFO - Routing to troubleshoot for: Check the cause of the red color icon on the machine
 2025-10-28 05:40:19,886 - support_system - INFO - Routing to returns for: Process return request for the machine
 2025-10-28 05:40:19,889 - support_system - INFO - All tasks completed
+2025-10-28 12:58:00,174 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 12:58:00,199 - support_system - INFO - Support graph created successfully.
+2025-10-28 12:58:13,023 - support_system - INFO - Analyzing user query
+2025-10-28 12:58:19,046 - support_system - INFO - Empty task list - casual conversation
+2025-10-28 12:58:19,046 - support_system - INFO - unpacked
+2025-10-28 12:58:19,046 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-28 12:58:19,046 - support_system - INFO - generating welcome
+2025-10-28 12:58:35,563 - support_system - INFO - Analyzing user query
+2025-10-28 12:58:38,406 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-28 12:58:38,406 - support_system - INFO - unpacked
+2025-10-28 12:58:38,406 - support_system - INFO - Generated 1 subtasks
+2025-10-28 12:58:40,594 - support_system - INFO - Routing to billing for: check the customer's bill for details and discrepancies
+2025-10-28 12:58:44,216 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'tools_to_call': [], 'message': 'Could you please provide me with your phone number so I can check your bill?'}
+2025-10-28 12:58:44,217 - support_system - INFO - All tasks completed
+2025-10-28 13:09:44,542 - support_system - INFO - using: gpt-4o-mini
+2025-10-28 13:09:44,565 - support_system - INFO - Support graph created successfully.
+2025-10-28 13:09:52,890 - support_system - INFO - Analyzing user query
+2025-10-28 13:09:56,685 - support_system - INFO - Empty task list - casual conversation
+2025-10-28 13:09:56,685 - support_system - INFO - unpacked
+2025-10-28 13:09:56,685 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-28 13:09:56,685 - support_system - INFO - generating welcome
+2025-10-28 13:10:06,078 - support_system - INFO - Analyzing user query
+2025-10-28 13:10:14,060 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-28 13:10:14,061 - support_system - INFO - unpacked
+2025-10-28 13:10:14,061 - support_system - INFO - Generated 1 subtasks
+2025-10-28 13:10:15,412 - support_system - INFO - Routing to billing for: Assist the customer with their billing inquiry
+2025-10-28 13:10:17,681 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'tools_to_call': [], 'message': 'I can help you with your bill! Could you please provide your phone number so I can look it up for you?'}
+2025-10-28 13:10:17,682 - support_system - INFO - All tasks completed
+2025-10-30 00:40:31,907 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 00:40:31,935 - support_system - INFO - Support graph created successfully.
+2025-10-30 00:40:55,642 - support_system - INFO - Analyzing user query
+2025-10-30 00:40:57,775 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:40:57,775 - support_system - INFO - unpacked
+2025-10-30 00:40:57,775 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:40:57,775 - support_system - INFO - generating welcome
+2025-10-30 00:41:27,967 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 00:41:27,989 - support_system - INFO - Support graph created successfully.
+2025-10-30 00:41:29,383 - support_system - INFO - Analyzing user query
+2025-10-30 00:41:32,565 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:41:32,566 - support_system - INFO - unpacked
+2025-10-30 00:41:32,566 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:41:32,566 - support_system - INFO - generating welcome
+2025-10-30 00:46:02,975 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 00:46:02,997 - support_system - INFO - Support graph created successfully.
+2025-10-30 00:46:14,809 - support_system - INFO - Analyzing user query
+2025-10-30 00:46:16,083 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:46:16,084 - support_system - INFO - unpacked
+2025-10-30 00:46:16,084 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:46:16,084 - support_system - INFO - generating welcome
+2025-10-30 00:46:27,212 - support_system - INFO - Analyzing user query
+2025-10-30 00:46:29,777 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-30 00:46:29,777 - support_system - INFO - unpacked
+2025-10-30 00:46:29,778 - support_system - INFO - Generated 1 subtasks
+2025-10-30 00:46:31,208 - support_system - INFO - Routing to billing for: Assist the customer with their billing inquiry
+2025-10-30 00:46:33,886 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Could you please provide your phone number so I can assist you with your bill?'}
+2025-10-30 00:46:33,887 - support_system - INFO - All tasks completed
+2025-10-30 00:46:48,149 - support_system - WARNING - System prompt file not found, using default
+2025-10-30 00:46:48,153 - support_system - INFO - Starting multi-agent support system...
+2025-10-30 00:46:48,153 - support_system - INFO - User Query: Hey, I want to return my product.
+
+2025-10-30 00:46:48,156 - support_system - INFO - Analyzing user query
+2025-10-30 00:46:49,907 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-30 00:46:49,908 - support_system - INFO - Generated 1 subtasks
+2025-10-30 00:46:51,663 - support_system - INFO - Routing to returns for: Process return request for the customer's product
+2025-10-30 00:46:51,667 - support_system - INFO - All tasks completed
+2025-10-30 00:47:30,413 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 00:47:30,436 - support_system - INFO - Support graph created successfully.
+2025-10-30 00:47:38,860 - support_system - INFO - Analyzing user query
+2025-10-30 00:47:40,517 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:47:40,517 - support_system - INFO - unpacked
+2025-10-30 00:47:40,517 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:47:40,517 - support_system - INFO - generating welcome
+2025-10-30 00:48:00,835 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 00:48:00,855 - support_system - INFO - Support graph created successfully.
+2025-10-30 00:48:20,795 - support_system - INFO - Analyzing user query
+2025-10-30 00:48:21,852 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:48:21,852 - support_system - INFO - unpacked
+2025-10-30 00:48:21,852 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:48:21,852 - support_system - INFO - generating welcome
+2025-10-30 00:55:54,346 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 00:55:54,368 - support_system - INFO - Support graph created successfully.
+2025-10-30 00:55:55,199 - support_system - INFO - Analyzing user query
+2025-10-30 00:55:56,808 - support_system - INFO - LLM response: []
+2025-10-30 00:55:56,809 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:55:56,809 - support_system - INFO - unpacked
+2025-10-30 00:55:56,809 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:55:56,809 - support_system - INFO - generating welcome
+2025-10-30 00:57:45,086 - support_system - INFO - Analyzing user query
+2025-10-30 00:57:46,879 - support_system - INFO - LLM response: [
+  {
+    "task_id": "task_1",
+    "description": "Assist customer with billing issue related to their recent purchase",
+    "agent": "billing",
+    "dependencies": [],
+    "priority": 1
+  }
+]
+2025-10-30 00:57:46,879 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-30 00:57:46,879 - support_system - INFO - unpacked
+2025-10-30 00:57:46,879 - support_system - INFO - Generated 1 subtasks
+2025-10-30 00:57:48,687 - support_system - INFO - Routing to billing for: Assist customer with billing issue related to their recent purchase
+2025-10-30 00:57:50,764 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'message': 'Could you please provide me with your phone number and the bill ID you need help with?'}
+2025-10-30 00:57:50,766 - support_system - INFO - All tasks completed
+2025-10-30 00:59:48,388 - support_system - INFO - Analyzing user query
+2025-10-30 00:59:49,209 - support_system - INFO - LLM response: []
+2025-10-30 00:59:49,210 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:59:49,210 - support_system - INFO - unpacked
+2025-10-30 00:59:49,210 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:59:49,210 - support_system - INFO - generating welcome
+2025-10-30 00:59:50,678 - support_system - INFO - Analyzing user query
+2025-10-30 00:59:51,423 - support_system - INFO - LLM response: []
+2025-10-30 00:59:51,423 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 00:59:51,423 - support_system - INFO - unpacked
+2025-10-30 00:59:51,423 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 00:59:51,423 - support_system - INFO - generating helpful
+2025-10-30 00:59:57,723 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 00:59:57,745 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:00:05,493 - support_system - INFO - Analyzing user query
+2025-10-30 01:00:06,410 - support_system - INFO - LLM response: []
+2025-10-30 01:00:06,410 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 01:00:06,410 - support_system - INFO - unpacked
+2025-10-30 01:00:06,410 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 01:00:06,410 - support_system - INFO - generating welcome
+2025-10-30 01:00:23,268 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:00:23,288 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:00:38,170 - support_system - INFO - Analyzing user query
+2025-10-30 01:00:39,082 - support_system - INFO - LLM response: []
+2025-10-30 01:00:39,082 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 01:00:39,082 - support_system - INFO - unpacked
+2025-10-30 01:00:39,082 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 01:00:39,082 - support_system - INFO - generating welcome
+2025-10-30 01:02:54,167 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:02:54,187 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:03:00,085 - support_system - INFO - Analyzing user query
+2025-10-30 01:03:00,085 - support_system - ERROR - Error in decompose_query_with_llm: '"task_id"'
+2025-10-30 01:03:00,085 - support_system - INFO - unpacked
+2025-10-30 01:03:00,085 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 01:03:00,085 - support_system - INFO - generating welcome
+2025-10-30 01:03:23,271 - support_system - INFO - Analyzing user query
+2025-10-30 01:03:23,273 - support_system - ERROR - Error in decompose_query_with_llm: '"task_id"'
+2025-10-30 01:03:23,273 - support_system - INFO - unpacked
+2025-10-30 01:03:23,273 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 01:03:23,273 - support_system - INFO - generating helpful
+2025-10-30 01:06:30,358 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:06:30,387 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:06:36,736 - support_system - INFO - Analyzing user query
+2025-10-30 01:06:36,736 - support_system - ERROR - Error in decompose_query_with_llm: '"task_id"'
+2025-10-30 01:06:36,737 - support_system - INFO - unpacked
+2025-10-30 01:06:36,737 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 01:06:36,737 - support_system - INFO - generating welcome
+2025-10-30 01:13:13,324 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:13:13,345 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:13:19,499 - support_system - INFO - Analyzing user query
+2025-10-30 01:13:20,700 - support_system - INFO - LLM response: []
+2025-10-30 01:13:20,701 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 01:13:20,701 - support_system - INFO - unpacked
+2025-10-30 01:13:20,701 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 01:13:20,701 - support_system - INFO - generating welcome
+2025-10-30 01:14:30,239 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:14:30,258 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:14:32,298 - support_system - INFO - Analyzing user query
+2025-10-30 01:14:33,464 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 01:14:33,464 - support_system - INFO - unpacked
+2025-10-30 01:14:33,465 - support_system - INFO - Generated 0 subtasks
+2025-10-30 01:14:33,465 - support_system - INFO - All tasks completed
+2025-10-30 01:15:04,138 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:15:04,156 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:15:13,159 - support_system - INFO - Analyzing user query
+2025-10-30 01:15:14,119 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 01:15:14,119 - support_system - INFO - unpacked
+2025-10-30 01:15:22,174 - support_system - INFO - Analyzing user query
+2025-10-30 01:15:23,164 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 01:15:23,165 - support_system - INFO - unpacked
+2025-10-30 01:44:27,240 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:44:27,262 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:44:28,870 - support_system - INFO - Analyzing user query
+2025-10-30 01:44:30,392 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:44:30,392 - support_system - INFO - unpacked
+2025-10-30 01:44:53,930 - support_system - INFO - Analyzing user query
+2025-10-30 01:44:55,187 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:44:55,187 - support_system - INFO - unpacked
+2025-10-30 01:45:50,042 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:45:50,065 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:45:52,258 - support_system - INFO - Analyzing user query
+2025-10-30 01:45:54,714 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:45:54,714 - support_system - INFO - unpacked
+2025-10-30 01:48:19,940 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:48:19,962 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:48:21,377 - support_system - INFO - Analyzing user query
+2025-10-30 01:48:23,302 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:48:23,302 - support_system - INFO - unpacked
+2025-10-30 01:48:47,166 - support_system - INFO - Analyzing user query
+2025-10-30 01:48:49,679 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:48:49,679 - support_system - INFO - unpacked
+2025-10-30 01:49:56,297 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:49:56,322 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:50:04,589 - support_system - INFO - Analyzing user query
+2025-10-30 01:50:06,280 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:50:06,280 - support_system - INFO - unpacked
+2025-10-30 01:50:25,020 - support_system - INFO - Analyzing user query
+2025-10-30 01:50:27,216 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:50:27,217 - support_system - INFO - unpacked
+2025-10-30 01:57:43,687 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:57:43,710 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:57:44,746 - support_system - INFO - Analyzing user query
+2025-10-30 01:57:47,721 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:57:47,722 - support_system - INFO - unpacked
+2025-10-30 01:58:20,589 - support_system - INFO - Analyzing user query
+2025-10-30 01:58:22,228 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:58:22,228 - support_system - INFO - unpacked
+2025-10-30 01:58:49,179 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 01:58:49,201 - support_system - INFO - Support graph created successfully.
+2025-10-30 01:59:23,980 - support_system - INFO - Analyzing user query
+2025-10-30 01:59:25,820 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 01:59:25,820 - support_system - INFO - unpacked
+2025-10-30 02:00:11,671 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 02:00:11,693 - support_system - INFO - Support graph created successfully.
+2025-10-30 02:00:13,805 - support_system - INFO - Analyzing user query
+2025-10-30 02:00:15,767 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 02:00:15,767 - support_system - INFO - unpacked
+2025-10-30 02:11:10,723 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 02:11:10,747 - support_system - INFO - Support graph created successfully.
+2025-10-30 02:11:22,592 - support_system - INFO - Analyzing user query
+2025-10-30 02:11:24,766 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 02:11:24,766 - support_system - INFO - unpacked
+2025-10-30 02:11:24,766 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 02:11:24,767 - support_system - INFO - generating welcome
+2025-10-30 02:11:26,235 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 02:12:07,356 - support_system - INFO - Analyzing user query
+2025-10-30 02:12:09,917 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 02:12:09,918 - support_system - INFO - unpacked
+2025-10-30 02:12:09,918 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 02:12:09,918 - support_system - INFO - generating helpful
+2025-10-30 02:12:11,285 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 02:13:06,692 - support_system - INFO - Analyzing user query
+2025-10-30 02:13:08,883 - support_system - ERROR - Unexpected JSON format from LLM: <class 'dict'>
+2025-10-30 02:13:08,883 - support_system - INFO - unpacked
+2025-10-30 02:13:08,883 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 02:13:08,883 - support_system - INFO - generating final
+2025-10-30 02:19:25,445 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 02:19:25,471 - support_system - INFO - Support graph created successfully.
+2025-10-30 02:19:35,739 - support_system - INFO - Before graph.invoke -> original_query: 
+2025-10-30 02:19:35,754 - support_system - INFO - Analyzing user query
+2025-10-30 02:19:36,598 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 02:19:36,599 - support_system - INFO - unpacked
+2025-10-30 02:19:36,599 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 02:19:36,599 - support_system - INFO - generating welcome
+2025-10-30 02:19:37,858 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 02:30:34,391 - support_system - INFO - Before graph.invoke -> original_query: no
+2025-10-30 02:30:34,403 - support_system - INFO - Analyzing user query
+2025-10-30 02:30:40,281 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 02:30:40,305 - support_system - INFO - Support graph created successfully.
+2025-10-30 02:32:36,260 - support_system - INFO - Before graph.invoke -> original_query: hello, help me with by bot, when I press start it beeps twice and shuts down
+2025-10-30 02:32:36,281 - support_system - INFO - Analyzing user query
+2025-10-30 02:32:39,213 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-30 02:32:39,214 - support_system - INFO - unpacked
+2025-10-30 02:32:39,214 - support_system - INFO - Generated 1 subtasks
+2025-10-30 02:32:40,720 - support_system - INFO - Routing to troubleshoot for: Diagnose the issue with the bot that beeps twice and shuts down when the start button is pressed.
+2025-10-30 02:32:40,722 - support_system - INFO - All tasks completed
+2025-10-30 02:32:42,505 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 02:38:16,048 - support_system - INFO - Before graph.invoke -> original_query: hello, help me with by bot, when I press start it beeps twice and shuts down
+2025-10-30 02:38:16,060 - support_system - INFO - All tasks completed
+2025-10-30 02:38:18,464 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 02:38:19,038 - support_system - INFO - Before graph.invoke -> original_query: hello, help me with by bot, when I press start it beeps twice and shuts down
+2025-10-30 02:38:19,040 - support_system - INFO - All tasks completed
+2025-10-30 02:38:23,302 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 02:38:23,324 - support_system - INFO - Support graph created successfully.
+2025-10-30 02:38:32,245 - support_system - INFO - Before graph.invoke -> original_query: Hi, can you help with my bill
+2025-10-30 02:38:32,260 - support_system - INFO - Analyzing user query
+2025-10-30 02:38:33,295 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 02:38:33,295 - support_system - INFO - unpacked
+2025-10-30 02:38:33,295 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 02:38:33,295 - support_system - INFO - generating welcome
+2025-10-30 02:38:42,488 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 02:39:50,202 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 02:39:50,227 - support_system - INFO - Support graph created successfully.
+2025-10-30 02:39:51,091 - support_system - INFO - Before graph.invoke -> original_query: hi
+2025-10-30 02:39:51,103 - support_system - INFO - Analyzing user query
+2025-10-30 02:39:52,147 - support_system - INFO - Empty task list - casual conversation
+2025-10-30 02:39:52,147 - support_system - INFO - unpacked
+2025-10-30 02:39:52,147 - support_system - INFO - Casual conversation detected, no tasks created
+2025-10-30 02:39:52,147 - support_system - INFO - generating welcome
+2025-10-30 02:39:54,332 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 02:40:24,602 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 02:40:24,622 - support_system - INFO - Support graph created successfully.
+2025-10-30 02:40:30,497 - support_system - INFO - Before graph.invoke -> original_query: help with my bil
+2025-10-30 02:40:30,511 - support_system - INFO - Analyzing user query
+2025-10-30 02:40:32,141 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-30 02:40:32,141 - support_system - INFO - unpacked
+2025-10-30 02:40:32,141 - support_system - INFO - Generated 1 subtasks
+2025-10-30 02:40:33,578 - support_system - INFO - Routing to billing for: assistance with billing issues
+2025-10-30 02:40:35,240 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Could you please provide your phone number so I can assist you with your bill?'}
+2025-10-30 02:40:35,242 - support_system - INFO - All tasks completed
+2025-10-30 02:40:36,999 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'

@@ -36,8 +36,7 @@ def route_to_agent(state: AgentState) -> str:
     if next_agent == "finish" or state.get("all_tasks_completed"):
         return "finish"
     
-    if next_agent in [AgentType.TROUBLESHOOT, AgentType.BILLING, 
-                      AgentType.WARRANTY, AgentType.RETURNS]:
+    if next_agent in ["troubleshoot", "billing", "warranty", "returns"]:
         return next_agent
     
     # Default to end if no valid routing

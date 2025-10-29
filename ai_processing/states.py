@@ -29,6 +29,15 @@ class SubTask(TypedDict):
     dependencies: List[str]         # Task IDs that must complete first
     priority: int                   # Lower number = higher priority
 
+class UserInfo(TypedDict):
+    """User information relevant to the support session"""
+    user_id: str
+    phone_number: str
+    name: Optional[str]
+    email: Optional[str]
+    account_created: Optional[str]  # Date string
+    purchase_history: Optional[List[dict]]  # List of past purchases
+
 class AgentState(TypedDict):
     """
     The main state that flows through the graph.
