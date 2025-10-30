@@ -6,10 +6,6 @@ Available Tools:
 3. send_bill(ph_number, bill_id, mode) - Send bill via email/SMS
 4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request
 
-Customer Request: {query}
-Conversation History: {conversation_history}
-Current Context: {context}
-
 Your task:
 1. Identify what the customer needs regarding billing
 2. Determine which tool(s) to use

@@ -548,3 +548,95 @@
 2025-10-30 02:40:35,240 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Could you please provide your phone number so I can assist you with your bill?'}
 2025-10-30 02:40:35,242 - support_system - INFO - All tasks completed
 2025-10-30 02:40:36,999 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 10:22:40,124 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 10:22:40,149 - support_system - INFO - Support graph created successfully.
+2025-10-30 10:22:43,203 - support_system - INFO - Before graph.invoke -> original_query: help with my bill
+2025-10-30 10:22:43,216 - support_system - INFO - Analyzing user query
+2025-10-30 10:22:48,422 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-30 10:22:48,422 - support_system - INFO - unpacked
+2025-10-30 10:22:48,422 - support_system - INFO - Generated 1 subtasks
+2025-10-30 10:22:48,422 - support_system - INFO - Routing to billing for: Assist the customer with billing inquiries or issues.
+2025-10-30 10:22:50,596 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Could you please provide me with your phone number so I can assist you with your bill?'}
+2025-10-30 10:22:50,598 - support_system - INFO - All tasks completed
+2025-10-30 10:22:53,532 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 10:46:41,501 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 10:46:41,525 - support_system - INFO - Support graph created successfully.
+2025-10-30 10:46:50,118 - support_system - INFO - Before graph.invoke -> original_query: help me with a bill from last week
+2025-10-30 10:46:50,137 - support_system - INFO - Analyzing user query
+2025-10-30 10:46:54,633 - support_system - INFO - Generated 1 actionable subtasks
+2025-10-30 10:46:54,633 - support_system - INFO - unpacked
+2025-10-30 10:46:54,634 - support_system - INFO - Generated 1 subtasks
+2025-10-30 10:46:54,634 - support_system - INFO - Routing to billing for: Assist the customer with billing inquiries related to their bill from last week
+2025-10-30 10:46:54,636 - support_system - INFO - Analyzing billing request user query: help me with a bill from last week
+conversation history: Customer: help me with a bill from last week
+context: {}
+2025-10-30 10:46:57,386 - support_system - INFO - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Could you please provide your phone number so I can assist you with the bill from last week?'}
+2025-10-30 10:46:57,388 - support_system - INFO - All tasks completed
+2025-10-30 10:46:58,992 - support_system - ERROR - Error processing message: 'InteractiveSupportChatbot' object has no attribute 'display_assistant_message'
+2025-10-30 11:12:47,680 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 11:12:47,703 - support_system - INFO - Support graph created successfully.
+2025-10-30 11:12:58,308 - support_system - INFO -  - (supervisor) - Analyzing user query
+2025-10-30 11:13:02,889 - support_system - INFO -  - (supervisor) - Generated 1 actionable subtasks
+2025-10-30 11:13:02,889 - support_system - INFO -  - (supervisor) - unpacked
+2025-10-30 11:13:02,889 - support_system - INFO -  - (supervisor) - Generated 1 subtasks
+2025-10-30 11:13:02,889 - support_system - INFO -  - (supervisor) - Routing to billing for: Assist customer with the billing calculation error
+2025-10-30 11:13:02,891 - support_system - INFO - - (billing agent) - Analyzing billing request user query: help me with a bill it have calculation error
+context: {}
+2025-10-30 11:13:06,781 - support_system - INFO -  - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'tools_to_call': [], 'message': 'Please provide your phone number and the bill ID that has the calculation error.'}
+2025-10-30 11:13:06,783 - support_system - INFO -  - (supervisor) - All tasks completed
+2025-10-30 11:13:49,746 - support_system - INFO -  - (supervisor) - All tasks completed
+2025-10-30 11:18:27,398 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 11:18:27,420 - support_system - INFO - Support graph created successfully.
+2025-10-30 11:18:37,014 - support_system - INFO - (supervisor) - Analyzing user query
+2025-10-30 11:18:41,137 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-10-30 11:18:41,137 - support_system - INFO - (supervisor) - unpacked
+2025-10-30 11:18:41,137 - support_system - INFO - (supervisor) - Generated 1 subtasks
+2025-10-30 11:18:41,138 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-10-30 11:18:41,138 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with their billing inquiries
+2025-10-30 11:18:41,139 - support_system - INFO - - (billing agent) - Analyzing billing request user query: help me with the bill
+context: {}
+2025-10-30 11:18:42,772 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Could you please provide your phone number so I can assist you with your bill?'}
+2025-10-30 11:18:42,773 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-10-30 11:18:42,773 - support_system - INFO - (supervisor) - Next task: None
+2025-10-30 11:18:42,773 - support_system - INFO - (supervisor) - All tasks completed
+2025-10-30 11:24:47,799 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 11:24:47,822 - support_system - INFO - Support graph created successfully.
+2025-10-30 11:25:06,953 - support_system - INFO - (supervisor) - Analyzing user query
+2025-10-30 11:25:10,875 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-10-30 11:25:10,877 - support_system - INFO - (supervisor) - unpacked
+2025-10-30 11:25:10,877 - support_system - INFO - (supervisor) - Generated 1 subtasks
+2025-10-30 11:25:10,877 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Assist the customer with the billing issue regarding a wrong calculation.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-10-30 11:25:10,877 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with the billing issue regarding a wrong calculation.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-10-30 11:25:10,877 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with the billing issue regarding a wrong calculation.
+2025-10-30 11:25:10,879 - support_system - INFO - (billing agent) - Analyzing billing request user query: help mw with a wrong calculation in my bill
+context: {}
+2025-10-30 11:25:12,781 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'tools_to_call': [], 'message': 'Could you please provide your phone number and the bill ID that has the wrong calculation?'}
+2025-10-30 11:25:12,783 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-10-30 11:25:12,783 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Assist the customer with the billing issue regarding a wrong calculation.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-10-30 11:25:12,783 - support_system - INFO - (supervisor) - Next task: None
+2025-10-30 11:25:12,783 - support_system - INFO - (supervisor) - All tasks completed
+2025-10-30 11:30:21,184 - support_system - INFO - using: gpt-4o-mini
+2025-10-30 11:30:21,208 - support_system - INFO - Support graph created successfully.
+2025-10-30 11:30:22,409 - support_system - INFO - (supervisor) - Analyzing user query
+2025-10-30 11:30:28,651 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-10-30 11:30:28,652 - support_system - INFO - (supervisor) - unpacked
+2025-10-30 11:30:28,652 - support_system - INFO - (supervisor) - Generated 1 subtasks
+2025-10-30 11:30:28,652 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Assist the customer with a incorrect calculation in their bill', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-10-30 11:30:28,652 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with a incorrect calculation in their bill', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-10-30 11:30:28,652 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with a incorrect calculation in their bill
+2025-10-30 11:30:28,654 - support_system - INFO - (billing agent) - Analyzing billing request user query: help mw with a wrong calculation in my bill
+context: {}
+2025-10-30 11:30:30,528 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'message': 'Please provide your phone number and the bill ID for the bill with the incorrect calculation.'}
+2025-10-30 11:30:30,529 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-10-30 11:30:30,529 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Assist the customer with a incorrect calculation in their bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-10-30 11:30:30,529 - support_system - INFO - (supervisor) - Next task: None
+2025-10-30 11:30:30,529 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-10-30 11:30:38,864 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-10-30 11:30:38,865 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Assist the customer with a incorrect calculation in their bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-10-30 11:30:38,865 - support_system - INFO - (supervisor) - Next task: None
+2025-10-30 11:30:38,865 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response

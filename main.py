@@ -108,7 +108,7 @@ class InteractiveSupportChatbot:
             self.state["messages"].append(HumanMessage(content=user_message))
         
         try:
-            logger.info(f"Before graph.invoke -> original_query: {self.state.get('original_query')}")
+            # logger.info(f" - (main) - Before graph.invoke -> original_query: {self.state.get('original_query')}")
             result = self.graph.invoke(self.state)
             self.state = result
             
@@ -116,7 +116,7 @@ class InteractiveSupportChatbot:
             # Get the last assistant message
             for msg in reversed(result["messages"]):
                 if isinstance(msg, AIMessage):
-                    self.display_assistant_message(msg.content)
+                    print(f"\nAssistant: {msg.content}\n")
                     break
             
             # Check if tasks are completed
@@ -143,7 +143,7 @@ class InteractiveSupportChatbot:
             return True
             
         except Exception as e:
-            logger.error(f"Error processing message: {e}")
+            logger.error(f" - (main) - Error processing message: {e}")
             print("I apologize, but I encountered an error. Could you please rephrase your question?")
             return True
     
@@ -175,6 +175,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\n\nChatbot terminated by user. Goodbye!")
     except Exception as e:
-        logger.error(f"Fatal error in chatbot: {e}")
+        logger.error(f" - (main) - Fatal error in chatbot: {e}")
         print(f"\nAn error occurred: {e}")
         print("Please restart the chatbot.")

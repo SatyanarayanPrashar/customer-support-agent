@@ -1,7 +1,7 @@
 import json
 from typing import Dict, List
 from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refund_ticket, send_bill
-from agents.billing.promt import BILLING_ANALYSIS_PROMPT, BILLING_RESPONSE_PROMPT
+from agents.billing.prompt import BILLING_ANALYSIS_PROMPT, BILLING_RESPONSE_PROMPT
 from ai_processing.states import AgentState, AgentType, TaskStatus
 from langchain_core.messages import HumanMessage, AIMessage
 
@@ -21,7 +21,7 @@ def billing_agent(state: "AgentState") -> "AgentState":
     current_task = state["current_task"]
     
     if not llm_client:
-        logger.error("LLM client not found in billing agent")
+        logger.error("(billing agent) - LLM client not found in billing agent")
         state["messages"].append(
             AIMessage(content="I'm having trouble accessing the billing system. Please try again.")
         )
@@ -41,7 +41,7 @@ def billing_agent(state: "AgentState") -> "AgentState":
             llm_client
         )
         
-        logger.info(f"Billing analysis: {analysis}")
+        logger.info(f"(billing agent) - Billing analysis: {analysis}")
         
         # Handle based on action
         if analysis["action"] == "need_info":
@@ -59,9 +59,9 @@ def billing_agent(state: "AgentState") -> "AgentState":
         
         # Add message and complete task
         state["messages"].append(AIMessage(content=response))
-        
+         
     except Exception as e:
-        logger.error(f"Error in billing agent: {e}")
+        logger.error(f"(billing agent) - error: {e}")
         error_msg = "I apologize, but I encountered an error accessing billing information. Could you please try again?"
         state["messages"].append(AIMessage(content=error_msg))
         mark_task_completed(state, current_task, error_msg)
@@ -73,14 +73,11 @@ def analyze_billing_request(query: str, conversation_history: str,
     """
     Analyze the billing request and determine what action to take
     """
+    logger.info("(billing agent) - Analyzing billing request user query: " + query + "\ncontext: " + json.dumps(context))
     
     conversation = [
-        {"role": "system", "content": "You are an expert billing support agent."},
-        {"role": "user", "content": BILLING_ANALYSIS_PROMPT.format(
-            query=query,
-            conversation_history=conversation_history,
-            context=json.dumps(context)
-        )}
+        {"role": "system", "content": BILLING_ANALYSIS_PROMPT},
+        {"role": "user", "content": query + "\ncontext: " + json.dumps(context)}
     ]
     
     response = llm_client.invoke(conversation)
@@ -111,7 +108,7 @@ def handle_need_info(analysis: Dict, state: "AgentState", llm_client) -> str:
     
     if not missing_info:
         # We actually have all the info, re-analyze
-        logger.info("All required info available, re-analyzing")
+        logger.info("(billing agent) - All required info available, re-analyzing")
         return "Let me check that for you."
     
     # Ask for missing information
@@ -148,7 +145,7 @@ def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
         params = tool_call["params"]
         
         try:
-            logger.info(f"Executing tool: {tool_name} with params: {params}")
+            logger.info(f"(billing agent) - Executing tool: {tool_name} with params: {params}")
             
             if tool_name == "get_bills":
                 result = get_bills(params["ph_number"])
@@ -172,10 +169,10 @@ def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
                 tool_results.append({"tool": tool_name, "result": result})
             
             else:
-                logger.warning(f"Unknown tool: {tool_name}")
+                logger.warning(f"(billing agent) - Unknown tool: {tool_name}")
                 
         except Exception as e:
-            logger.error(f"Error executing tool {tool_name}: {e}")
+            logger.error(f"(billing agent) - Error executing tool {tool_name}: {e}")
             tool_results.append({
                 "tool": tool_name,
                 "result": f"Error: {str(e)}"
@@ -243,16 +240,3 @@ def mark_task_completed(state: "AgentState", task: Dict, result: str):
             break
     
     state["current_task"] = None
-
-
-# ===========================
-# Integration with Main System
-# ===========================
-
-# Add this to your main multi_agent_system.py file:
-# Replace the existing simple billing_agent function with this one
-
-"""
-# In your graph construction:
-workflow.add_node("billing", billing_agent)
-"""
