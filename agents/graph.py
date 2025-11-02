@@ -24,22 +24,30 @@ def human_input_node(state: AgentState) -> AgentState:
     
     return state
 
-def route_to_agent(state: AgentState) -> str:
+def route_to_human_input(state: AgentState) -> bool:
     """
-    Determine which node to go to next based on state.
-    Only called from supervisor node.
+    Determine if we need human input.
+    """
+    return state.get("needs_human_input", False)
+    
+def route_from_supervisor(state: AgentState) -> str:
+    """
+    Called after the supervisor node.
+    Decides whether to go to an agent, get human input, or finish.
     """
     
-    # Route based on next_agent
+    # 1. Check if the supervisor *itself* needs human input
+    if state.get("needs_human_input", False):
+        # Important: Clear the flag so it doesn't loop
+        state["needs_human_input"] = False
+        return "human_input"
+    
+    # 2. Route to a worker agent (based on supervisor's decision)
     next_agent = state.get("next_agent", "")
-    
-    if next_agent == "finish" or state.get("all_tasks_completed"):
-        return "finish"
-    
     if next_agent in ["troubleshoot", "billing", "warranty", "returns"]:
         return next_agent
     
-    # Default to end if no valid routing
+    # 3. Default to finishing
     return "finish"
 
 def create_support_graph():
@@ -59,11 +67,12 @@ def create_support_graph():
     workflow.add_node("returns", returns_agent)
     workflow.add_node("human_input", human_input_node)
     
-    # Add conditional edges from supervisor to all possible next nodes
+    # 1. Supervisor's conditional edge
     workflow.add_conditional_edges(
         "supervisor",
-        route_to_agent,
+        route_from_supervisor,
         {
+            "human_input": "human_input",
             "troubleshoot": "troubleshoot",
             "billing": "billing",
             "warranty": "warranty",
@@ -72,13 +81,19 @@ def create_support_graph():
         }
     )
     
-    # All agents route back to supervisor
-    workflow.add_edge("troubleshoot", "supervisor")
-    workflow.add_edge("billing", "supervisor")
-    workflow.add_edge("warranty", "supervisor")
-    workflow.add_edge("returns", "supervisor")
-    
-    # Human input routes back to supervisor
+    # 2. Worker agents' conditional edges
+    agent_nodes = ["troubleshoot", "billing", "warranty", "returns"]
+    for agent in agent_nodes:
+        workflow.add_conditional_edges(
+            agent,
+            route_to_human_input,
+            {
+                True: "human_input",
+                False: "supervisor"
+            }
+        )
+
+    # 3. Human input always goes back to supervisor for re-evaluation
     workflow.add_edge("human_input", "supervisor")
     
     logger.info("Support graph created successfully.")

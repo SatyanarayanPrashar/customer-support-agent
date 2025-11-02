@@ -640,3 +640,50 @@ context: {}
  [{'task_id': 'task_1', 'description': 'Assist the customer with a incorrect calculation in their bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
 2025-10-30 11:30:38,865 - support_system - INFO - (supervisor) - Next task: None
 2025-10-30 11:30:38,865 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-03 00:04:00,271 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 00:04:00,272 - support_system - INFO - Support graph created successfully.
+2025-11-03 00:05:03,992 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 00:05:03,993 - support_system - INFO - Support graph created successfully.
+2025-11-03 00:16:07,800 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 00:16:07,801 - support_system - INFO - Support graph created successfully
+2025-11-03 00:19:43,744 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 00:19:43,745 - support_system - INFO - Support graph created successfully
+2025-11-03 00:21:52,189 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 00:21:52,190 - support_system - INFO - Support graph created successfully
+2025-11-03 00:37:32,763 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 00:37:32,764 - support_system - INFO - Support graph created successfully
+2025-11-03 00:37:51,700 - support_system - INFO - Starting new session with query: I have issue with my bill...
+2025-11-03 00:37:51,703 - support_system - INFO - --- Iteration 1 ---
+2025-11-03 00:37:51,704 - support_system - INFO - Invoking graph for thread: anonymous
+2025-11-03 00:37:51,720 - support_system - INFO - Supervisor processing query: I have issue with my bill...
+2025-11-03 00:37:51,720 - support_system - WARNING - Unknown next_agent: AgentType.SUPERVISOR, terminating
+2025-11-03 00:37:51,721 - support_system - INFO - Session ended after 1 iterations
+2025-11-03 00:37:51,721 - support_system - INFO - Interaction depth: 1
+2025-11-03 00:37:51,721 - support_system - INFO - Total messages: 1
+2025-11-03 01:49:30,057 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 01:49:56,384 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 01:50:07,233 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 01:50:07,233 - support_system - INFO - Support graph created successfully.
+2025-11-03 01:50:26,621 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 01:50:26,622 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:02:06,764 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:02:06,765 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:11:03,087 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:14:16,658 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:14:16,659 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:14:58,497 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:14:58,498 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:15:10,648 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:15:10,649 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:15:21,306 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:15:21,306 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:16:00,339 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:16:00,340 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:23:04,288 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:23:04,288 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:24:39,083 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:24:39,084 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:34:04,446 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:34:04,447 - support_system - INFO - Support graph created successfully.
+2025-11-03 02:37:50,607 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 02:37:50,608 - support_system - INFO - Support graph created successfully.
