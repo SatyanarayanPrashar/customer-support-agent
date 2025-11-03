@@ -68,8 +68,8 @@ class AgentState(TypedDict):
     final_response: Optional[str]                               # Final response to user
     llm_client: Optional[Get_response]                          # LLM client for supervisor
 
-    casual_turn_count: int                                      # Track number of casual exchanges
-    awaiting_real_query: bool                                   # Flag if waiting for actionable request
+    # casual_turn_count: int                                      # Track number of casual exchanges
+    # awaiting_real_query: bool                                   # Flag if waiting for actionable request
 
 class AgentType(str, Enum):
     """Available agent types"""
@@ -77,7 +77,4 @@ class AgentType(str, Enum):
     TROUBLESHOOT = "troubleshoot"
     BILLING = "billing"
     WARRANTY = "warranty"
-    RETURNS = "returns"                                         # Suggested: Handle return requests
-    ACCOUNT = "account"                                         # Suggested: Account management, password resets
-    TECHNICAL_SPECS = "technical_specs"                         # Suggested: Product specifications
-    FEEDBACK = "feedback"                                       # Suggested: Collect feedback and complaints
+    RETURNS = "returns"

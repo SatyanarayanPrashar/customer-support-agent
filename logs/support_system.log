@@ -687,3 +687,23 @@ context: {}
 2025-11-03 02:34:04,447 - support_system - INFO - Support graph created successfully.
 2025-11-03 02:37:50,607 - support_system - INFO - using: gpt-4o-mini
 2025-11-03 02:37:50,608 - support_system - INFO - Support graph created successfully.
+2025-11-03 03:08:22,510 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 03:08:22,534 - support_system - INFO - Support graph created successfully.
+2025-11-03 03:12:16,600 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 03:12:16,626 - support_system - INFO - Support graph created successfully.
+2025-11-03 03:28:56,052 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 03:28:56,052 - support_system - INFO - Invoking graph for conversation: conv_001
+2025-11-03 03:28:56,052 - support_system - INFO - Starting new conversation: conv_001
+2025-11-03 03:28:56,053 - support_system - INFO - Support graph created successfully.
+2025-11-03 03:28:56,056 - support_system - INFO - Starting graph execution...
+2025-11-03 03:28:56,060 - support_system - ERROR - (supervisor) - LLM client not found in state
+2025-11-03 03:28:56,060 - support_system - INFO - Node executed: supervisor
+2025-11-03 03:28:56,060 - support_system - INFO - Graph execution completed successfully
+2025-11-03 03:37:18,573 - support_system - INFO - using: gpt-4o-mini
+2025-11-03 03:37:18,573 - support_system - INFO - Invoking graph for conversation: conv_001
+2025-11-03 03:37:18,573 - support_system - INFO - Starting new conversation: conv_001
+2025-11-03 03:37:18,574 - support_system - INFO - Support graph created successfully.
+2025-11-03 03:37:18,577 - support_system - INFO - Starting graph execution...
+2025-11-03 03:37:18,581 - support_system - ERROR - (supervisor) - LLM client not found in state
+2025-11-03 03:37:18,581 - support_system - INFO - Node executed: supervisor
+2025-11-03 03:37:18,581 - support_system - INFO - Graph execution completed successfully
