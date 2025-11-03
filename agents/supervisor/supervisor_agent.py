@@ -1,7 +1,7 @@
 import json
 from agents.supervisor.prompt import SUPERVISOR_DECOMPOSITION_PROMPT, SUPERVISOR_ROUTING_PROMPT, FINAL_RESPONSE_PROMPT, TURN_4_PROMPT, TURN_3_PROMPT, GENERATE_WELCOME, GENERATE_HELPFUL
 from ai_processing.get_response import Get_response
-from ai_processing.states import AgentState, SubTask, TaskStatus
+from ai_processing.states import AgentState, AgentType, SubTask, TaskStatus
 from langchain_core.messages import AIMessage
 from typing import List, Optional
 
@@ -28,6 +28,12 @@ def supervisor_node(state: AgentState) -> AgentState:
         return state
     
     logger.debug(f"(supervisor) - Supervisor received original_query: {state.get('original_query')}")
+
+    # if an agent requested human input, route to human_input directly
+    # if state.get("needs_human_input", False):
+    #     logger.info("(supervisor) - Human input required, routing to human_input node.")
+    #     state["next_agent"] = "human_input"
+    #     return state
     
     # Initialize casual turn tracking if not present
     if "casual_turn_count" not in state:
@@ -78,6 +84,7 @@ def supervisor_node(state: AgentState) -> AgentState:
         logger.info(f"(supervisor) - Generated {len(subtasks)} subtasks")
     else:
         logger.info("(supervisor) - Continuing with existing subtasks")
+
     # Find the next task to execute
     next_task = get_next_task(state["subtasks"])
     logger.info(f"(supervisor) - Next task: {next_task}")
@@ -94,8 +101,7 @@ def supervisor_node(state: AgentState) -> AgentState:
             state["final_response"] = compile_final_response_with_llm(state, llm_client)
         elif any_in_progress:
             logger.info("(supervisor) - Tasks in progress; waiting for agent response")
-            # Keep current agent assigned or idle; don’t mark as finished
-            state["next_agent"] = None
+            state["next_agent"] = state["current_task"]["agent"]
         else:
             logger.info("(supervisor) - No available tasks, but not all completed (possible dependency wait)")
             state["next_agent"] = None

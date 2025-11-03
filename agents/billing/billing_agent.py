@@ -1,4 +1,5 @@
 import json
+import re
 from typing import Dict, List
 from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refund_ticket, send_bill
 from agents.billing.prompt import BILLING_ANALYSIS_PROMPT, BILLING_RESPONSE_PROMPT
@@ -45,9 +46,11 @@ def billing_agent(state: "AgentState") -> "AgentState":
         
         # Handle based on action
         if analysis["action"] == "need_info":
-            # Need more information from customer
-            response = handle_need_info(analysis, state, llm_client)
-            
+            state["needs_human_input"] = True
+            response = analysis.get("message", "Could you please provide more details regarding your bill you are looking for like the phone number or the bill id?")
+            state["human_input_prompt"] = response
+            current_task["status"] = TaskStatus.BLOCKED
+
         elif analysis["action"] == "use_tools":
             # Execute tools and generate response
             response = handle_use_tools(analysis, state, llm_client)
@@ -77,59 +80,31 @@ def analyze_billing_request(query: str, conversation_history: str,
     
     conversation = [
         {"role": "system", "content": BILLING_ANALYSIS_PROMPT},
-        {"role": "user", "content": query + "\ncontext: " + json.dumps(context)}
+        # {"role": "user", "content": query + "\ncontext: " + json.dumps(context)}
+        {"role": "user", "content": conversation_history}
     ]
     
     response = llm_client.invoke(conversation)
     
     # Clean and parse JSON
     response = response.strip()
-    if response.startswith("```json"):
-        response = response[7:]
-    if response.startswith("```"):
-        response = response[3:]
-    if response.endswith("```"):
-        response = response[:-3]
+
+    # Remove code fences if present
+    response = re.sub(r"^```(?:json)?", "", response)
+    response = re.sub(r"```$", "", response)
     response = response.strip()
+
+    # Try to fix single quotes and trailing commas
+    try:
+        return json.loads(response)
+    except json.JSONDecodeError:
+        # Replace single quotes with double quotes safely
+        safe_response = re.sub(r"(?<!\\)'", '"', response)
+        safe_response = re.sub(r",\s*}", "}", safe_response)
+        safe_response = re.sub(r",\s*]", "]", safe_response)
+        return json.loads(safe_response)
     
     return json.loads(response)
-
-def handle_need_info(analysis: Dict, state: "AgentState", llm_client) -> str:
-    """
-    Handle case where we need more information from customer
-    """
-    
-    required_info = analysis.get("required_info", [])
-    message = analysis.get("message", "")
-    
-    # Check what info we already have in context
-    context = state.get("agent_context", {})
-    missing_info = [info for info in required_info if info not in context]
-    
-    if not missing_info:
-        # We actually have all the info, re-analyze
-        logger.info("(billing agent) - All required info available, re-analyzing")
-        return "Let me check that for you."
-    
-    # Ask for missing information
-    if message:
-        return message
-    else:
-        # Generate a message asking for missing info
-        info_names = {
-            "phone_number": "phone number",
-            "bill_id": "bill ID",
-            "amount": "refund amount",
-            "reason": "reason for refund"
-        }
-        
-        missing_names = [info_names.get(info, info) for info in missing_info]
-        
-        if len(missing_names) == 1:
-            return f"I'll need your {missing_names[0]} to help with that."
-        else:
-            formatted = ", ".join(missing_names[:-1]) + f" and {missing_names[-1]}"
-            return f"I'll need your {formatted} to help with that."
 
 def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
     """
