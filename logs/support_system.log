@@ -1384,3 +1384,131 @@ context: {}
 2025-11-03 16:41:07,258 - support_system - INFO - (supervisor) - All tasks completed
 2025-11-03 16:44:27,367 - support_system - INFO - using: gpt-4o-mini
 2025-11-03 16:44:27,391 - support_system - INFO - Support graph created successfully.
+2025-11-04 00:40:19,364 - support_system - INFO - using: gpt-4o-mini
+2025-11-04 00:40:19,390 - support_system - INFO - Support graph created successfully.
+2025-11-04 00:40:50,368 - support_system - INFO - (main) - Before graph.invoke -> original_query: Hi I need help realted to a incorrect calculation in a bill and charged more
+2025-11-04 00:40:50,387 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-04 00:40:54,238 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-04 00:40:54,238 - support_system - INFO - (supervisor) - unpacked
+2025-11-04 00:40:54,238 - support_system - INFO - (supervisor) - Generated 1 subtasks
+2025-11-04 00:40:54,238 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Address the issue of incorrect calculation and overcharge in the bill', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:40:54,238 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Address the issue of incorrect calculation and overcharge in the bill', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-04 00:40:54,238 - support_system - INFO - (supervisor) - Routing to billing for: Address the issue of incorrect calculation and overcharge in the bill
+2025-11-04 00:40:54,240 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi I need help realted to a incorrect calculation in a bill and charged more
+context: {}
+2025-11-04 00:40:57,395 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'message': 'Could you please provide your phone number and the bill ID so I can assist you with the incorrect calculation?'}
+2025-11-04 00:41:19,352 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:41:19,354 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Address the issue of incorrect calculation and overcharge in the bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:41:19,354 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:41:19,355 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:41:19,356 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi I need help realted to a incorrect calculation in a bill and charged more
+context: {}
+2025-11-04 00:41:25,631 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'use_tools', 'tools_to_call': [{'tool': 'refund_ticket', 'params': {'ph_number': '1234567890', 'bill_id': 'B002', 'amount': None, 'reason': 'Incorrect calculation in the bill'}}], 'message': 'I will process your refund request for bill B002 due to the incorrect calculation. Please hold on for a moment.'}
+2025-11-04 00:41:25,633 - support_system - INFO - (billing agent) - Executing tool: refund_ticket with params: {'ph_number': '1234567890', 'bill_id': 'B002', 'amount': None, 'reason': 'Incorrect calculation in the bill'}
+2025-11-04 00:41:25,633 - support_system - ERROR - (billing agent) - Error executing tool refund_ticket: unsupported format string passed to NoneType.__format__
+2025-11-04 00:41:29,300 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:41:29,301 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Address the issue of incorrect calculation and overcharge in the bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:41:29,301 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:41:29,301 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:41:29,302 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi I need help realted to a incorrect calculation in a bill and charged more
+context: {"billing_tool_results": [{"tool": "refund_ticket", "result": "Error: unsupported format string passed to NoneType.__format__"}]}
+2025-11-04 00:41:32,590 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['charge_details'], 'message': 'Could you please describe the specific charges that seem incorrect? Any details about what you expected versus what was charged would be very helpful.'}
+2025-11-04 00:41:32,593 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:41:32,594 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Address the issue of incorrect calculation and overcharge in the bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:41:32,594 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:41:32,594 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:41:32,595 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi I need help realted to a incorrect calculation in a bill and charged more
+context: {"billing_tool_results": [{"tool": "refund_ticket", "result": "Error: unsupported format string passed to NoneType.__format__"}]}
+2025-11-04 00:41:34,968 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['description_of_incorrect_charges'], 'message': 'Could you please describe the specific charges that seem incorrect? Any details about what you expected versus what was charged would be very helpful.'}
+2025-11-04 00:41:34,970 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:41:34,971 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Address the issue of incorrect calculation and overcharge in the bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:41:34,971 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:41:34,971 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:41:34,972 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi I need help realted to a incorrect calculation in a bill and charged more
+context: {"billing_tool_results": [{"tool": "refund_ticket", "result": "Error: unsupported format string passed to NoneType.__format__"}]}
+2025-11-04 00:41:37,732 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'respond', 'message': 'Please provide the details of the charges that appear to be incorrect, including what you expected versus what was charged.'}
+2025-11-04 00:41:37,735 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:41:37,735 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Address the issue of incorrect calculation and overcharge in the bill', 'agent': 'billing', 'status': 'completed', 'result': 'Please provide the details of the charges that appear to be incorrect, including what you expected versus what was charged.', 'dependencies': [], 'priority': 1}]
+2025-11-04 00:41:37,735 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:41:37,735 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-04 00:50:47,545 - support_system - INFO - using: gpt-4o-mini
+2025-11-04 00:50:47,570 - support_system - INFO - Support graph created successfully.
+2025-11-04 00:51:22,730 - support_system - INFO - (main) - Before graph.invoke -> original_query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+2025-11-04 00:51:22,745 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-04 00:51:27,165 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-04 00:51:27,165 - support_system - INFO - (supervisor) - unpacked
+2025-11-04 00:51:27,165 - support_system - INFO - (supervisor) - Generated 1 subtasks
+2025-11-04 00:51:27,166 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:51:27,166 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-04 00:51:27,166 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the billing calculation error and adjust the final amount accordingly.
+2025-11-04 00:51:27,168 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+context: {}
+2025-11-04 00:51:29,604 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'tools_to_call': [], 'message': 'Please provide your phone number and the bill ID so I can verify the details and assist you with the charge.'}
+2025-11-04 00:51:29,611 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:51:29,611 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:51:29,611 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:51:29,611 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:51:29,612 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+context: {}
+2025-11-04 00:51:31,679 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'message': 'Please provide your phone number and the bill ID so I can verify the details and assist you with the charge.'}
+2025-11-04 00:51:31,681 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:51:31,682 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:51:31,682 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:51:31,682 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:51:31,683 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+context: {}
+2025-11-04 00:51:35,384 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number', 'bill_id'], 'tools_to_call': [], 'message': 'Please provide your phone number and the bill ID so I can verify the details and assist you with the charge.'}
+2025-11-04 00:52:01,380 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:52:01,381 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:52:01,381 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:52:01,381 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:52:01,381 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+context: {}
+2025-11-04 00:52:06,832 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'use_tools', 'tools_to_call': [{'tool': 'get_bill_by_id', 'params': {'ph_number': '1234567890', 'bill_id': 'B002'}}], 'message': 'I will now retrieve the details for your bill B002 using your phone number 1234567890.'}
+2025-11-04 00:52:06,832 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': '1234567890', 'bill_id': 'B002'}
+2025-11-04 00:52:11,198 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:52:11,198 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:52:11,199 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:52:11,199 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:52:11,200 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+context: {"billing_tool_results": [{"tool": "get_bill_by_id", "result": {"ph_number": "1234567890", "name": "John Doe", "bill": {"bill_id": "B002", "due_date": "2024-09-05", "mode": "Credit Card", "total_amount": 488.23, "items": [{"product": "Robotic Floor Cleaner M612", "price": 249.99}, {"product": "Dust Filter Cartridge", "price": 15.49}, {"product": "Mop Head Replacement Kit", "price": 22.75}]}}}]}
+2025-11-04 00:52:13,054 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['specific_charge_incorrect'], 'message': 'Could you let me know which specific charge seems incorrect? This will help me assist you better in resolving any discrepancies.'}
+2025-11-04 00:54:11,470 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:54:11,472 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:54:11,472 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:54:11,472 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:54:11,473 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+context: {"billing_tool_results": [{"tool": "get_bill_by_id", "result": {"ph_number": "1234567890", "name": "John Doe", "bill": {"bill_id": "B002", "due_date": "2024-09-05", "mode": "Credit Card", "total_amount": 488.23, "items": [{"product": "Robotic Floor Cleaner M612", "price": 249.99}, {"product": "Dust Filter Cartridge", "price": 15.49}, {"product": "Mop Head Replacement Kit", "price": 22.75}]}}}]}
+2025-11-04 00:54:17,016 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'use_tools', 'tools_to_call': [{'tool': 'refund_ticket', 'params': {'ph_number': 'unknown', 'bill_id': 'B002', 'amount': '224.23', 'reason': 'Incorrect billing amount due to price discrepancies in charges.'}}], 'message': "Thank you for your patience, John. I've noted the discrepancies in the pricing. I'm processing a refund for the incorrect amount related to your bill ID B002. Please hold on for a moment while I take care of this."}
+2025-11-04 00:54:17,017 - support_system - INFO - (billing agent) - Executing tool: refund_ticket with params: {'ph_number': 'unknown', 'bill_id': 'B002', 'amount': '224.23', 'reason': 'Incorrect billing amount due to price discrepancies in charges.'}
+2025-11-04 00:54:20,355 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:54:20,355 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-04 00:54:20,356 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:54:20,356 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-04 00:54:20,356 - support_system - INFO - (billing agent) - Analyzing billing request user query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+context: {"billing_tool_results": [{"tool": "refund_ticket", "result": "A refund ticket of $224.23 for bill B002 has been raised for phone number unknown due to 'Incorrect billing amount due to price discrepancies in charges.'."}]}
+2025-11-04 00:54:22,736 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'respond', 'message': "I've raised a refund ticket for the difference due to the calculation error. You will be issued a refund of $224.23. If you have any other questions or need further assistance, please don't hesitate to reach out. I'm here to help!"}
+2025-11-04 00:54:22,738 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:54:22,739 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': 'completed', 'result': "I've raised a refund ticket for the difference due to the calculation error. You will be issued a refund of $224.23. If you have any other questions or need further assistance, please don't hesitate to reach out. I'm here to help!", 'dependencies': [], 'priority': 1}]
+2025-11-04 00:54:22,739 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:54:22,739 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-04 00:55:15,570 - support_system - INFO - (main) - Before graph.invoke -> original_query: Hi, in my bill I just noticed I got charged more because of a calculation error in the final amount.
+2025-11-04 00:55:15,577 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-04 00:55:15,577 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'Investigate the billing calculation error and adjust the final amount accordingly.', 'agent': 'billing', 'status': 'completed', 'result': "I've raised a refund ticket for the difference due to the calculation error. You will be issued a refund of $224.23. If you have any other questions or need further assistance, please don't hesitate to reach out. I'm here to help!", 'dependencies': [], 'priority': 1}]
+2025-11-04 00:55:15,577 - support_system - INFO - (supervisor) - Next task: None
+2025-11-04 00:55:15,577 - support_system - INFO - (supervisor) - All tasks completed

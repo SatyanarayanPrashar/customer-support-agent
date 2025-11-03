@@ -3,8 +3,8 @@ BILLING_ANALYSIS_PROMPT = """You are a billing support agent analyzing a custome
 Available Tools:
 1. get_bills(ph_number) - Get all bills for a phone number
 2. get_bill_by_id(ph_number, bill_id) - Get specific bill details
-3. send_bill(ph_number, bill_id, mode) - Send bill via email/SMS
-4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request
+3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS
+4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request, before using this tool, ensure you have verified the bill details and the amount to refund.
 
 Your task:
 1. Identify what the customer needs regarding billing
@@ -30,13 +30,14 @@ Examples:
 - "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool
 - "Thanks for the help" → respond with friendly message
 
-Respond ONLY with JSON."""
+Respond ONLY with JSON. No text or commentary outside the JSON."""
 
 BILLING_RESPONSE_PROMPT = """You are a friendly billing support agent. Generate a natural response to the customer.
 
 Customer Query: {query}
 Tool Results: {tool_results}
 Context: {context}
+messages: {messages}
 
 Create a helpful, conversational response that:
 1. Addresses their billing concern

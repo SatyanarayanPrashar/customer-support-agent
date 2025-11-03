@@ -158,6 +158,7 @@ def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
     
     # Generate response based on tool results
     response = generate_billing_response(
+        state["messages"],
         state["original_query"],
         tool_results,
         state.get("agent_context", {}),
@@ -166,7 +167,7 @@ def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
     
     return response
 
-def generate_billing_response(query: str, tool_results: List[Dict], 
+def generate_billing_response(messages, query: str, tool_results: List[Dict], 
                               context: Dict, llm_client) -> str:
     """
     Generate a natural response based on tool execution results
@@ -175,6 +176,7 @@ def generate_billing_response(query: str, tool_results: List[Dict],
     conversation = [
         {"role": "system", "content": "You are a helpful billing support agent."},
         {"role": "user", "content": BILLING_RESPONSE_PROMPT.format(
+            messages=messages,
             query=query,
             tool_results=json.dumps(tool_results, indent=2),
             context=json.dumps(context)

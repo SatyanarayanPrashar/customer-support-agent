@@ -26,7 +26,7 @@ class Get_response:
         try:
             for i in conversation:
                 if i['role'] == 'user':
-                    print("user: ", i['content'])
+                    print("user: ", i['content'][:40], "...")
                 elif i['role'] == 'assistant':
                     print("assistant: ", i['content'][:40], "...")
                 elif i['role'] == 'system':
