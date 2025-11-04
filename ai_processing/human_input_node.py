@@ -13,7 +13,8 @@ def human_input_node(state: AgentState) -> AgentState:
     if state.get("human_input_prompt"):
         state["messages"].append(AIMessage(content=state["human_input_prompt"]))
     
-    user_input = input("Assistant: " + state.get("human_input_prompt", "Please provide the required information: ") + "\nYou: ")
+    user_input = input("\n--------------------------------------------------------------------------------\nAssistant: " + state.get("human_input_prompt", "Please provide the required information: ") + "\nYou:")
+    print("--------------------------------------------------------------------------------")
     state["messages"].append(HumanMessage(content=user_input))
 
     state["needs_human_input"] = False

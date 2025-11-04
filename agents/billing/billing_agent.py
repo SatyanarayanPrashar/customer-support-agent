@@ -54,15 +54,19 @@ def billing_agent(state: "AgentState") -> "AgentState":
         elif analysis["action"] == "use_tools":
             # Execute tools and generate response
             response = handle_use_tools(analysis, state, llm_client)
+            state["messages"].append(AIMessage(content=response))
             
-        else:  # respond
+        elif analysis["action"] == "respond" :  # respond
             # Just respond to the customer
-            response = analysis.get("message", "How else can I help with your billing?")
-            mark_task_completed(state, current_task, response)
+            response = analysis.get("message", "I'm checking the issue, press 1 if you are still here")
+            state["messages"].append(AIMessage(content=response))
+            state["needs_human_input"] = True
+            state["human_input_prompt"] = response
+            current_task["status"] = TaskStatus.BLOCKED
         
-        # Add message and complete task
-        state["messages"].append(AIMessage(content=response))
-         
+        else:
+            mark_task_completed(state, current_task, response)
+
     except Exception as e:
         logger.error(f"(billing agent) - error: {e}")
         error_msg = "I apologize, but I encountered an error accessing billing information. Could you please try again?"
@@ -71,17 +75,13 @@ def billing_agent(state: "AgentState") -> "AgentState":
     
     return state
 
-def analyze_billing_request(query: str, conversation_history: str, 
-                            context: Dict, llm_client) -> Dict:
+def analyze_billing_request(query: str, conversation_history, context: Dict, llm_client) -> Dict:
     """
     Analyze the billing request and determine what action to take
     """
-    logger.info("(billing agent) - Analyzing billing request user query: " + query + "\ncontext: " + json.dumps(context))
-    
     conversation = [
         {"role": "system", "content": BILLING_ANALYSIS_PROMPT},
-        # {"role": "user", "content": query + "\ncontext: " + json.dumps(context)}
-        {"role": "user", "content": conversation_history}
+        {"role": "user", "content": conversation_history + "\nCustomer Query: " + query + "\nContext: " + json.dumps(context)}
     ]
     
     response = llm_client.invoke(conversation)
@@ -103,8 +103,6 @@ def analyze_billing_request(query: str, conversation_history: str,
         safe_response = re.sub(r",\s*}", "}", safe_response)
         safe_response = re.sub(r",\s*]", "]", safe_response)
         return json.loads(safe_response)
-    
-    return json.loads(response)
 
 def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
     """
@@ -135,12 +133,7 @@ def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
                 tool_results.append({"tool": tool_name, "result": result})
                 
             elif tool_name == "refund_ticket":
-                result = refund_ticket(
-                    params["ph_number"],
-                    params["bill_id"],
-                    params["amount"],
-                    params["reason"]
-                )
+                result = refund_ticket(params["ph_number"], params["bill_id"], params["amount"], params["reason"])
                 tool_results.append({"tool": tool_name, "result": result})
             
             else:
@@ -167,8 +160,7 @@ def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
     
     return response
 
-def generate_billing_response(messages, query: str, tool_results: List[Dict], 
-                              context: Dict, llm_client) -> str:
+def generate_billing_response(messages, query: str, tool_results: List[Dict], context: Dict, llm_client) -> str:
     """
     Generate a natural response based on tool execution results
     """

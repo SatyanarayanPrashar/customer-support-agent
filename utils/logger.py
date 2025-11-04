@@ -19,10 +19,10 @@ def setup_logger(
         formatter = logging.Formatter(log_format)
 
         # Console handler
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(level)
-        console_handler.setFormatter(formatter)
-        logger.addHandler(console_handler)
+        # console_handler = logging.StreamHandler()
+        # console_handler.setLevel(level)
+        # console_handler.setFormatter(formatter)
+        # logger.addHandler(console_handler)
 
         # Optional file handler
         if log_file:

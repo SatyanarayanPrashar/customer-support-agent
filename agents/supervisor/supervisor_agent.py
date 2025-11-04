@@ -137,7 +137,7 @@ def decompose_query_with_llm(query: str, llm_client: Get_response) -> tuple[List
         # Prepare the conversation for LLM
         conversation = [
             {"role": "system", "content": SUPERVISOR_DECOMPOSITION_PROMPT},
-            {"role": "user", "content": "Here is the customer Query: " + query}
+            {"role": "user", "content": query}
         ]
         
         # Get LLM response

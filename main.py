@@ -70,6 +70,11 @@ class InteractiveSupportChatbot:
             return user_input
         except (KeyboardInterrupt, EOFError):
             print("\n\nGoodbye!")
+            print("\nconveresation: \n")
+            for i in self.state["messages"]:
+                print(i)
+                print("\n------------------------------------------------------------------------------------------------------------------------\n")
+            print("\n\nagent context:\n", self.state["agent_context"])
             sys.exit(0)
     
     def process_user_message(self, user_message: str) -> bool:
@@ -87,28 +92,6 @@ class InteractiveSupportChatbot:
             print("Thank you for contacting support. Have a great day!")
             return False
         
-        # Case 1: We're in the middle of a human-in-loop prompt
-        # if self.state and self.state.get("human_input_prompt"):
-        #     # Add the user's response as the latest HumanMessage
-        #     self.state["messages"].append(HumanMessage(content=user_message))
-
-        #     # Clear the human prompt and reset the flag
-        #     self.state["human_input_prompt"] = None
-        #     self.state["needs_human_input"] = False
-
-        #     # Send the updated state back to the graph to resume processing
-        #     result = self.graph.invoke(self.state)
-        #     self.state = result
-
-        #     # Print assistant reply
-        #     for msg in reversed(result["messages"]):
-        #         if isinstance(msg, AIMessage):
-        #             print(f"\nAssistant: {msg.content}\n")
-        #             break
-
-        #     return True
-        
-        # Case 2: Normal new message flow
         if self.state is None or not self.state.get("original_query"):
             # Check if we were awaiting a real query
             if self.state and self.state.get("awaiting_real_query"):
