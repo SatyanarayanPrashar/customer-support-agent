@@ -34,9 +34,6 @@ class UserInfo(TypedDict):
     user_id: str
     phone_number: str
     name: Optional[str]
-    email: Optional[str]
-    account_created: Optional[str]  # Date string
-    purchase_history: Optional[List[dict]]  # List of past purchases
 
 class AgentState(TypedDict):
     """

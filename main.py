@@ -7,11 +7,9 @@ from ai_processing.get_response import Get_response
 from ai_processing.states import AgentState
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from agents.graph import create_support_graph
+from ai_processing.graph import create_support_graph
 from utils.config_loader import load_config
 from utils.logger import get_logger
-
-from langchain_core.messages import HumanMessage
 
 logger = get_logger()
 config = load_config("config.yaml")
@@ -72,6 +70,11 @@ class InteractiveSupportChatbot:
             return user_input
         except (KeyboardInterrupt, EOFError):
             print("\n\nGoodbye!")
+            print("\nconveresation: \n")
+            for i in self.state["messages"]:
+                print(i)
+                print("\n------------------------------------------------------------------------------------------------------------------------\n")
+            print("\n\nagent context:\n", self.state["agent_context"])
             sys.exit(0)
     
     def process_user_message(self, user_message: str) -> bool:
@@ -89,7 +92,6 @@ class InteractiveSupportChatbot:
             print("Thank you for contacting support. Have a great day!")
             return False
         
-        # If this is a new conversation or previous tasks are completed
         if self.state is None or not self.state.get("original_query"):
             # Check if we were awaiting a real query
             if self.state and self.state.get("awaiting_real_query"):
@@ -108,7 +110,7 @@ class InteractiveSupportChatbot:
             self.state["messages"].append(HumanMessage(content=user_message))
         
         try:
-            logger.info(f"Before graph.invoke -> original_query: {self.state.get('original_query')}")
+            logger.info(f"(main) - Before graph.invoke -> original_query: {self.state.get('original_query')}")
             result = self.graph.invoke(self.state)
             self.state = result
             
@@ -116,7 +118,7 @@ class InteractiveSupportChatbot:
             # Get the last assistant message
             for msg in reversed(result["messages"]):
                 if isinstance(msg, AIMessage):
-                    self.display_assistant_message(msg.content)
+                    print(f"\nAssistant: {msg.content}\n")
                     break
             
             # Check if tasks are completed
@@ -143,7 +145,7 @@ class InteractiveSupportChatbot:
             return True
             
         except Exception as e:
-            logger.error(f"Error processing message: {e}")
+            logger.error(f" - (main) - Error processing message: {e}")
             print("I apologize, but I encountered an error. Could you please rephrase your question?")
             return True
     
@@ -175,6 +177,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\n\nChatbot terminated by user. Goodbye!")
     except Exception as e:
-        logger.error(f"Fatal error in chatbot: {e}")
+        logger.error(f" - (main) - Fatal error in chatbot: {e}")
         print(f"\nAn error occurred: {e}")
         print("Please restart the chatbot.")

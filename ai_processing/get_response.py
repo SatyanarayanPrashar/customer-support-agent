@@ -24,13 +24,13 @@ class Get_response:
         Generate response from the AI.
         """
         try:
-            for i in conversation:
-                if i['role'] == 'user':
-                    print("user: ", i['content'])
-                elif i['role'] == 'assistant':
-                    print("assistant: ", i['content'][:40], "...")
-                elif i['role'] == 'system':
-                    print("system: ", i['content'][:40], "...")
+            # for i in conversation:
+            #     if i['role'] == 'user':
+            #         print("user: ", i['content'][:40], "...")
+            #     elif i['role'] == 'assistant':
+            #         print("assistant: ", i['content'][:40], "...")
+            #     elif i['role'] == 'system':
+            #         print("system: ", i['content'][:40], "...")
             response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=conversation

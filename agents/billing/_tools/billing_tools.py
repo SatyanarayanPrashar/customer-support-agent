@@ -1,6 +1,5 @@
 from langchain_core.tools import tool
 
-@tool
 def get_bills(ph_number: int):
     """
     Returns all the bills associated with a phone number.
@@ -41,7 +40,6 @@ def get_bills(ph_number: int):
 
     return bills
 
-@tool
 def get_bill_by_id(ph_number: int, bill_id: str):
     """
     Retrieve a particular bill by its ID for the given phone number.
@@ -60,7 +58,6 @@ def get_bill_by_id(ph_number: int, bill_id: str):
 
     return None
 
-@tool
 def send_bill(ph_number: int, bill_id: str, mode: str):
     """
     Mock function to simulate sending a bill to the customer.
@@ -69,11 +66,16 @@ def send_bill(ph_number: int, bill_id: str, mode: str):
     # In a real implementation, this would integrate with an email/SMS service
     return f"Bill {bill_id} has been sent to phone number {ph_number} via {mode}."
 
-@tool
-def refund_ticket(ph_number: int, bill_id: str, amount: float, reason: str):
+def refund_ticket(ph_number: int, bill_id: str, amount, reason: str):
     """
     Mock function to simulate processing a refund.
     Returns a success message.
     """
-    # In a real implementation, this would integrate with a payment gateway
+    if isinstance(amount, str):
+        try:
+            amount = float(amount)
+        except ValueError:
+            return "Invalid amount provided. Please enter a numeric value."
+    if amount is None or amount is 0 or amount < 0:
+        return "Please calculate the refund amount before raising a refund ticket."
     return f"A refund ticket of ${amount:.2f} for bill {bill_id} has been raised for phone number {ph_number} due to '{reason}'."
