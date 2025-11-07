@@ -1,6 +1,6 @@
 import json
 from agents.supervisor.prompt import SUPERVISOR_DECOMPOSITION_PROMPT, SUPERVISOR_ROUTING_PROMPT, FINAL_RESPONSE_PROMPT, TURN_4_PROMPT, TURN_3_PROMPT, GENERATE_WELCOME, GENERATE_HELPFUL
-from ai_processing.get_response import Get_response
+from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState, AgentType, SubTask, TaskStatus
 from langchain_core.messages import AIMessage
 from typing import List, Optional
@@ -124,7 +124,7 @@ def supervisor_node(state: AgentState) -> AgentState:
     
     return state
 
-def decompose_query_with_llm(query: str, llm_client: Get_response) -> tuple[List[SubTask], Optional[str]]:
+def decompose_query_with_llm(query: str, llm_client: LLM_Client) -> tuple[List[SubTask], Optional[str]]:
     """
     Use LLM to decompose the user query into subtasks.
     Returns (subtasks_list, unactionable_message).
@@ -196,7 +196,7 @@ def decompose_query_with_llm(query: str, llm_client: Get_response) -> tuple[List
         logger.error(f"(supervisor) - Error in decompose_query_with_llm: {e}")
         return ([], None)
 
-def compile_final_response_with_llm(state: AgentState, llm_client: Get_response) -> str:
+def compile_final_response_with_llm(state: AgentState, llm_client: LLM_Client) -> str:
     """
     Compile results from all agents into a final response using LLM.
     """
@@ -255,7 +255,7 @@ def get_next_task(subtasks: List[SubTask]) -> Optional[SubTask]:
     
     return None
 
-def generate_welcome_with_capabilities(llm_client: Get_response) -> str:
+def generate_welcome_with_capabilities(llm_client: LLM_Client) -> str:
     """
     Generate a welcoming response that showcases system capabilities.
     Used on first casual interaction.
@@ -276,7 +276,7 @@ def generate_welcome_with_capabilities(llm_client: Get_response) -> str:
         logger.error(f"(supervisor) - Error generating welcome: {e}")
         return "Hello! I can help you with product troubleshooting, billing questions, warranty information, returns, and account management. What do you need help with today?"
 
-def generate_helpful_prompt(llm_client: Get_response) -> str:
+def generate_helpful_prompt(llm_client: LLM_Client) -> str:
     """
     Generate a more specific prompt for the second casual turn.
     """
@@ -296,7 +296,7 @@ def generate_helpful_prompt(llm_client: Get_response) -> str:
         logger.error(f"(supervisor) - Error generating helpful prompt: {e}")
         return "I'm here to help! For example, I can troubleshoot issues, check warranty status, or answer billing questions. What would you like to know?"
 
-def generate_final_prompt(turn_count: int, llm_client: Get_response) -> str:
+def generate_final_prompt(turn_count: int, llm_client: LLM_Client) -> str:
     """
     Generate a more direct prompt after multiple casual turns.
     After 3+ turns without a real question, be more explicit.

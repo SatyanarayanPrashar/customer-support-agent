@@ -36,6 +36,7 @@ Examples:
 
 Respond ONLY with JSON. No text or commentary outside the JSON."""
 
+
 BILLING_RESPONSE_PROMPT = """You are a friendly billing support agent. Generate a natural response to the customer.
 
 Customer Query: {query}
@@ -50,3 +51,14 @@ Create a helpful, conversational response that:
 4. Remains professional but friendly
 
 Keep it concise and easy to understand."""
+
+
+SUMMARY_PROMPT = """You have to summarise the conversation between an Customer support AI Agent and the customer.
+
+RULES:
+1. Be concise but donot leave any information which can be helpful for the agent to resolve user's querry
+2. Responed only the summary without any extra comment or message.
+
+Example Response:
+"Because of calculation mistake, user was charged more. User's ph no. 1245667890 and bil id is B002."
+"""

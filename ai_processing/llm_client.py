@@ -1,7 +1,7 @@
 from typing import Dict,  Any
 import openai
 
-class Get_response:
+class LLM_Client:
     def __init__(self, config: Dict[str, Any]):
         """
         Initialize AIWorker with configuration.

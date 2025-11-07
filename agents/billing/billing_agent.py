@@ -2,9 +2,10 @@ import json
 import re
 from typing import Dict, List
 from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refund_ticket, send_bill
+from agents.billing.compaction import _format_messages_to_string, compact_conversation_history
 from agents.billing.prompt import BILLING_ANALYSIS_PROMPT, BILLING_RESPONSE_PROMPT
-from ai_processing.states import AgentState, AgentType, TaskStatus
-from langchain_core.messages import HumanMessage, AIMessage
+from ai_processing.states import AgentState, TaskStatus
+from langchain_core.messages import AIMessage
 
 from utils.logger import get_logger
 logger = get_logger()
@@ -29,15 +30,16 @@ def billing_agent(state: "AgentState") -> "AgentState":
         mark_task_completed(state, current_task, "Error: LLM client not available")
         return state
     
-    # Get conversation context
-    conversation_history = get_conversation_summary(state)
+    compaction_result = compact_conversation_history(state, llm_client)
+    state["messages"] = compaction_result["messages"]
+    conversation_history_string = _format_messages_to_string(state["messages"])    
     agent_context = state.get("agent_context", {})
     
     # Analyze what the customer needs
     try:
         analysis = analyze_billing_request(
             state["original_query"],
-            conversation_history,
+            conversation_history_string,
             agent_context,
             llm_client
         )
@@ -54,6 +56,7 @@ def billing_agent(state: "AgentState") -> "AgentState":
         elif analysis["action"] == "use_tools":
             # Execute tools and generate response
             response = handle_use_tools(analysis, state, llm_client)
+            print(f"\nAssistant: ", analysis.get("message"))
             state["messages"].append(AIMessage(content=response))
             
         elif analysis["action"] == "respond" :  # respond
@@ -65,6 +68,7 @@ def billing_agent(state: "AgentState") -> "AgentState":
             current_task["status"] = TaskStatus.BLOCKED
         
         else:
+            response = analysis.get("message", "Resolved")
             mark_task_completed(state, current_task, response)
 
     except Exception as e:
@@ -177,25 +181,6 @@ def generate_billing_response(messages, query: str, tool_results: List[Dict], co
     
     response = llm_client.invoke(conversation)
     return response.strip()
-
-def get_conversation_summary(state: "AgentState") -> str:
-    """
-    Get a summary of the conversation history
-    """
-    
-    messages = state.get("messages", [])
-    if not messages:
-        return "No prior conversation"
-    
-    # Get last 4 messages for context
-    recent_messages = messages[-4:]
-    summary_parts = []
-    
-    for msg in recent_messages:
-        role = "Customer" if isinstance(msg, HumanMessage) else "Agent"
-        summary_parts.append(f"{role}: {msg.content}")
-    
-    return "\n".join(summary_parts)
 
 def mark_task_completed(state: "AgentState", task: Dict, result: str):
     """

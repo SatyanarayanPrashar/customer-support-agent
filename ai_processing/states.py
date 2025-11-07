@@ -9,7 +9,7 @@ from langgraph.graph.message import add_messages
 from langchain_core.messages import BaseMessage
 from enum import Enum
 
-from ai_processing.get_response import Get_response
+from ai_processing.llm_client import LLM_Client
 
 class TaskStatus(str, Enum):
     """Status of individual tasks"""
@@ -63,7 +63,7 @@ class AgentState(TypedDict):
     all_tasks_completed: bool                                   # Completion tracking
     
     final_response: Optional[str]                               # Final response to user
-    llm_client: Optional[Get_response]                          # LLM client for supervisor
+    llm_client: Optional[LLM_Client]                          # LLM client for supervisor
 
     casual_turn_count: int                                      # Track number of casual exchanges
     awaiting_real_query: bool                                   # Flag if waiting for actionable request

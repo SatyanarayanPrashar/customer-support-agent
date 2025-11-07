@@ -3,7 +3,7 @@ import sys
 from typing import Any, Dict
 from langchain_core.messages import HumanMessage, AIMessage
 
-from ai_processing.get_response import Get_response
+from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -32,7 +32,7 @@ class InteractiveSupportChatbot:
             config: Configuration with API keys and model settings
         """
         self.config = config
-        self.llm_client = Get_response(config)
+        self.llm_client = LLM_Client(config)
         self.graph = create_support_graph()
         self.conversation_active = True
         self.state = None
