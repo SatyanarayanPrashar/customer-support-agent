@@ -111,7 +111,7 @@ class InteractiveSupportChatbot:
         
         try:
             logger.info(f"(main) - Before graph.invoke -> original_query: {self.state.get('original_query')}")
-            result = self.graph.invoke(self.state)
+            result = self.graph.invoke(self.state, {"recursion_limit": 100})
             self.state = result
             
             # Display only new messages (messages added after user's last message)

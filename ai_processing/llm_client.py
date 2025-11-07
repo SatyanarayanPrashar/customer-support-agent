@@ -1,6 +1,9 @@
 from typing import Dict,  Any
 import openai
 
+from utils.logger import get_logger
+logger = get_logger()
+
 class LLM_Client:
     def __init__(self, config: Dict[str, Any]):
         """
@@ -24,18 +27,11 @@ class LLM_Client:
         Generate response from the AI.
         """
         try:
-            # for i in conversation:
-            #     if i['role'] == 'user':
-            #         print("user: ", i['content'][:40], "...")
-            #     elif i['role'] == 'assistant':
-            #         print("assistant: ", i['content'][:40], "...")
-            #     elif i['role'] == 'system':
-            #         print("system: ", i['content'][:40], "...")
             response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=conversation
             )
             return response.choices[0].message.content
         except Exception as e:
-            self.logger.error(f"Error generating text: {e}")
+            logger.error(f"Error generating text: {e}")
             return ""
