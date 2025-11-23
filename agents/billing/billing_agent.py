@@ -154,8 +154,7 @@ def handle_use_tools(state: dict, item, llm_client) -> dict:
         tool_result_content = f"Error execution failed: {str(e)}"
 
     tool_msg = {
-        "role": "tool",
-        "tool_call_id": tool_call_id,
+        "role": "developer",
         "content": str(tool_result_content)
     }
     

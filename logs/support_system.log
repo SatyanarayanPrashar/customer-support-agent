@@ -1001,3 +1001,46 @@ You are a supervisor agent in a custome...
 2025-11-24 00:13:44,754 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing inquiry', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
 2025-11-24 00:13:44,754 - support_system - INFO - (supervisor) - Next task: None
 2025-11-24 00:13:44,755 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-24 00:23:03,345 - support_system - INFO - using: gpt-4o-mini
+2025-11-24 00:23:03,369 - support_system - INFO - Support graph created successfully.
+2025-11-24 00:23:21,127 - support_system - INFO - (main) - Before graph.invoke -> original_query: Can I get help with a bill?
+2025-11-24 00:23:21,134 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-24 00:23:23,890 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-24 00:23:23,891 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-24 00:23:23,891 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries regarding a bill', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:23:23,891 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries regarding a bill', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-24 00:23:23,891 - support_system - INFO - (supervisor) - Routing to billing for: Assist with billing inquiries regarding a bill
+2025-11-24 00:23:23,892 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries regarding a bill', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:25:38,020 - support_system - INFO - (main) - Before graph.invoke -> original_query: Can I get help with a bill?
+2025-11-24 00:25:38,028 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:25:38,028 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries regarding a bill', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:25:38,028 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:25:38,028 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-24 00:25:38,029 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries regarding a bill', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:25:47,498 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-24 00:25:47,499 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-24 00:25:50,342 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:25:50,343 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries regarding a bill', 'agent': 'billing', 'status': 'completed', 'result': 'I found your bill B002, which is due on 2024-09-05 with a total amount of $488.23. If you need further assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
+2025-11-24 00:25:50,343 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:25:50,343 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-24 00:27:39,228 - support_system - INFO - (main) - Before graph.invoke -> original_query: Can I get help with a bill?
+2025-11-24 00:27:39,238 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-24 00:27:41,911 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-24 00:27:41,911 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-24 00:27:41,911 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:27:41,911 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-24 00:27:41,911 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.
+2025-11-24 00:27:41,912 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:27:44,474 - support_system - WARNING - JSON parse failed, attempting repair on: It seems there may be an issue with the billing. Would you like to initiate a refund for the difference? If so, please confirm the amount you wish to be refunded and the reason for the refund.
+2025-11-24 00:30:44,736 - support_system - INFO - (main) - Before graph.invoke -> original_query: Can I get help with a bill?
+2025-11-24 00:30:44,744 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:30:44,744 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:30:44,744 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:30:44,744 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-24 00:30:44,746 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:30:48,692 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-24 00:30:48,693 - support_system - INFO - (billing agent) - Executing tool: refund_ticket with params: {'ph_number': 1234567890, 'bill_id': 'B002', 'amount': '200', 'reason': 'Overcharge on bill items'}
+2025-11-24 00:30:51,159 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:30:51,159 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.', 'agent': 'billing', 'status': 'completed', 'result': 'A refund ticket of $200.00 for bill B002 has been raised due to an overcharge on bill items. If you need any further assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
+2025-11-24 00:30:51,159 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:30:51,159 - support_system - INFO - (supervisor) - All tasks completed
