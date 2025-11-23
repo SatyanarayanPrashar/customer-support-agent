@@ -22,16 +22,22 @@ class LLM_Client:
             api_key=self.api_key
         )
 
-    def invoke(self, conversation: list):
+    def invoke(self, input_list: list, tools = []):
         """
         Generate response from the AI.
         """
+        for i in input_list:
+            if i["role"] == "system":
+                print(f"{i["role"]}: {i["content"][:40]}...")
+            else:
+                print(f"{i['role']}: {i['content'][:100]}...")
         try:
-            response = self.client.chat.completions.create(
+            response = self.client.responses.create(
                 model=self.model_name,
-                messages=conversation
+                tools=tools,
+                input=input_list
             )
-            return response.choices[0].message.content
+            return response
         except Exception as e:
             logger.error(f"Error generating text: {e}")
             return ""

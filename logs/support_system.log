@@ -1,35 +1,1003 @@
-2025-11-08 00:37:34,837 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bills
-2025-11-08 00:37:34,852 - support_system - INFO - (supervisor) - Analyzing user query
-2025-11-08 00:37:43,453 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
-2025-11-08 00:37:43,453 - support_system - INFO - (supervisor) - unpacked
-2025-11-08 00:37:43,453 - support_system - INFO - (supervisor) - Generated 1 subtasks
-2025-11-08 00:37:43,453 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
- [{'task_id': 'task_1', 'description': 'Assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
-2025-11-08 00:37:43,453 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
-2025-11-08 00:37:43,453 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with their billing inquiries
-2025-11-08 00:37:44,931 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
-2025-11-08 00:44:17,421 - support_system - INFO - (supervisor) - Continuing with existing subtasks
-2025-11-08 00:44:17,423 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
- [{'task_id': 'task_1', 'description': 'Assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
-2025-11-08 00:44:17,423 - support_system - INFO - (supervisor) - Next task: None
-2025-11-08 00:44:17,423 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
-2025-11-08 00:44:48,891 - support_system - ERROR - (billing agent) - error: 'LLM_Client' object has no attribute 'logger'
-2025-11-08 00:44:48,900 - support_system - INFO - (supervisor) - Continuing with existing subtasks
-2025-11-08 00:44:48,900 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
- [{'task_id': 'task_1', 'description': 'Assist the customer with their billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
-2025-11-08 00:44:48,900 - support_system - INFO - (supervisor) - Next task: None
-2025-11-08 00:44:48,900 - support_system - INFO - (supervisor) - All tasks completed
-2025-11-08 00:44:50,169 - support_system - ERROR - (supervisor) - Error compiling final response: 'LLM_Client' object has no attribute 'logger'
-2025-11-08 00:46:57,042 - support_system - INFO - using: gpt-4o-mini
-2025-11-08 00:46:57,066 - support_system - INFO - Support graph created successfully.
-2025-11-08 00:47:05,477 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with a bill
-2025-11-08 00:47:05,488 - support_system - INFO - (supervisor) - Analyzing user query
-
-
-2025-11-08 00:47:37,099 - support_system - ERROR - Error generating text: Connection error.
-2025-11-08 00:47:37,100 - support_system - ERROR - (supervisor) - Failed to parse LLM response as JSON: Expecting value: line 1 column 1 (char 0)
-2025-11-08 00:47:37,100 - support_system - ERROR - (supervisor) - Response was: 
-2025-11-08 00:47:37,100 - support_system - INFO - (supervisor) - unpacked
-2025-11-08 00:47:37,100 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
-2025-11-08 00:47:37,100 - support_system - INFO - (supervisor) - generating welcome
-2025-11-08 00:47:38,433 - support_system - ERROR - Error generating text: Connection error.
+2025-11-22 00:48:05,934 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:48:05,957 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:48:07,573 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-22 00:48:07,577 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:48:11,526 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'Response' object has no attribute 'strip'
+2025-11-22 00:48:11,526 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:48:11,526 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:48:11,526 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:48:13,927 - support_system - ERROR - (supervisor) - Error generating welcome: 'Response' object has no attribute 'strip'
+2025-11-22 00:51:43,970 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:51:43,998 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:51:45,943 - support_system - INFO - (main) - Before graph.invoke -> original_query: helo
+2025-11-22 00:51:45,961 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:51:51,173 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'Response' object has no attribute 'strip'
+2025-11-22 00:51:51,174 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:51:51,174 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:51:51,174 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:51:53,690 - support_system - ERROR - (supervisor) - Error generating welcome: 'Response' object has no attribute 'strip'
+2025-11-22 00:54:37,154 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:54:37,177 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:54:40,635 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-22 00:54:40,637 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:54:40,788 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 00:54:40,788 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 00:54:40,788 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:54:40,788 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:54:40,788 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:54:40,788 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 00:54:53,034 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-22 00:54:53,036 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:54:53,036 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 00:54:53,036 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 00:54:53,036 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:54:53,036 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:54:53,036 - support_system - INFO - (supervisor) - generating helpful
+2025-11-22 00:54:53,036 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 00:55:26,283 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:55:26,308 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:55:27,979 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-22 00:55:27,983 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:55:28,110 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 00:55:28,110 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 00:55:28,110 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:55:28,110 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:55:28,110 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:55:28,110 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 00:57:37,162 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:57:37,188 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:57:38,859 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello\
+2025-11-22 00:57:38,863 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:57:39,973 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'ChatCompletion' object has no attribute 'output'
+2025-11-22 00:57:39,973 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:57:39,973 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:57:39,973 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:57:41,441 - support_system - ERROR - (supervisor) - Error generating welcome: 'ChatCompletion' object has no attribute 'strip'
+2025-11-22 00:58:03,992 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:58:04,016 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:58:05,899 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-22 00:58:05,904 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:58:06,560 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'ChatCompletion' object has no attribute 'output'
+2025-11-22 00:58:06,561 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:58:06,561 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:58:06,561 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:58:07,975 - support_system - ERROR - (supervisor) - Error generating welcome: 'ChatCompletion' object has no attribute 'strip'
+2025-11-22 00:58:34,499 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:58:34,519 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:58:36,503 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-22 00:58:36,508 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:58:37,525 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'ChatCompletion' object has no attribute 'output'
+2025-11-22 00:58:37,525 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:58:37,525 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:58:37,525 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:58:39,285 - support_system - ERROR - (supervisor) - Error generating welcome: 'ChatCompletion' object has no attribute 'strip'
+2025-11-22 00:59:05,667 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:59:05,687 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:59:06,815 - support_system - INFO - (main) - Before graph.invoke -> original_query: jo
+2025-11-22 00:59:06,819 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:59:07,939 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 00:59:07,939 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:59:07,939 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:59:07,939 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 00:59:35,885 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 00:59:35,909 - support_system - INFO - Support graph created successfully.
+2025-11-22 00:59:37,068 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-22 00:59:37,072 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 00:59:37,921 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 00:59:37,921 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 00:59:37,921 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 00:59:37,921 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:01:11,976 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:01:11,998 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:01:13,214 - support_system - INFO - (main) - Before graph.invoke -> original_query: jjo
+2025-11-22 01:01:13,216 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:01:13,931 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 01:01:13,931 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:01:13,932 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:01:13,932 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:02:53,189 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:02:53,211 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:02:56,084 - support_system - INFO - (main) - Before graph.invoke -> original_query: hel;lo
+2025-11-22 01:02:56,090 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:02:57,111 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 01:02:57,111 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:02:57,111 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:02:57,111 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:04:57,659 - support_system - INFO - (main) - Before graph.invoke -> original_query: hel;lo
+2025-11-22 01:04:57,669 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:04:58,225 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 01:04:58,225 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:04:58,225 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:04:58,225 - support_system - INFO - (supervisor) - generating helpful
+2025-11-22 01:05:13,136 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:05:13,158 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:05:25,716 - support_system - INFO - (main) - Before graph.invoke -> original_query: can I get help for my bill?
+2025-11-22 01:05:25,721 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:05:28,134 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 01:05:28,134 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:05:28,135 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:05:28,135 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:06:20,148 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:06:20,171 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:06:28,569 - support_system - INFO - (main) - Before graph.invoke -> original_query: can I get help with my bills?
+2025-11-22 01:06:28,578 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:06:30,294 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'ChatCompletion' object has no attribute 'output'
+2025-11-22 01:06:30,294 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:06:30,294 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:06:30,295 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:06:31,685 - support_system - ERROR - (supervisor) - Error generating welcome: 'ChatCompletion' object has no attribute 'strip'
+2025-11-22 01:07:15,749 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:07:15,773 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:07:23,538 - support_system - INFO - (main) - Before graph.invoke -> original_query: can I get help with my bills?
+2025-11-22 01:07:23,542 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:07:23,662 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 01:07:23,662 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'str' object has no attribute 'output'
+2025-11-22 01:07:23,662 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:07:23,662 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:07:23,662 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:07:23,662 - support_system - ERROR - Error generating text: Responses.create() got an unexpected keyword argument 'messages'
+2025-11-22 01:07:43,760 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:07:43,779 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:07:53,110 - support_system - INFO - (main) - Before graph.invoke -> original_query: can I get help with my bills?
+2025-11-22 01:07:53,119 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:07:55,719 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'Response' object has no attribute 'strip'
+2025-11-22 01:07:55,719 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:07:55,719 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:07:55,719 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:07:59,488 - support_system - ERROR - (supervisor) - Error generating welcome: 'Response' object has no attribute 'strip'
+2025-11-22 01:14:51,023 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:14:51,048 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:14:56,483 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bill
+2025-11-22 01:14:56,490 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:15:00,250 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'list' object has no attribute 'content'
+2025-11-22 01:15:00,251 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:15:00,251 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:15:00,251 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:15:02,670 - support_system - ERROR - (supervisor) - Error generating welcome: 'Response' object has no attribute 'strip'
+2025-11-22 01:15:22,935 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:15:22,956 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:15:30,280 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bill
+2025-11-22 01:15:30,285 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:15:32,876 - support_system - ERROR - (supervisor) - Error in decompose_query_with_llm: 'list' object has no attribute 'content'
+2025-11-22 01:15:32,876 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:15:32,876 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-22 01:15:32,876 - support_system - INFO - (supervisor) - generating welcome
+2025-11-22 01:15:35,975 - support_system - ERROR - (supervisor) - Error generating welcome: 'Response' object has no attribute 'strip'
+2025-11-22 01:17:45,563 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:17:45,587 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:17:55,077 - support_system - INFO - (main) - Before graph.invoke -> original_query: can i get help with a bill?
+2025-11-22 01:17:55,082 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:17:58,805 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:17:58,805 - support_system - INFO - (supervisor) - unpacked
+2025-11-22 01:17:58,805 - support_system - INFO - (supervisor) - Generated 1 subtasks
+2025-11-22 01:17:58,805 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:17:58,805 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:17:58,805 - support_system - INFO - (supervisor) - Routing to billing for: assistance with billing inquiries
+2025-11-22 01:17:59,058 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Missing required parameter: 'input[1].content[0].type'.", 'type': 'invalid_request_error', 'param': 'input[1].content[0].type', 'code': 'missing_required_parameter'}}
+2025-11-22 01:17:59,058 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 01:17:59,059 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:17:59,060 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task 
+ [{'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 01:17:59,060 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:17:59,060 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 01:18:01,566 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 01:35:58,050 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:35:58,076 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:35:58,968 - support_system - INFO - (main) - Before graph.invoke -> original_query: can i get help with a bill?
+2025-11-22 01:35:58,973 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:36:03,322 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:36:03,322 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 01:36:03,322 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with a billing issue', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:36:03,322 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assistance with a billing issue', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:36:03,322 - support_system - INFO - (supervisor) - Routing to billing for: assistance with a billing issue
+2025-11-22 01:36:03,323 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with a billing issue', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:36:04,067 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[1]', 'code': 'invalid_value'}}
+2025-11-22 01:36:04,067 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 01:36:04,069 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:36:04,070 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with a billing issue', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 01:36:04,070 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:36:04,070 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 01:36:06,611 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 01:37:43,837 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:37:43,863 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:38:01,495 - support_system - INFO - (main) - Before graph.invoke -> original_query: can i get help with a bill?
+2025-11-22 01:38:01,503 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:38:01,503 - support_system - INFO - 
+Input message: {'role': 'system', 'content': '\nYou are a supervisor agent in a customer support system. Your job is to analyze customer queries and break them down into specific subtasks if needed that can be handled by specialized agents.\nBefore dividing the query, first go through all the available agents and their capabilities. If the query is casual (greetings, thanks, small talk), return an empty array []. If the query is actionable (specific requests for help), break it down into subtasks.\n\nAvailable Agents:\n- troubleshoot: Diagnoses and resolves product issues, technical problems\n- billing: Handles payments, invoices, refunds, charges\n- warranty: Checks warranty status, coverage, and claims\n- returns: Processes return and exchange requests\n- account: Manages account settings, passwords, profile updates\n- technical_specs: Provides product specifications and compatibility info\n- feedback: Collects customer feedback and complaints\n\nYour task:\n1. First, determine if this is a CASUAL MESSAGE (greetings, small talk, thanks) or an ACTIONABLE REQUEST\n2. If CASUAL: Return an empty array []\n3. If ACTIONABLE: Analyze the query and create subtasks\n\nIMPORTANT RULES:\n- Greetings like "hi", "hello", "hey" → Return []\n- Thank you messages → Return []\n- Casual conversation → Return []\n- Only create tasks for SPECIFIC ACTIONABLE REQUESTS that require agent assistance\n\nIf actionable, respond with a JSON array in this format:\n[{{"task_id": "task_1","description": "brief description of what needs to be done","agent": "agent_name","dependencies": [],"priority": 1}}]\n\nExamples:\n- "hi" → []\n- "hello there" → []\n- "thanks!" → []\n- "my product is broken" → [task with troubleshoot agent]\n- "what\'s my warranty status?" → [task with warranty agent]\n- "i want to return my order" → [task with returns agent]\n\nRespond ONLY with the JSON array (or empty array), no additional text or text formatting.'}
+2025-11-22 01:38:01,504 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'can i get help with a bill?'}
+2025-11-22 01:38:05,662 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:38:05,662 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 01:38:05,662 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:38:05,662 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:38:05,662 - support_system - INFO - (supervisor) - Routing to billing for: assist with billing inquiries
+2025-11-22 01:38:05,663 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:38:05,663 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 01:38:05,663 - support_system - INFO - 
+Input message: content='can i get help with a bill?' additional_kwargs={} response_metadata={}
+2025-11-22 01:38:06,698 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[1]', 'code': 'invalid_value'}}
+2025-11-22 01:38:06,698 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 01:38:06,700 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:38:06,701 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 01:38:06,701 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:38:06,701 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 01:38:06,701 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a helpful customer support agent.'}
+2025-11-22 01:38:06,701 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'You are concluding a customer support conversation. Summarize the assistance provided in a friendly, professional manner.\n\nCreate a brief, warm closing message that:\n1. Summarizes what was addressed\n2. Offers further assistance\n3. Sounds natural and helpful\n\nKeep it concise (2-3 sentences).'}
+2025-11-22 01:38:09,813 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 01:41:10,703 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:41:10,725 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:41:12,640 - support_system - INFO - (main) - Before graph.invoke -> original_query: can i get help with a bill?
+2025-11-22 01:41:12,647 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:41:12,650 - support_system - INFO - 
+Input message: {'role': 'system', 'content': '\nYou are a supervisor agent in a customer support system. Your job is to analyze customer queries and break them down into specific subtasks if needed that can be handled by specialized agents.\nBefore dividing the query, first go through all the available agents and their capabilities. If the query is casual (greetings, thanks, small talk), return an empty array []. If the query is actionable (specific requests for help), break it down into subtasks.\n\nAvailable Agents:\n- troubleshoot: Diagnoses and resolves product issues, technical problems\n- billing: Handles payments, invoices, refunds, charges\n- warranty: Checks warranty status, coverage, and claims\n- returns: Processes return and exchange requests\n- account: Manages account settings, passwords, profile updates\n- technical_specs: Provides product specifications and compatibility info\n- feedback: Collects customer feedback and complaints\n\nYour task:\n1. First, determine if this is a CASUAL MESSAGE (greetings, small talk, thanks) or an ACTIONABLE REQUEST\n2. If CASUAL: Return an empty array []\n3. If ACTIONABLE: Analyze the query and create subtasks\n\nIMPORTANT RULES:\n- Greetings like "hi", "hello", "hey" → Return []\n- Thank you messages → Return []\n- Casual conversation → Return []\n- Only create tasks for SPECIFIC ACTIONABLE REQUESTS that require agent assistance\n\nIf actionable, respond with a JSON array in this format:\n[{{"task_id": "task_1","description": "brief description of what needs to be done","agent": "agent_name","dependencies": [],"priority": 1}}]\n\nExamples:\n- "hi" → []\n- "hello there" → []\n- "thanks!" → []\n- "my product is broken" → [task with troubleshoot agent]\n- "what\'s my warranty status?" → [task with warranty agent]\n- "i want to return my order" → [task with returns agent]\n\nRespond ONLY with the JSON array (or empty array), no additional text or text formatting.'}
+2025-11-22 01:41:12,651 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'can i get help with a bill?'}
+2025-11-22 01:41:16,687 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:41:16,688 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 01:41:16,688 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:41:16,688 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:41:16,688 - support_system - INFO - (supervisor) - Routing to billing for: assist customer with billing inquiries
+2025-11-22 01:41:16,688 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:41:16,688 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 01:41:16,689 - support_system - INFO - 
+Input message: content='can i get help with a bill?' additional_kwargs={} response_metadata={}
+2025-11-22 01:41:17,841 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[1]', 'code': 'invalid_value'}}
+2025-11-22 01:41:17,842 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 01:41:17,843 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:41:17,844 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist customer with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 01:41:17,844 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:41:17,844 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 01:41:17,844 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a helpful customer support agent.'}
+2025-11-22 01:41:17,844 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'You are concluding a customer support conversation. Summarize the assistance provided in a friendly, professional manner.\n\nCreate a brief, warm closing message that:\n1. Summarizes what was addressed\n2. Offers further assistance\n3. Sounds natural and helpful\n\nKeep it concise (2-3 sentences).'}
+2025-11-22 01:41:26,765 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 01:45:45,313 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:45:45,339 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:45:50,740 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with bills
+2025-11-22 01:45:50,749 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:45:50,749 - support_system - INFO - 
+Input message: {'role': 'system', 'content': '\nYou are a supervisor agent in a customer support system. Your job is to analyze customer queries and break them down into specific subtasks if needed that can be handled by specialized agents.\nBefore dividing the query, first go through all the available agents and their capabilities. If the query is casual (greetings, thanks, small talk), return an empty array []. If the query is actionable (specific requests for help), break it down into subtasks.\n\nAvailable Agents:\n- troubleshoot: Diagnoses and resolves product issues, technical problems\n- billing: Handles payments, invoices, refunds, charges\n- warranty: Checks warranty status, coverage, and claims\n- returns: Processes return and exchange requests\n- account: Manages account settings, passwords, profile updates\n- technical_specs: Provides product specifications and compatibility info\n- feedback: Collects customer feedback and complaints\n\nYour task:\n1. First, determine if this is a CASUAL MESSAGE (greetings, small talk, thanks) or an ACTIONABLE REQUEST\n2. If CASUAL: Return an empty array []\n3. If ACTIONABLE: Analyze the query and create subtasks\n\nIMPORTANT RULES:\n- Greetings like "hi", "hello", "hey" → Return []\n- Thank you messages → Return []\n- Casual conversation → Return []\n- Only create tasks for SPECIFIC ACTIONABLE REQUESTS that require agent assistance\n\nIf actionable, respond with a JSON array in this format:\n[{{"task_id": "task_1","description": "brief description of what needs to be done","agent": "agent_name","dependencies": [],"priority": 1}}]\n\nExamples:\n- "hi" → []\n- "hello there" → []\n- "thanks!" → []\n- "my product is broken" → [task with troubleshoot agent]\n- "what\'s my warranty status?" → [task with warranty agent]\n- "i want to return my order" → [task with returns agent]\n\nRespond ONLY with the JSON array (or empty array), no additional text or text formatting.'}
+2025-11-22 01:45:50,749 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with bills'}
+2025-11-22 01:46:01,588 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:46:01,588 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 01:46:01,588 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:46:01,588 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:46:01,588 - support_system - INFO - (supervisor) - Routing to billing for: assist with billing inquiries
+2025-11-22 01:46:01,589 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:46:01,589 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 01:46:01,589 - support_system - INFO - 
+Input message: content='help me with bills' additional_kwargs={} response_metadata={}
+2025-11-22 01:46:02,334 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[1]', 'code': 'invalid_value'}}
+2025-11-22 01:46:02,335 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 01:46:02,337 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:46:02,337 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 01:46:02,338 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:46:02,338 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 01:46:02,338 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a helpful customer support agent.'}
+2025-11-22 01:46:02,338 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'You are concluding a customer support conversation. Summarize the assistance provided in a friendly, professional manner.\n\nCreate a brief, warm closing message that:\n1. Summarizes what was addressed\n2. Offers further assistance\n3. Sounds natural and helpful\n\nKeep it concise (2-3 sentences).'}
+2025-11-22 01:46:04,820 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 01:49:30,141 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:49:30,164 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:49:37,479 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bill
+2025-11-22 01:49:37,486 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:49:37,486 - support_system - INFO - 
+Input message: {'role': 'system', 'content': '\nYou are a supervisor agent in a customer support system. Your job is to analyze customer queries and break them down into specific subtasks if needed that can be handled by specialized agents.\nBefore dividing the query, first go through all the available agents and their capabilities. If the query is casual (greetings, thanks, small talk), return an empty array []. If the query is actionable (specific requests for help), break it down into subtasks.\n\nAvailable Agents:\n- troubleshoot: Diagnoses and resolves product issues, technical problems\n- billing: Handles payments, invoices, refunds, charges\n- warranty: Checks warranty status, coverage, and claims\n- returns: Processes return and exchange requests\n- account: Manages account settings, passwords, profile updates\n- technical_specs: Provides product specifications and compatibility info\n- feedback: Collects customer feedback and complaints\n\nYour task:\n1. First, determine if this is a CASUAL MESSAGE (greetings, small talk, thanks) or an ACTIONABLE REQUEST\n2. If CASUAL: Return an empty array []\n3. If ACTIONABLE: Analyze the query and create subtasks\n\nIMPORTANT RULES:\n- Greetings like "hi", "hello", "hey" → Return []\n- Thank you messages → Return []\n- Casual conversation → Return []\n- Only create tasks for SPECIFIC ACTIONABLE REQUESTS that require agent assistance\n\nIf actionable, respond with a JSON array in this format:\n[{{"task_id": "task_1","description": "brief description of what needs to be done","agent": "agent_name","dependencies": [],"priority": 1}}]\n\nExamples:\n- "hi" → []\n- "hello there" → []\n- "thanks!" → []\n- "my product is broken" → [task with troubleshoot agent]\n- "what\'s my warranty status?" → [task with warranty agent]\n- "i want to return my order" → [task with returns agent]\n\nRespond ONLY with the JSON array (or empty array), no additional text or text formatting.'}
+2025-11-22 01:49:37,487 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with my bill'}
+2025-11-22 01:49:47,034 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:49:47,034 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 01:49:47,034 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:49:47,034 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:49:47,034 - support_system - INFO - (supervisor) - Routing to billing for: assist with billing inquiries
+2025-11-22 01:49:47,035 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:49:47,035 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 01:49:47,035 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with my bill'}
+2025-11-22 01:50:02,488 - support_system - ERROR - (billing agent) - error: 'Response' object has no attribute 'strip'
+2025-11-22 01:50:02,490 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:50:02,491 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 01:50:02,491 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:50:02,491 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 01:50:02,491 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a helpful customer support agent.'}
+2025-11-22 01:50:02,491 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'You are concluding a customer support conversation. Summarize the assistance provided in a friendly, professional manner.\n\nCreate a brief, warm closing message that:\n1. Summarizes what was addressed\n2. Offers further assistance\n3. Sounds natural and helpful\n\nKeep it concise (2-3 sentences).'}
+2025-11-22 01:50:20,174 - support_system - ERROR - Error generating text: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_b0c048dff08642cfab0cfd7cff945dc0 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+2025-11-22 01:54:49,104 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:54:49,130 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:54:50,711 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-22 01:54:50,716 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:54:50,716 - support_system - INFO - 
+Input message: {'role': 'system', 'content': '\nYou are a supervisor agent in a customer support system. Your job is to analyze customer queries and break them down into specific subtasks if needed that can be handled by specialized agents.\nBefore dividing the query, first go through all the available agents and their capabilities. If the query is casual (greetings, thanks, small talk), return an empty array []. If the query is actionable (specific requests for help), break it down into subtasks.\n\nAvailable Agents:\n- troubleshoot: Diagnoses and resolves product issues, technical problems\n- billing: Handles payments, invoices, refunds, charges\n- warranty: Checks warranty status, coverage, and claims\n- returns: Processes return and exchange requests\n- account: Manages account settings, passwords, profile updates\n- technical_specs: Provides product specifications and compatibility info\n- feedback: Collects customer feedback and complaints\n\nYour task:\n1. First, determine if this is a CASUAL MESSAGE (greetings, small talk, thanks) or an ACTIONABLE REQUEST\n2. If CASUAL: Return an empty array []\n3. If ACTIONABLE: Analyze the query and create subtasks\n\nIMPORTANT RULES:\n- Greetings like "hi", "hello", "hey" → Return []\n- Thank you messages → Return []\n- Casual conversation → Return []\n- Only create tasks for SPECIFIC ACTIONABLE REQUESTS that require agent assistance\n\nIf actionable, respond with a JSON array in this format:\n[{{"task_id": "task_1","description": "brief description of what needs to be done","agent": "agent_name","dependencies": [],"priority": 1}}]\n\nExamples:\n- "hi" → []\n- "hello there" → []\n- "thanks!" → []\n- "my product is broken" → [task with troubleshoot agent]\n- "what\'s my warranty status?" → [task with warranty agent]\n- "i want to return my order" → [task with returns agent]\n\nRespond ONLY with the JSON array (or empty array), no additional text or text formatting.'}
+2025-11-22 01:54:50,718 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'hi'}
+2025-11-22 01:54:57,069 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:54:57,089 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:55:02,396 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with the bills
+2025-11-22 01:55:02,408 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:55:02,408 - support_system - INFO - 
+Input message: {'role': 'system', 'content': '\nYou are a supervisor agent in a customer support system. Your job is to analyze customer queries and break them down into specific subtasks if needed that can be handled by specialized agents.\nBefore dividing the query, first go through all the available agents and their capabilities. If the query is casual (greetings, thanks, small talk), return an empty array []. If the query is actionable (specific requests for help), break it down into subtasks.\n\nAvailable Agents:\n- troubleshoot: Diagnoses and resolves product issues, technical problems\n- billing: Handles payments, invoices, refunds, charges\n- warranty: Checks warranty status, coverage, and claims\n- returns: Processes return and exchange requests\n- account: Manages account settings, passwords, profile updates\n- technical_specs: Provides product specifications and compatibility info\n- feedback: Collects customer feedback and complaints\n\nYour task:\n1. First, determine if this is a CASUAL MESSAGE (greetings, small talk, thanks) or an ACTIONABLE REQUEST\n2. If CASUAL: Return an empty array []\n3. If ACTIONABLE: Analyze the query and create subtasks\n\nIMPORTANT RULES:\n- Greetings like "hi", "hello", "hey" → Return []\n- Thank you messages → Return []\n- Casual conversation → Return []\n- Only create tasks for SPECIFIC ACTIONABLE REQUESTS that require agent assistance\n\nIf actionable, respond with a JSON array in this format:\n[{{"task_id": "task_1","description": "brief description of what needs to be done","agent": "agent_name","dependencies": [],"priority": 1}}]\n\nExamples:\n- "hi" → []\n- "hello there" → []\n- "thanks!" → []\n- "my product is broken" → [task with troubleshoot agent]\n- "what\'s my warranty status?" → [task with warranty agent]\n- "i want to return my order" → [task with returns agent]\n\nRespond ONLY with the JSON array (or empty array), no additional text or text formatting.'}
+2025-11-22 01:55:02,409 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with the bills'}
+2025-11-22 01:55:05,398 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:55:05,398 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 01:55:05,398 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:55:05,398 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:55:05,398 - support_system - INFO - (supervisor) - Routing to billing for: assistance with billing inquiries
+2025-11-22 01:55:05,399 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:55:05,399 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 01:55:05,399 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with the bills'}
+2025-11-22 01:55:07,919 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Could you please provide your phone number so I can assist you with your bills?'}
+2025-11-22 01:55:08,610 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:55:08,610 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:55:08,611 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:55:08,611 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-22 01:55:08,612 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:55:08,612 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 01:55:08,613 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with the bills'}
+2025-11-22 01:55:08,616 - support_system - INFO - 
+Input message: [ResponseOutputMessage(id='msg_09771cc9bb4f05d6006920caa20400819b9294a251fe80fe07', content=[ResponseOutputText(annotations=[], text='{\n    "action": "need_info",\n    "required_info": ["phone_number"],\n    "message": "Could you please provide your phone number so I can assist you with your bills?"\n}', type='output_text', logprobs=[])], role='assistant', status='completed', type='message')]
+2025-11-22 01:55:08,616 - support_system - INFO - 
+Input message: {'role': 'assistant', 'content': 'Could you please provide your phone number so I can assist you with your bills?'}
+2025-11-22 01:55:08,618 - support_system - INFO - 
+Input message: content='Could you please provide your phone number so I can assist you with your bills?' additional_kwargs={} response_metadata={}
+2025-11-22 01:55:08,619 - support_system - INFO - 
+Input message: content='' additional_kwargs={} response_metadata={}
+2025-11-22 01:55:08,623 - support_system - ERROR - Error generating text: Object of type ResponseOutputMessage is not JSON serializable
+2025-11-22 01:55:08,623 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 01:55:08,624 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 01:55:08,624 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 01:55:08,624 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 01:55:08,624 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 01:55:08,624 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a helpful customer support agent.'}
+2025-11-22 01:55:08,625 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'You are concluding a customer support conversation. Summarize the assistance provided in a friendly, professional manner.\n\nCreate a brief, warm closing message that:\n1. Summarizes what was addressed\n2. Offers further assistance\n3. Sounds natural and helpful\n\nKeep it concise (2-3 sentences).'}
+2025-11-22 01:55:11,069 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 01:55:11,071 - support_system - ERROR -  - (main) - Error processing message: list indices must be integers or slices, not str
+2025-11-22 01:58:42,760 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 01:58:42,785 - support_system - INFO - Support graph created successfully.
+2025-11-22 01:58:51,528 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bi;;s
+2025-11-22 01:58:51,539 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 01:58:51,539 - support_system - INFO - 
+Input message: {'role': 'system', 'content': '\nYou are a supervisor agent in a customer support system. Your job is to analyze customer queries and break them down into specific subtasks if needed that can be handled by specialized agents.\nBefore dividing the query, first go through all the available agents and their capabilities. If the query is casual (greetings, thanks, small talk), return an empty array []. If the query is actionable (specific requests for help), break it down into subtasks.\n\nAvailable Agents:\n- troubleshoot: Diagnoses and resolves product issues, technical problems\n- billing: Handles payments, invoices, refunds, charges\n- warranty: Checks warranty status, coverage, and claims\n- returns: Processes return and exchange requests\n- account: Manages account settings, passwords, profile updates\n- technical_specs: Provides product specifications and compatibility info\n- feedback: Collects customer feedback and complaints\n\nYour task:\n1. First, determine if this is a CASUAL MESSAGE (greetings, small talk, thanks) or an ACTIONABLE REQUEST\n2. If CASUAL: Return an empty array []\n3. If ACTIONABLE: Analyze the query and create subtasks\n\nIMPORTANT RULES:\n- Greetings like "hi", "hello", "hey" → Return []\n- Thank you messages → Return []\n- Casual conversation → Return []\n- Only create tasks for SPECIFIC ACTIONABLE REQUESTS that require agent assistance\n\nIf actionable, respond with a JSON array in this format:\n[{{"task_id": "task_1","description": "brief description of what needs to be done","agent": "agent_name","dependencies": [],"priority": 1}}]\n\nExamples:\n- "hi" → []\n- "hello there" → []\n- "thanks!" → []\n- "my product is broken" → [task with troubleshoot agent]\n- "what\'s my warranty status?" → [task with warranty agent]\n- "i want to return my order" → [task with returns agent]\n\nRespond ONLY with the JSON array (or empty array), no additional text or text formatting.'}
+2025-11-22 01:58:51,539 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with my bi;;s'}
+2025-11-22 01:58:55,603 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 01:58:55,603 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 01:58:55,603 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 01:58:55,603 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 01:58:55,603 - support_system - INFO - (supervisor) - Routing to billing for: Assist with billing inquiries
+2025-11-22 01:58:55,604 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 01:58:55,604 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 01:58:55,604 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with my bi;;s'}
+2025-11-22 01:59:04,512 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-22 02:00:54,515 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:00:54,516 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:00:54,516 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:00:54,517 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-22 02:00:54,518 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:00:54,518 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a billing support agent analyzing a customer\'s request. Your task is to:\n1. Identify what the customer needs regarding billin\n2. Identify what information you need from the customer (phone number, bill ID, etc.) to fulfil customer\'s query\n3. Determine which tool(s) to use\n\nAvailable Tools:\n1. get_bills(ph_number) - Get all bills for a phone number\n2. get_bill_by_id(ph_number, bill_id) - Get specific bill details\n3. send_bill(ph_number, bill_id, mode) - Sends bill via email/SMS\n4. refund_ticket(ph_number, bill_id, amount, reason) - Process refund request.\n\nRules:\n1. Before using refund_ticket, ensure you have verified the bill details and the refund amount.\n2. Before using redund_ticket, you must verify the amount with the user and rasise the ticket upon there confirmation only.\n3. If user have forgot the bill ID, you can first use get_bills to retrieve all bills and filter based on user input.\n4. Use "completed" as "action in the json response when the user\'s querry is staisfied, and no further action is required.\n\nRespond with JSON in this format:\n{{\n    "action": "need_info" | "use_tools" | "respond" | "completed",\n    "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"\n    "tools_to_call": [  // Only if action is "use_tools"\n        {{\n            "tool": "tool_name",\n            "params": {{"param1": "value1", ...}}\n            "tool_call_id": 1  // Unique identifier for this tool call\n        }}\n    ],\n    "message": "What to say to the customer"\n}}\n\nExamples:\n- "I want to see my bills" → need phone_number\n- "Show bill B001" → need phone_number (if not in context)\n- "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool\n- "Thanks for the help" → respond with friendly message\n\nRespond ONLY with JSON. No text or commentary outside the JSON.'}
+2025-11-22 02:00:54,518 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'help me with my bi;;s'}
+2025-11-22 02:00:54,518 - support_system - INFO - 
+Input message: {'role': 'assistant', 'content': '{\n    "action": "need_info",\n    "required_info": ["phone_number"],\n    "message": "Please provide your phone number so I can assist you with your bills."\n}'}
+2025-11-22 02:00:54,518 - support_system - INFO - 
+Input message: {'role': 'assistant', 'content': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-22 02:00:54,519 - support_system - INFO - 
+Input message: content='Please provide your phone number so I can assist you with your bills.' additional_kwargs={} response_metadata={}
+2025-11-22 02:00:54,519 - support_system - INFO - 
+Input message: content='1234567890' additional_kwargs={} response_metadata={}
+2025-11-22 02:00:55,868 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[4]', 'code': 'invalid_value'}}
+2025-11-22 02:00:55,869 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 02:00:55,870 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:00:55,871 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:00:55,871 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:00:55,871 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:00:55,871 - support_system - INFO - 
+Input message: {'role': 'system', 'content': 'You are a helpful customer support agent.'}
+2025-11-22 02:00:55,871 - support_system - INFO - 
+Input message: {'role': 'user', 'content': 'You are concluding a customer support conversation. Summarize the assistance provided in a friendly, professional manner.\n\nCreate a brief, warm closing message that:\n1. Summarizes what was addressed\n2. Offers further assistance\n3. Sounds natural and helpful\n\nKeep it concise (2-3 sentences).'}
+2025-11-22 02:00:58,751 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:00:58,752 - support_system - ERROR -  - (main) - Error processing message: 'AIMessage' object is not subscriptable
+2025-11-22 02:06:59,912 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:06:59,939 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:07:00,563 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bills
+2025-11-22 02:07:00,568 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:07:04,379 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:07:04,379 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:07:04,379 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries and issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:07:04,379 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist with billing inquiries and issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:07:04,379 - support_system - INFO - (supervisor) - Routing to billing for: assist with billing inquiries and issues
+2025-11-22 02:07:04,379 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing inquiries and issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:07:12,877 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-22 02:07:21,540 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:07:21,541 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries and issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:07:21,542 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:07:21,542 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-22 02:07:21,542 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing inquiries and issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:07:22,527 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[4]', 'code': 'invalid_value'}}
+2025-11-22 02:07:22,527 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 02:07:22,529 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:07:22,529 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries and issues', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:07:22,529 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:07:22,529 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:07:41,056 - support_system - ERROR - Error generating text: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_c9b3701032459f2d9fcbc54da827cb2e in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+2025-11-22 02:07:41,058 - support_system - ERROR -  - (main) - Error processing message: 'AIMessage' object is not subscriptable
+2025-11-22 02:09:52,977 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:09:53,002 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:09:54,160 - support_system - INFO - (main) - Before graph.invoke -> original_query: Function call detected:
+2025-11-22 02:09:54,165 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:09:58,695 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:09:58,715 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:10:18,436 - support_system - INFO - (main) - Before graph.invoke -> original_query: help mw with my bill, my phone number is 1234567890
+2025-11-22 02:10:18,444 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:10:33,268 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:10:33,269 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:10:33,269 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist customer with billing inquiries using phone number provided', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:10:33,269 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist customer with billing inquiries using phone number provided', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:10:33,269 - support_system - INFO - (supervisor) - Routing to billing for: Assist customer with billing inquiries using phone number provided
+2025-11-22 02:10:33,270 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist customer with billing inquiries using phone number provided', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:10:35,792 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['bill_id'], 'message': 'Could you please provide me with the bill ID or let me know what specific issue you need help with regarding your bill?'}
+2025-11-22 02:10:47,600 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:10:47,602 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist customer with billing inquiries using phone number provided', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:10:47,602 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:10:47,602 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-22 02:10:47,603 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist customer with billing inquiries using phone number provided', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:10:47,887 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[4]', 'code': 'invalid_value'}}
+2025-11-22 02:10:47,887 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 02:10:47,889 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:10:47,889 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist customer with billing inquiries using phone number provided', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:10:47,889 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:10:47,890 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:10:50,464 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:10:50,466 - support_system - ERROR -  - (main) - Error processing message: 'AIMessage' object is not subscriptable
+2025-11-22 02:13:10,959 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:13:10,982 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:13:28,549 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bill, B002 and my phone number is 123454658
+2025-11-22 02:13:28,566 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:13:28,566 - support_system - INFO - system: 
+You are a supervisor agent in a custome...
+2025-11-22 02:13:28,566 - support_system - INFO - user: help me with my bill, B002 and my phone number is 123454658...
+2025-11-22 02:13:33,237 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:13:33,237 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:13:33,237 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing query for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:13:33,237 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist with billing query for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:13:33,237 - support_system - INFO - (supervisor) - Routing to billing for: assist with billing query for bill B002
+2025-11-22 02:13:33,238 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing query for bill B002', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:13:33,238 - support_system - INFO - system: You are a billing support agent analyzin...
+2025-11-22 02:13:33,238 - support_system - INFO - user: help me with my bill, B002 and my phone number is 123454658...
+2025-11-22 02:13:42,437 - support_system - ERROR - (billing agent) - error: string indices must be integers, not 'str'
+2025-11-22 02:13:42,439 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:13:42,439 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing query for bill B002', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:13:42,439 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:13:42,439 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:13:42,439 - support_system - INFO - system: You are a helpful customer support agent...
+2025-11-22 02:13:42,439 - support_system - INFO - user: You are concluding a customer support conversation. Summarize the assistance provided in a friendly,...
+2025-11-22 02:13:50,677 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:13:50,684 - support_system - ERROR -  - (main) - Error processing message: 'AIMessage' object is not subscriptable
+2025-11-22 02:24:54,658 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:24:54,684 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:25:02,372 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello, I want a help with my bill
+2025-11-22 02:25:02,376 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:25:02,376 - support_system - INFO - system: 
+You are a supervisor agent in a custome...
+2025-11-22 02:25:02,376 - support_system - INFO - user: hello, I want a help with my bill...
+2025-11-22 02:25:06,757 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:25:06,757 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:25:06,757 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:25:06,757 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:25:06,757 - support_system - INFO - (supervisor) - Routing to billing for: Assist with billing inquiries
+2025-11-22 02:25:06,758 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:25:06,758 - support_system - INFO - system: You are a billing support agent analyzin...
+2025-11-22 02:25:06,758 - support_system - INFO - user: hello, I want a help with my bill...
+2025-11-22 02:25:09,200 - support_system - ERROR - (billing agent) - error: expected string or bytes-like object, got 'Response'
+2025-11-22 02:25:09,201 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:25:09,201 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:25:09,201 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:25:09,201 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:25:09,202 - support_system - INFO - system: You are a helpful customer support agent...
+2025-11-22 02:25:09,202 - support_system - INFO - user: You are concluding a customer support conversation. Summarize the assistance provided in a friendly,...
+2025-11-22 02:25:17,470 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:25:17,472 - support_system - ERROR -  - (main) - Error processing message: 'AIMessage' object is not subscriptable
+2025-11-22 02:28:01,829 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:28:01,851 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:28:03,821 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello, I want a help with my bill
+2025-11-22 02:28:03,825 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:28:06,587 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:28:06,587 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:28:06,588 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:28:06,588 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:28:06,588 - support_system - INFO - (supervisor) - Routing to billing for: assist with billing inquiries
+2025-11-22 02:28:06,588 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:28:21,811 - support_system - ERROR - (billing agent) - error: expected string or bytes-like object, got 'Response'
+2025-11-22 02:28:21,814 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:28:21,814 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:28:21,814 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:28:21,814 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:28:24,291 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:28:24,292 - support_system - ERROR -  - (main) - Error processing message: 'AIMessage' object is not subscriptable
+2025-11-22 02:30:26,512 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:30:26,535 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:30:34,713 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with a bill
+2025-11-22 02:30:34,719 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:30:43,408 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:30:43,408 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:30:43,408 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:30:43,408 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:30:43,408 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with billing inquiries or issues
+2025-11-22 02:30:43,409 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:30:45,931 - support_system - ERROR - (billing agent) - error: expected string or bytes-like object, got 'Response'
+2025-11-22 02:30:45,933 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:30:45,933 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:30:45,933 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:30:45,933 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:30:48,436 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:33:29,638 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:33:29,660 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:33:34,365 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bills
+2025-11-22 02:33:34,371 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:33:38,029 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:33:38,030 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:33:38,030 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries, payments, or invoice issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:33:38,030 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries, payments, or invoice issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:33:38,030 - support_system - INFO - (supervisor) - Routing to billing for: Assist with billing inquiries, payments, or invoice issues
+2025-11-22 02:33:38,030 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist with billing inquiries, payments, or invoice issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:33:55,967 - support_system - ERROR - Error generating text: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_6e52c4125314495f9d7eea5f5f013a93 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+2025-11-22 02:33:55,969 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 02:33:55,970 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:33:55,970 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiries, payments, or invoice issues', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:33:55,970 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:33:55,970 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:34:13,773 - support_system - ERROR - Error generating text: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_5f3ea2d085b541318125bad4b467c6e9 in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+2025-11-22 02:35:23,360 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:35:23,383 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:35:28,369 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with my bills
+2025-11-22 02:35:28,374 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:35:32,107 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:35:32,107 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:35:32,107 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:35:32,107 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:35:32,107 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with billing inquiries or issues
+2025-11-22 02:35:32,108 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:35:35,156 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-22 02:35:47,085 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:35:47,087 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:35:47,087 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:35:47,087 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-22 02:35:47,088 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:35:47,089 - support_system - ERROR - (billing agent) - error: 'AIMessage' object is not subscriptable
+2025-11-22 02:35:47,089 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:35:47,089 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries or issues', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:35:47,089 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:35:47,089 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:35:50,398 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:35:50,400 - support_system - ERROR -  - (main) - Error processing message: 'AIMessage' object is not subscriptable
+2025-11-22 02:38:42,338 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:38:42,360 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:38:55,254 - support_system - INFO - (main) - Before graph.invoke -> original_query: help me with a bill
+2025-11-22 02:38:55,265 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:38:58,887 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:38:58,887 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:38:58,887 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing questions', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:38:58,887 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assistance with billing questions', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:38:58,887 - support_system - INFO - (supervisor) - Routing to billing for: assistance with billing questions
+2025-11-22 02:38:58,888 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with billing questions', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:39:01,417 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bill.'}
+2025-11-22 02:39:36,913 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:39:36,913 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing questions', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:39:36,913 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:39:36,914 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-22 02:39:36,914 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with billing questions', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:39:40,031 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-22 02:39:40,032 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-22 02:39:40,719 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: 'tool'. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[6]', 'code': 'invalid_value'}}
+2025-11-22 02:39:40,719 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 02:39:40,721 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:39:40,721 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing questions', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:39:40,721 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:39:40,721 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:39:43,742 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:44:45,489 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:44:45,513 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:44:55,205 - support_system - INFO - (main) - Before graph.invoke -> original_query: i need help with my biling
+2025-11-22 02:44:55,211 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:45:00,450 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:45:00,450 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:45:00,450 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:45:00,450 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:45:00,450 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with billing inquiries
+2025-11-22 02:45:00,451 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist the customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:45:18,188 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your billing.'}
+2025-11-22 02:45:18,189 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'get'
+2025-11-22 02:46:10,147 - support_system - ERROR -  - (main) - Error processing message: 'NoneType' object does not support item assignment
+2025-11-22 02:49:44,411 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:49:44,439 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:49:45,840 - support_system - INFO - (main) - Before graph.invoke -> original_query: i need help with my biling
+2025-11-22 02:49:45,842 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:49:49,687 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:49:49,687 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:49:49,687 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with their billing issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:49:49,687 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist the customer with their billing issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:49:49,687 - support_system - INFO - (supervisor) - Routing to billing for: Assist the customer with their billing issues
+2025-11-22 02:49:49,687 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist the customer with their billing issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:50:07,406 - support_system - ERROR - Error generating text: Error code: 500 - {'error': {'message': 'An error occurred while processing your request. You can retry your request, or contact us through our help center at help.openai.com if the error persists. Please include the request ID req_67ac0dcb13684b04a91084e9b32f69fb in your message.', 'type': 'server_error', 'param': None, 'code': 'server_error'}}
+2025-11-22 02:50:07,407 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-22 02:50:07,409 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-22 02:50:07,409 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist the customer with their billing issues', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-22 02:50:07,409 - support_system - INFO - (supervisor) - Next task: None
+2025-11-22 02:50:07,409 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-22 02:50:15,783 - support_system - ERROR - (supervisor) - Error compiling final response: 'Response' object has no attribute 'strip'
+2025-11-22 02:51:15,630 - support_system - INFO - using: gpt-4o-mini
+2025-11-22 02:51:15,653 - support_system - INFO - Support graph created successfully.
+2025-11-22 02:51:18,202 - support_system - INFO - (main) - Before graph.invoke -> original_query: i need help with my biling
+2025-11-22 02:51:18,207 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-22 02:51:21,839 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-22 02:51:21,839 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-22 02:51:21,839 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-22 02:51:21,839 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assistance with billing issues', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-22 02:51:21,839 - support_system - INFO - (supervisor) - Routing to billing for: assistance with billing issues
+2025-11-22 02:51:21,840 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with billing issues', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-22 02:51:24,662 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your billing.'}
+2025-11-22 02:51:24,662 - support_system - ERROR - (billing agent) - error: string indices must be integers, not 'tuple'
+2025-11-22 02:51:35,985 - support_system - ERROR -  - (main) - Error processing message: 'NoneType' object does not support item assignment
+2025-11-23 22:46:04,221 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 22:46:04,249 - support_system - INFO - Support graph created successfully.
+2025-11-23 22:46:06,337 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-23 22:46:06,340 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 22:46:17,290 - support_system - INFO - (supervisor) - Empty task list
+2025-11-23 22:46:17,291 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 22:46:17,291 - support_system - INFO - (supervisor) - generating welcome
+2025-11-23 22:46:20,423 - support_system - ERROR - (supervisor) - Error generating welcome: 'Response' object has no attribute 'strip'
+2025-11-23 22:54:57,812 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 22:54:57,834 - support_system - INFO - Support graph created successfully.
+2025-11-23 22:55:00,012 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 22:55:00,021 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 22:55:02,881 - support_system - ERROR - (supervisor) - Failed to parse LLM response as JSON: Expecting value: line 1 column 1 (char 0)
+2025-11-23 22:55:02,881 - support_system - ERROR - (supervisor) - Response was: hi how can I help you?
+2025-11-23 22:55:02,881 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 22:55:02,881 - support_system - ERROR -  - (main) - Error processing message: cannot access local variable 'response' where it is not associated with a value
+2025-11-23 23:02:25,802 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 23:02:25,824 - support_system - INFO - Support graph created successfully.
+2025-11-23 23:02:28,046 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:02:28,052 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:02:33,851 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:02:33,851 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:04:52,451 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:04:52,456 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:04:55,173 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:04:55,173 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:12:37,401 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 23:12:37,425 - support_system - INFO - Support graph created successfully.
+2025-11-23 23:12:41,102 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:12:41,107 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:12:51,671 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:12:51,671 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:12:54,549 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:12:54,551 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:12:57,022 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:12:57,022 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:13:14,143 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:13:14,144 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:13:16,823 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:13:16,824 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:13:28,239 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 23:13:28,260 - support_system - INFO - Support graph created successfully.
+2025-11-23 23:13:30,156 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:13:30,162 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:13:33,354 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:13:33,355 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:14:00,292 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:14:00,296 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:14:09,129 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-23 23:14:09,129 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-23 23:14:09,130 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check the bill with ID B002 for any discrepancies', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:14:09,130 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Check the bill with ID B002 for any discrepancies', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-23 23:14:09,130 - support_system - INFO - (supervisor) - Routing to billing for: Check the bill with ID B002 for any discrepancies
+2025-11-23 23:14:09,131 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check the bill with ID B002 for any discrepancies', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:14:12,547 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can check the bill with ID B002.'}
+2025-11-23 23:14:12,548 - support_system - ERROR - (billing agent) - error: string indices must be integers, not 'tuple'
+2025-11-23 23:14:28,669 - support_system - ERROR -  - (main) - Error processing message: 'NoneType' object does not support item assignment
+2025-11-23 23:14:43,536 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:14:43,539 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:14:46,119 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-23 23:14:46,119 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-23 23:14:46,120 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check for the billing details related to bill ID B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:14:46,120 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Check for the billing details related to bill ID B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-23 23:14:46,120 - support_system - INFO - (supervisor) - Routing to billing for: Check for the billing details related to bill ID B002
+2025-11-23 23:14:46,121 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check for the billing details related to bill ID B002', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:14:48,781 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-23 23:14:48,781 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-23 23:14:49,459 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: 'tool'. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[9]', 'code': 'invalid_value'}}
+2025-11-23 23:14:49,459 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-23 23:14:49,460 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:14:49,460 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check for the billing details related to bill ID B002', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-23 23:14:49,460 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:14:49,461 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-23 23:39:41,749 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 23:39:41,773 - support_system - INFO - Support graph created successfully.
+2025-11-23 23:39:43,451 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-23 23:39:43,456 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:39:47,143 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:39:47,143 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:39:57,377 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-23 23:39:57,380 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:40:00,271 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-23 23:40:00,274 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-23 23:40:00,274 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:40:00,275 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-23 23:40:00,275 - support_system - INFO - (supervisor) - Routing to billing for: Assist customer with billing inquiries
+2025-11-23 23:40:00,279 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Assist customer with billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:40:02,988 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bill.'}
+2025-11-23 23:40:02,988 - support_system - ERROR - (billing agent) - error: string indices must be integers, not 'str'
+2025-11-23 23:40:02,989 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:40:02,989 - support_system - WARNING - (human_input) - No current task found to resume.
+2025-11-23 23:40:02,990 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:40:02,990 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist customer with billing inquiries', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-23 23:40:02,990 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:40:02,990 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-23 23:41:32,751 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 23:41:32,773 - support_system - INFO - Support graph created successfully.
+2025-11-23 23:41:36,722 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-23 23:41:36,726 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:41:47,102 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:41:47,103 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:42:43,304 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi
+2025-11-23 23:42:43,314 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:42:52,050 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-23 23:42:52,050 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-23 23:42:52,051 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:42:52,051 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-23 23:42:52,051 - support_system - INFO - (supervisor) - Routing to billing for: assist the customer with their billing inquiries
+2025-11-23 23:42:52,055 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:42:55,317 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:42:55,320 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:42:55,320 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:42:55,320 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:42:55,320 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:42:55,320 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:42:55,321 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:42:55,321 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:42:57,880 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:42:57,881 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:42:57,882 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:42:57,883 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:42:57,883 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:42:57,883 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:42:57,883 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:42:57,884 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:00,448 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:00,451 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:00,451 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:00,452 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:00,453 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:00,454 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:00,454 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:00,455 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:02,951 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:02,953 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:02,953 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:02,955 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:02,955 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:02,955 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:02,955 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:02,956 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:05,381 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:05,383 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:05,383 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:05,384 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:05,384 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:05,385 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:05,385 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:05,386 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:07,842 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:07,843 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:07,844 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:07,845 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:07,845 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:07,845 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:07,845 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:07,846 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:11,378 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:11,380 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:11,380 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:11,381 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:11,381 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:11,381 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:11,381 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:11,382 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:13,875 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:13,877 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:13,877 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:13,878 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:13,878 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:13,878 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:13,879 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:13,879 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:16,476 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:16,477 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:16,477 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:16,478 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:16,478 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:16,478 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:16,478 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:16,479 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:19,182 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:19,183 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:19,183 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:19,184 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:19,184 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:19,184 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:19,184 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:19,186 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:21,746 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:21,749 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:21,750 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:21,750 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:21,751 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:21,751 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:21,751 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:21,754 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:24,295 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:24,296 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:24,296 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:24,297 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:24,297 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:24,297 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:24,297 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:24,298 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:26,839 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:26,841 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:26,841 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:26,842 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:26,842 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:26,842 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:26,842 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:26,843 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:29,295 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:29,297 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:29,297 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:29,297 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:29,297 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:29,297 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:29,297 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:29,299 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:31,989 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:31,990 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:31,991 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:31,992 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:31,992 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:31,993 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:31,993 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:31,994 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:34,962 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:34,964 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:34,964 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:34,965 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:34,965 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:34,965 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:34,965 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:34,966 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:38,249 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:38,253 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:38,253 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:38,253 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:38,253 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:38,253 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:38,253 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:38,254 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:40,809 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:40,810 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:40,810 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:40,811 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:40,811 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:40,811 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:40,811 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:40,812 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:43,282 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:43,283 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:43,284 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:43,284 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:43,284 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:43,284 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:43,285 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:43,285 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:43:46,634 - support_system - INFO - (billing agent) - Billing analysis: {'action': 'need_info', 'required_info': ['phone_number'], 'message': 'Please provide your phone number so I can assist you with your bills.'}
+2025-11-23 23:43:46,639 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:43:46,639 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:43:46,642 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:43:46,645 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:43:46,647 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:43:46,647 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:43:46,649 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist the customer with their billing inquiries', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:51:22,458 - support_system - INFO - using: gpt-4o-mini
+2025-11-23 23:51:22,482 - support_system - INFO - Support graph created successfully.
+2025-11-23 23:51:24,388 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:51:24,393 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:51:28,192 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-23 23:51:28,192 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-23 23:51:46,225 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-23 23:51:46,229 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-23 23:51:48,925 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-23 23:51:48,925 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-23 23:51:48,925 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:51:48,925 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-23 23:51:48,926 - support_system - INFO - (supervisor) - Routing to billing for: Check billing details for bill B002 and investigate the charge
+2025-11-23 23:51:48,927 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:51:51,895 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:51:51,895 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:51:51,896 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:51:51,896 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:51:51,896 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:51:51,896 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:51:51,897 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:51:54,619 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:51:54,619 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:51:54,620 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:51:54,620 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:51:54,620 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:51:54,620 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:51:54,621 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:51:57,056 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:51:57,056 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:51:57,056 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:51:57,057 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:51:57,057 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:51:57,057 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:51:57,057 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-23 23:51:59,604 - support_system - INFO - (human_input) - Processing human input state
+2025-11-23 23:51:59,604 - support_system - INFO - (human_input) - Resuming task: task_1
+2025-11-23 23:51:59,605 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-23 23:51:59,605 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-23 23:51:59,605 - support_system - INFO - (supervisor) - Next task: None
+2025-11-23 23:51:59,605 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-23 23:51:59,606 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check billing details for bill B002 and investigate the charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:07:35,599 - support_system - INFO - using: gpt-4o-mini
+2025-11-24 00:07:35,622 - support_system - INFO - Support graph created successfully.
+2025-11-24 00:07:35,622 - support_system - ERROR -  - (main) - Fatal error in chatbot: Found edge starting at unknown node 'human_input'
+2025-11-24 00:12:57,347 - support_system - INFO - using: gpt-4o-mini
+2025-11-24 00:12:57,370 - support_system - INFO - Support graph created successfully.
+2025-11-24 00:13:00,693 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-24 00:13:00,698 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-24 00:13:03,425 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-24 00:13:03,426 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-24 00:13:20,830 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-24 00:13:20,832 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-24 00:13:23,456 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-24 00:13:23,456 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-24 00:13:23,456 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing inquiry', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:13:23,457 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assistance with billing inquiry', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-24 00:13:23,457 - support_system - INFO - (supervisor) - Routing to billing for: assistance with billing inquiry
+2025-11-24 00:13:23,458 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with billing inquiry', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:13:40,489 - support_system - INFO - (main) - Before graph.invoke -> original_query: hello
+2025-11-24 00:13:40,491 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:13:40,491 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing inquiry', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:13:40,492 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:13:40,492 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-24 00:13:40,492 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assistance with billing inquiry', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:13:43,933 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-24 00:13:43,933 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-24 00:13:44,753 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: 'tool'. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[6]', 'code': 'invalid_value'}}
+2025-11-24 00:13:44,753 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-24 00:13:44,754 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:13:44,754 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assistance with billing inquiry', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-24 00:13:44,754 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:13:44,755 - support_system - INFO - (supervisor) - All tasks completed

@@ -1,7 +1,6 @@
 import os
 import sys
 from typing import Any, Dict
-from langchain_core.messages import HumanMessage, AIMessage
 
 from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState
@@ -97,29 +96,44 @@ class InteractiveSupportChatbot:
             if self.state and self.state.get("awaiting_real_query"):
                 # Continue with existing state to preserve casual_turn_count
                 self.state["original_query"] = user_message
-                self.state["messages"].append(HumanMessage(content=user_message))
+                self.state["messages"].append({"role": "user", "content": user_message})
                 self.state["all_tasks_completed"] = False
                 self.state["subtasks"] = []  # Reset subtasks
             else:
                 # Fresh start
                 self.initialize_conversation()
                 self.state["original_query"] = user_message
-                self.state["messages"].append(HumanMessage(content=user_message))
+                self.state["messages"].append({"role": "user", "content": user_message})
         else:
             # Continue existing conversation
-            self.state["messages"].append(HumanMessage(content=user_message))
+            self.state["messages"].append({"role": "user", "content": user_message})
+
+        self.state["needs_human_input"] = False 
+        
+        if self.state.get("current_task"):
+            self.state["current_task"]["status"] = "in_progress"
+            for t in self.state["subtasks"]:
+                if t["task_id"] == self.state["current_task"]["task_id"]:
+                    t["status"] = "in_progress"
+
+        previous_message_count = len(self.state["messages"])
         
         try:
             logger.info(f"(main) - Before graph.invoke -> original_query: {self.state.get('original_query')}")
             result = self.graph.invoke(self.state, {"recursion_limit": 100})
             self.state = result
             
-            # Display only new messages (messages added after user's last message)
-            # Get the last assistant message
-            for msg in reversed(result["messages"]):
-                if isinstance(msg, AIMessage):
-                    print(f"\nAssistant: {msg.content}\n")
-                    break
+            current_messages = result["messages"]
+            new_messages_count = len(current_messages) - previous_message_count
+
+            if new_messages_count > 0:
+                new_messages = current_messages[-new_messages_count:]
+                for msg in new_messages:
+                    if msg["role"] == "assistant":
+                        print(f"\nAssistant: {msg["content"]}\n")
+
+            if result.get("needs_human_input"):
+                return True
             
             # Check if tasks are completed
             if result.get("all_tasks_completed"):

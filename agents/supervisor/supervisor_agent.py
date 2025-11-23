@@ -1,8 +1,7 @@
 import json
-from agents.supervisor.prompt import SUPERVISOR_DECOMPOSITION_PROMPT, SUPERVISOR_ROUTING_PROMPT, FINAL_RESPONSE_PROMPT, TURN_4_PROMPT, TURN_3_PROMPT, GENERATE_WELCOME, GENERATE_HELPFUL
+from agents.supervisor.prompt import SUPERVISOR_DECOMPOSITION_PROMPT
 from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState, AgentType, SubTask, TaskStatus
-from langchain_core.messages import AIMessage
 from typing import List, Optional
 
 from utils.logger import get_logger
@@ -29,68 +28,46 @@ def supervisor_node(state: AgentState) -> AgentState:
     
     logger.debug(f"(supervisor) - Supervisor received original_query: {state.get('original_query')}")
 
-    # if an agent requested human input, route to human_input directly
-    # if state.get("needs_human_input", False):
-    #     logger.info("(supervisor) - Human input required, routing to human_input node.")
-    #     state["next_agent"] = "human_input"
-    #     return state
-    
-    # Initialize casual turn tracking if not present
     if "casual_turn_count" not in state:
         state["casual_turn_count"] = 0
     if "awaiting_real_query" not in state:
         state["awaiting_real_query"] = False
     
-    # If this is the first time supervisor is called
+    # first time supervisor is called
     if not state.get("subtasks"):
         logger.info("(supervisor) - Analyzing user query")
         
-        # Decompose the query into subtasks using LLM
-        # This returns (subtasks_list, unactionable_message)
-        subtasks, unactionable_msg = decompose_query_with_llm(state["original_query"], llm_client)
-        logger.info("(supervisor) - unpacked")
+        subtasks, unactionable_msg = decompose_query_with_llm(state, llm_client)
         
         # If no tasks (casual conversation), handle it
         if not subtasks:
             logger.info("(supervisor) - Casual conversation detected, no tasks created")
             state["casual_turn_count"] += 1
             
-            # Use the LLM-generated unactionable message if available
+            response = "I'm sorry, I didn't quite catch that. How can I help you today?"
+
             if unactionable_msg:
                 response = unactionable_msg
-            else:
-                # Generate response based on turn count (fallback)
-                if state["casual_turn_count"] == 1:
-                    logger.info("(supervisor) - generating welcome")
-                    response = generate_welcome_with_capabilities(llm_client)
-                elif state["casual_turn_count"] == 2:
-                    logger.info("(supervisor) - generating helpful")
-                    response = generate_helpful_prompt(llm_client)
-                elif state["(supervisor) - casual_turn_count"] >= 3:
-                    logger.info("(supervisor) - generating final")
-                    response = generate_final_prompt(state["casual_turn_count"], llm_client)
             
-            state["messages"].append(AIMessage(content=response))
+            state["messages"].append({"role": "assistant", "content":response})
             state["all_tasks_completed"] = True
             state["next_agent"] = "human_input"
             state["final_response"] = response
             state["awaiting_real_query"] = True
             return state
         
-        # Real tasks detected - reset casual counters
         state["casual_turn_count"] = 0
         state["awaiting_real_query"] = False
         state["subtasks"] = subtasks
-        logger.info(f"(supervisor) - Generated {len(subtasks)} subtasks")
+        logger.info(f"(supervisor) - Updated state with {len(subtasks)} subtasks")
+
     else:
         logger.info("(supervisor) - Continuing with existing subtasks")
 
-    # Find the next task to execute
     next_task = get_next_task(state["subtasks"])
     logger.info(f"(supervisor) - Next task: {next_task}")
     
-    if next_task is None: # none can be in 2 cases - even if the current task is in progress next can be none.
-        # Check whether all tasks are completed or one is still in progress
+    if next_task is None:
         all_completed = all(t["status"] == TaskStatus.COMPLETED for t in state["subtasks"])
         any_in_progress = any(t["status"] == TaskStatus.IN_PROGRESS for t in state["subtasks"])
 
@@ -98,15 +75,14 @@ def supervisor_node(state: AgentState) -> AgentState:
             logger.info("(supervisor) - All tasks completed")
             state["all_tasks_completed"] = True
             state["next_agent"] = "finish"
-            state["final_response"] = compile_final_response_with_llm(state, llm_client)
         elif any_in_progress:
             logger.info("(supervisor) - Tasks in progress; waiting for agent response")
             state["next_agent"] = state["current_task"]["agent"]
         else:
             logger.info("(supervisor) - No available tasks, but not all completed (possible dependency wait)")
             state["next_agent"] = None
+
     else:
-        # Update task status
         for task in state["subtasks"]:
             if task["task_id"] == next_task["task_id"]:
                 task["status"] = TaskStatus.IN_PROGRESS
@@ -114,17 +90,11 @@ def supervisor_node(state: AgentState) -> AgentState:
         state["current_task"] = next_task
         state["next_agent"] = next_task["agent"]
         
-        # Generate routing message using LLM
-        # routing_message = generate_routing_message(state, llm_client)
-        
-        # Add supervisor message explaining what we're doing
-        # state["messages"].append(AIMessage(content=routing_message))
-        
         logger.info(f"(supervisor) - Routing to {next_task['agent']} for: {next_task['description']}")
     
     return state
 
-def decompose_query_with_llm(query: str, llm_client: LLM_Client) -> tuple[List[SubTask], Optional[str]]:
+def decompose_query_with_llm(state, llm_client: LLM_Client) -> tuple[List[SubTask], Optional[str]]:
     """
     Use LLM to decompose the user query into subtasks.
     Returns (subtasks_list, unactionable_message).
@@ -132,18 +102,16 @@ def decompose_query_with_llm(query: str, llm_client: LLM_Client) -> tuple[List[S
     - If query is actionable: returns ([subtasks], None)
     - If query is casual/unactionable: returns ([], "LLM generated message")
     """
+    conversation = [
+        {"role": "system", "content": SUPERVISOR_DECOMPOSITION_PROMPT},
+        *state.get("messages")
+    ]
     
     try:
-        # Prepare the conversation for LLM
-        conversation = [
-            {"role": "system", "content": SUPERVISOR_DECOMPOSITION_PROMPT},
-            {"role": "user", "content": query}
-        ]
         
-        # Get LLM response
         response = llm_client.invoke(conversation)
+        response = response.output[0].content[0].text
         
-        # Clean response - remove markdown code blocks if present
         response = response.strip()
         if response.startswith("```json"):
             response = response[7:]
@@ -153,12 +121,16 @@ def decompose_query_with_llm(query: str, llm_client: LLM_Client) -> tuple[List[S
             response = response[:-3]
         response = response.strip()
         
-        data = json.loads(response)
+        try:
+            data = json.loads(response)
+        except json.JSONDecodeError:
+            logger.info("(supervisor) - Response is not JSON, treating as casual message")
+            return ([], response)
         
-        # Case 1: LLM returned an unactionable message (dict with 'response' key)
-        if isinstance(data, dict) and "response" in data:
+        # Case 1: LLM returned an unactionable message
+        if isinstance(data, str):
             logger.info("(supervisor) - LLM detected casual/unactionable query")
-            unactionable_message = data["response"]
+            unactionable_message = data
             return ([], unactionable_message)
         
         # Case 2: LLM returned empty array (casual conversation)
@@ -196,32 +168,6 @@ def decompose_query_with_llm(query: str, llm_client: LLM_Client) -> tuple[List[S
         logger.error(f"(supervisor) - Error in decompose_query_with_llm: {e}")
         return ([], None)
 
-def compile_final_response_with_llm(state: AgentState, llm_client: LLM_Client) -> str:
-    """
-    Compile results from all agents into a final response using LLM.
-    """
-    
-    try:
-        completed_tasks = [t for t in state["subtasks"] if t["status"] == TaskStatus.COMPLETED]
-        
-        task_summaries = []
-        for task in completed_tasks:
-            task_summaries.append(f"- {task['description']}: {task['result']}")
-        
-        prompt = FINAL_RESPONSE_PROMPT
-        
-        conversation = [
-            {"role": "system", "content": "You are a helpful customer support agent."},
-            {"role": "user", "content": prompt}
-        ]
-        
-        response = llm_client.invoke(conversation)
-        return response.strip()
-        
-    except Exception as e:
-        logger.error(f"(supervisor) - Error compiling final response: {e}")
-        # Fallback response
-        return "I've addressed your concerns. Is there anything else I can help you with?"
 
 def get_next_task(subtasks: List[SubTask]) -> Optional[SubTask]:
     """
@@ -232,7 +178,7 @@ def get_next_task(subtasks: List[SubTask]) -> Optional[SubTask]:
     """
     
     available_tasks = []
-    logger.info(f"(supervisor) - Checking {len(subtasks)} subtasks for next task \n {subtasks}")
+    logger.info(f"(supervisor) - Checking {len(subtasks)} subtasks for next task, task: {subtasks}")
     for task in subtasks:
         # Skip if not pending
         if task["status"] != TaskStatus.PENDING:
@@ -254,73 +200,3 @@ def get_next_task(subtasks: List[SubTask]) -> Optional[SubTask]:
         return sorted(available_tasks, key=lambda x: x["priority"])[0]
     
     return None
-
-def generate_welcome_with_capabilities(llm_client: LLM_Client) -> str:
-    """
-    Generate a welcoming response that showcases system capabilities.
-    Used on first casual interaction.
-    """
-    
-    try:
-        prompt = GENERATE_WELCOME
-        
-        conversation = [
-            {"role": "system", "content": "You are a friendly customer support agent introducing your capabilities."},
-            {"role": "user", "content": prompt}
-        ]
-        
-        response = llm_client.invoke(conversation)
-        return response.strip()
-        
-    except Exception as e:
-        logger.error(f"(supervisor) - Error generating welcome: {e}")
-        return "Hello! I can help you with product troubleshooting, billing questions, warranty information, returns, and account management. What do you need help with today?"
-
-def generate_helpful_prompt(llm_client: LLM_Client) -> str:
-    """
-    Generate a more specific prompt for the second casual turn.
-    """
-    
-    try:
-        prompt = GENERATE_HELPFUL
-        
-        conversation = [
-            {"role": "system", "content": "You are a friendly customer support agent."},
-            {"role": "user", "content": prompt}
-        ]
-        
-        response = llm_client.invoke(conversation)
-        return response.strip()
-        
-    except Exception as e:
-        logger.error(f"(supervisor) - Error generating helpful prompt: {e}")
-        return "I'm here to help! For example, I can troubleshoot issues, check warranty status, or answer billing questions. What would you like to know?"
-
-def generate_final_prompt(turn_count: int, llm_client: LLM_Client) -> str:
-    """
-    Generate a more direct prompt after multiple casual turns.
-    After 3+ turns without a real question, be more explicit.
-    """
-    
-    try:
-        if turn_count >= 4:
-            # After 4+ turns, suggest they come back later
-            prompt = TURN_4_PROMPT
-        else:
-            # Turn 3 - be direct but helpful
-            prompt = TURN_3_PROMPT
-        
-        conversation = [
-            {"role": "system", "content": "You are a friendly but direct customer support agent."},
-            {"role": "user", "content": prompt}
-        ]
-        
-        response = llm_client.invoke(conversation)
-        return response.strip()
-        
-    except Exception as e:
-        logger.error(f"(supervisor) - Error generating final prompt: {e}")
-        if turn_count >= 4:
-            return "It looks like you might not need assistance right now. Feel free to reach out whenever you have a question!"
-        else:
-            return "I'd love to help! Could you let me know what specific issue you're experiencing?"

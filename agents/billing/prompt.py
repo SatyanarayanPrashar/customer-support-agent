@@ -17,14 +17,8 @@ Rules:
 
 Respond with JSON in this format:
 {{
-    "action": "need_info" | "use_tools" | "respond" | "completed",
+    "action": "need_info" | "respond" | "completed",
     "required_info": ["phone_number", "bill_id", ...],  // Only if action is "need_info"
-    "tools_to_call": [  // Only if action is "use_tools"
-        {{
-            "tool": "tool_name",
-            "params": {{"param1": "value1", ...}}
-        }}
-    ],
     "message": "What to say to the customer"
 }}
 
@@ -34,23 +28,8 @@ Examples:
 - "I was charged twice on bill B001, my number is 1234567890" → use refund_ticket tool
 - "Thanks for the help" → respond with friendly message
 
-Respond ONLY with JSON. No text or commentary outside the JSON."""
+Respond ONLY with JSON. No text or commentary outside the JSON. no additional text or text formatting."""
 
-
-BILLING_RESPONSE_PROMPT = """You are a friendly billing support agent. Generate a natural response to the customer.
-
-Customer Query: {query}
-Tool Results: {tool_results}
-Context: {context}
-messages: {messages}
-
-Create a helpful, conversational response that:
-1. Addresses their billing concern
-2. Presents information clearly (if showing bills/charges)
-3. Asks follow-up questions if needed
-4. Remains professional but friendly
-
-Keep it concise and easy to understand."""
 
 
 SUMMARY_PROMPT = """You have to summarise the conversation between an Customer support AI Agent and the customer.

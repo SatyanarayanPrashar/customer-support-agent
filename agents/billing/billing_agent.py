@@ -1,11 +1,10 @@
 import json
 import re
 from typing import Dict, List
-from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refund_ticket, send_bill
+from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refund_ticket, send_bill, tools
 from agents.billing.compaction import _format_messages_to_string, compact_conversation_history
-from agents.billing.prompt import BILLING_ANALYSIS_PROMPT, BILLING_RESPONSE_PROMPT
+from agents.billing.prompt import BILLING_ANALYSIS_PROMPT
 from ai_processing.states import AgentState, TaskStatus
-from langchain_core.messages import AIMessage
 
 from utils.logger import get_logger
 logger = get_logger()
@@ -24,163 +23,145 @@ def billing_agent(state: "AgentState") -> "AgentState":
     
     if not llm_client:
         logger.error("(billing agent) - LLM client not found in billing agent")
-        state["messages"].append(
-            AIMessage(content="I'm having trouble accessing the billing system. Please try again.")
-        )
         mark_task_completed(state, current_task, "Error: LLM client not available")
         return state
     
-    compaction_result = compact_conversation_history(state, llm_client)
-    state["messages"] = compaction_result["messages"]
-    conversation_history_string = _format_messages_to_string(state["messages"])    
-    agent_context = state.get("agent_context", {})
-    
-    # Analyze what the customer needs
+    logger.info(f"(billing agent) - Current task: {current_task} recieved")
+
     try:
-        analysis = analyze_billing_request(
-            state["original_query"],
-            conversation_history_string,
-            agent_context,
-            llm_client
-        )
+        analysis = analyze_billing_request(state, llm_client)
+        action = analysis.get("action", "respond")
+        message_to_user = analysis.get("message", "Processing...")
         
-        logger.info(f"(billing agent) - Billing analysis: {analysis}")
-        
-        # Handle based on action
-        if analysis["action"] == "need_info":
+        if action == "need_info":
             state["needs_human_input"] = True
-            response = analysis.get("message", "Could you please provide more details regarding your bill you are looking for like the phone number or the bill id?")
-            state["human_input_prompt"] = response
+            state["human_input_prompt"] = message_to_user
+            state["messages"].append({"role": "assistant", "content": message_to_user})
+            current_task["status"] = TaskStatus.BLOCKED
+            
+        elif action == "respond" :
+            # response = analysis.get("message", "I'm checking the issue, press 1 if you are still here")
+            # state["messages"].append({"role": "assistant", "content": response})
+            # state["needs_human_input"] = True
+            # state["human_input_prompt"] = response
+            # current_task["status"] = TaskStatus.BLOCKED
+            state["needs_human_input"] = True
+            state["human_input_prompt"] = message_to_user
+            state["messages"].append({"role": "assistant", "content": message_to_user})
             current_task["status"] = TaskStatus.BLOCKED
 
-        elif analysis["action"] == "use_tools":
-            # Execute tools and generate response
-            response = handle_use_tools(analysis, state, llm_client)
-            print(f"\nAssistant: ", analysis.get("message"))
-            state["messages"].append(AIMessage(content=response))
-            
-        elif analysis["action"] == "respond" :  # respond
-            # Just respond to the customer
-            response = analysis.get("message", "I'm checking the issue, press 1 if you are still here")
-            state["messages"].append(AIMessage(content=response))
-            state["needs_human_input"] = True
-            state["human_input_prompt"] = response
-            current_task["status"] = TaskStatus.BLOCKED
+        elif action == "completed":
+            state["messages"].append({"role": "assistant", "content": message_to_user})
+            mark_task_completed(state, current_task, message_to_user)
         
         else:
-            response = analysis.get("message", "Resolved")
-            mark_task_completed(state, current_task, response)
+            state["messages"].append({"role": "assistant", "content": message_to_user})
+            state["needs_human_input"] = True
 
     except Exception as e:
         logger.error(f"(billing agent) - error: {e}")
         error_msg = "I apologize, but I encountered an error accessing billing information. Could you please try again?"
-        state["messages"].append(AIMessage(content=error_msg))
+        state["messages"].append({"role": "assistant", "content": error_msg})
         mark_task_completed(state, current_task, error_msg)
     
     return state
 
-def analyze_billing_request(query: str, conversation_history, context: Dict, llm_client) -> Dict:
+def analyze_billing_request(state, llm_client) -> Dict:
     """
     Analyze the billing request and determine what action to take
     """
     conversation = [
         {"role": "system", "content": BILLING_ANALYSIS_PROMPT},
-        {"role": "user", "content": conversation_history + "\nCustomer Query: " + query + "\nContext: " + json.dumps(context)}
+        *state.get("messages")
     ]
     
-    response = llm_client.invoke(conversation)
+    response = llm_client.invoke(input_list=conversation, tools=tools)
+
+    tool_calls = [item for item in response.output if item.type == 'function_call']
+
+    if tool_calls:
+        logger.info(f"(billing agent) - {len(tool_calls)} Function calls detected.")
+
+        for item in tool_calls:
+            handle_use_tools(state, item, llm_client)
+
+        return analyze_billing_request(state, llm_client)
     
-    # Clean and parse JSON
-    response = response.strip()
-
-    # Remove code fences if present
-    response = re.sub(r"^```(?:json)?", "", response)
-    response = re.sub(r"```$", "", response)
-    response = response.strip()
-
-    # Try to fix single quotes and trailing commas
     try:
-        return json.loads(response)
+        raw_text = response.output[0].content[0].text
+    except (AttributeError, IndexError):
+        logger.error("Could not extract text from LLM response")
+        return {"error": "Empty response from LLM"}
+
+    # Update state with the raw text
+    clean_text = raw_text.strip()
+    clean_text = re.sub(r"^```(?:json)?", "", clean_text)
+    clean_text = re.sub(r"```$", "", clean_text)
+    clean_text = clean_text.strip()
+
+    try:
+        return json.loads(clean_text)
     except json.JSONDecodeError:
-        # Replace single quotes with double quotes safely
-        safe_response = re.sub(r"(?<!\\)'", '"', response)
+        logger.warning(f"JSON parse failed, attempting repair on: {clean_text}")
+        safe_response = re.sub(r"(?<!\\)'", '"', clean_text)
         safe_response = re.sub(r",\s*}", "}", safe_response)
         safe_response = re.sub(r",\s*]", "]", safe_response)
-        return json.loads(safe_response)
-
-def handle_use_tools(analysis: Dict, state: "AgentState", llm_client) -> str:
-    """
-    Execute the required tools and generate response
-    """
-    
-    tools_to_call = analysis.get("tools_to_call", [])
-    tool_results = []
-    
-    # Execute each tool
-    for tool_call in tools_to_call:
-        tool_name = tool_call["tool"]
-        params = tool_call["params"]
-        
         try:
-            logger.info(f"(billing agent) - Executing tool: {tool_name} with params: {params}")
-            
-            if tool_name == "get_bills":
-                result = get_bills(params["ph_number"])
-                tool_results.append({"tool": tool_name, "result": result})
-                
-            elif tool_name == "get_bill_by_id":
-                result = get_bill_by_id(params["ph_number"], params["bill_id"])
-                tool_results.append({"tool": tool_name, "result": result})
-                
-            elif tool_name == "send_bill":
-                result = send_bill(params["ph_number"], params["bill_id"], params["mode"])
-                tool_results.append({"tool": tool_name, "result": result})
-                
-            elif tool_name == "refund_ticket":
-                result = refund_ticket(params["ph_number"], params["bill_id"], params["amount"], params["reason"])
-                tool_results.append({"tool": tool_name, "result": result})
-            
-            else:
-                logger.warning(f"(billing agent) - Unknown tool: {tool_name}")
-                
-        except Exception as e:
-            logger.error(f"(billing agent) - Error executing tool {tool_name}: {e}")
-            tool_results.append({
-                "tool": tool_name,
-                "result": f"Error: {str(e)}"
-            })
-    
-    # Store tool results in context for other agents
-    state["agent_context"]["billing_tool_results"] = tool_results
-    
-    # Generate response based on tool results
-    response = generate_billing_response(
-        state["messages"],
-        state["original_query"],
-        tool_results,
-        state.get("agent_context", {}),
-        llm_client
-    )
-    
-    return response
+            return json.loads(safe_response)
+        except json.JSONDecodeError:
+            return {"error": "Failed to parse JSON", "raw_content": clean_text}
 
-def generate_billing_response(messages, query: str, tool_results: List[Dict], context: Dict, llm_client) -> str:
+def handle_use_tools(state: dict, item, llm_client) -> dict:
     """
-    Generate a natural response based on tool execution results
+    Execute a single tool call from the ResponseFunctionToolCall object.
     """
+    tool_name = item.name
+    tool_call_id = item.call_id
     
-    conversation = [
-        {"role": "system", "content": "You are a helpful billing support agent."},
-        {"role": "user", "content": BILLING_RESPONSE_PROMPT.format(
-            messages=messages,
-            query=query,
-            tool_results=json.dumps(tool_results, indent=2),
-            context=json.dumps(context)
-        )}
-    ]
+    try:
+        params = json.loads(item.arguments)
+    except json.JSONDecodeError:
+        logger.error(f"Failed to parse arguments for {tool_name}: {item.arguments}")
+        return {"tool": tool_name, "error": "Invalid JSON arguments"}
+
+    tool_result_content = ""
+
+    try:
+        logger.info(f"(billing agent) - Executing tool: {tool_name} with params: {params}")
+
+        if tool_name == "get_bills":
+            tool_result_content = get_bills(params.get("ph_number"))
+            
+        elif tool_name == "get_bill_by_id":
+            tool_result_content = get_bill_by_id(params.get("ph_number"), params.get("bill_id"))
+            
+        elif tool_name == "send_bill":
+            tool_result_content = send_bill(params.get("ph_number"), params.get("bill_id"), params.get("mode"))
+            
+        elif tool_name == "refund_ticket":
+            tool_result_content = refund_ticket(
+                params.get("ph_number"), 
+                params.get("bill_id"), 
+                params.get("amount"), 
+                params.get("reason")
+            )
+        else:
+            logger.warning(f"(billing agent) - Unknown tool: {tool_name}")
+            tool_result_content = f"Error: Unknown tool {tool_name}"
+
+    except Exception as e:
+        logger.error(f"(billing agent) - Error executing tool {tool_name}: {e}")
+        tool_result_content = f"Error execution failed: {str(e)}"
+
+    tool_msg = {
+        "role": "tool",
+        "tool_call_id": tool_call_id,
+        "content": str(tool_result_content)
+    }
     
-    response = llm_client.invoke(conversation)
-    return response.strip()
+    state["messages"].append(tool_msg)
+    
+    return tool_msg
 
 def mark_task_completed(state: "AgentState", task: Dict, result: str):
     """
