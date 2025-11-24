@@ -1,15 +1,16 @@
 import json
 import re
-from typing import Dict, List
+from typing import Dict
 from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refund_ticket, send_bill, tools
 from agents.billing.compaction import _format_messages_to_string, compact_conversation_history
 from agents.billing.prompt import BILLING_ANALYSIS_PROMPT
+from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState, TaskStatus
 
 from utils.logger import get_logger
 logger = get_logger()
 
-def billing_agent(state: "AgentState") -> "AgentState":
+def billing_agent(state: "AgentState", llm_client: LLM_Client) -> "AgentState":
     """
     Billing agent that handles:
     - Viewing bills and charges
@@ -17,8 +18,6 @@ def billing_agent(state: "AgentState") -> "AgentState":
     - Sending bills
     - Answering billing questions
     """
-    
-    llm_client = state.get("llm_client")
     current_task = state["current_task"]
     
     if not llm_client:
@@ -31,7 +30,7 @@ def billing_agent(state: "AgentState") -> "AgentState":
     try:
         analysis = analyze_billing_request(state, llm_client)
         action = analysis.get("action", "respond")
-        message_to_user = analysis.get("message", "Processing...")
+        message_to_user = analysis.get("message", analysis)
         
         if action == "need_info":
             state["needs_human_input"] = True
@@ -40,11 +39,6 @@ def billing_agent(state: "AgentState") -> "AgentState":
             current_task["status"] = TaskStatus.BLOCKED
             
         elif action == "respond" :
-            # response = analysis.get("message", "I'm checking the issue, press 1 if you are still here")
-            # state["messages"].append({"role": "assistant", "content": response})
-            # state["needs_human_input"] = True
-            # state["human_input_prompt"] = response
-            # current_task["status"] = TaskStatus.BLOCKED
             state["needs_human_input"] = True
             state["human_input_prompt"] = message_to_user
             state["messages"].append({"role": "assistant", "content": message_to_user})

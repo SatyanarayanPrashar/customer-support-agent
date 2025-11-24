@@ -1044,3 +1044,143 @@ You are a supervisor agent in a custome...
 2025-11-24 00:30:51,159 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill ID B002 and determine the correct total amount charged.', 'agent': 'billing', 'status': 'completed', 'result': 'A refund ticket of $200.00 for bill B002 has been raised due to an overcharge on bill items. If you need any further assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
 2025-11-24 00:30:51,159 - support_system - INFO - (supervisor) - Next task: None
 2025-11-24 00:30:51,159 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-24 00:33:55,996 - support_system - INFO - using: gpt-4o-mini
+2025-11-24 00:33:56,019 - support_system - INFO - Support graph created successfully.
+2025-11-24 00:34:15,213 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi, I bought some items and I think I got charged more
+2025-11-24 00:34:15,217 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-24 00:34:19,057 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-24 00:34:19,058 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-24 00:40:29,251 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi, I bought some items and I think I got charged more
+2025-11-24 00:40:29,265 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-24 00:40:34,453 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-24 00:40:34,453 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-24 00:40:53,665 - support_system - INFO - using: gpt-4o-mini
+2025-11-24 00:40:53,686 - support_system - INFO - Support graph created successfully.
+2025-11-24 00:41:01,386 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi, I bought some items and I think I got charged more. please check the bill
+2025-11-24 00:41:01,391 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-24 00:41:05,579 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-24 00:41:05,579 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-24 00:41:05,579 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check the billing details for possible overcharge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:41:05,579 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'check the billing details for possible overcharge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-24 00:41:05,579 - support_system - INFO - (supervisor) - Routing to billing for: check the billing details for possible overcharge
+2025-11-24 00:41:05,580 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check the billing details for possible overcharge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:41:15,652 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi, I bought some items and I think I got charged more. please check the bill
+2025-11-24 00:41:15,655 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:41:15,655 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check the billing details for possible overcharge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:41:15,655 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:41:15,655 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-24 00:41:15,656 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check the billing details for possible overcharge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:41:18,316 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-24 00:41:18,316 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-24 00:42:02,728 - support_system - INFO - (main) - Before graph.invoke -> original_query: hi, I bought some items and I think I got charged more. please check the bill
+2025-11-24 00:42:02,735 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-24 00:42:02,735 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check the billing details for possible overcharge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-24 00:42:02,735 - support_system - INFO - (supervisor) - Next task: None
+2025-11-24 00:42:02,735 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-24 00:42:02,736 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check the billing details for possible overcharge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-24 00:42:11,714 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-24 00:42:11,715 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-24 00:42:14,171 - support_system - WARNING - JSON parse failed, attempting repair on: Your second bill (B002) has the following items:
+
+1. **Robotic Floor Cleaner M612** - $249.99
+2. **Dust Filter Cartridge** - $15.49
+3. **Mop Head Replacement Kit** - $22.75
+
+The total amount due is $488.23. 
+
+If you believe there's an error, please let me know the specific charge or item in question, and I can assist you further.
+2025-11-25 02:16:30,600 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 02:16:30,605 - support_system - INFO - Support graph created successfully.
+2025-11-25 02:16:46,004 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 02:16:53,547 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 02:16:53,547 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 02:16:53,547 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 02:16:53,547 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 02:16:53,547 - support_system - INFO - (supervisor) - Routing to billing for: investigate billing discrepancy
+2025-11-25 02:16:53,548 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 02:17:12,205 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 02:17:12,207 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 02:17:12,207 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 02:17:12,207 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 02:17:12,208 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 02:17:22,042 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-25 02:17:22,042 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-25 02:17:56,112 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 02:17:56,113 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 02:17:56,113 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 02:17:56,113 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 02:17:56,114 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 02:18:03,559 - support_system - WARNING - JSON parse failed, attempting repair on: Here are your bills:
+
+1. **Bill ID:** B001
+   - **Due Date:** 2024-07-15
+   - **Total Amount:** $299.97
+   - **Items:**
+     - Robotic Floor Cleaner M612: $249.99
+     - Cleaner Solution (1L): $19.99
+     - Replacement Mop Pads (Pack of 3): $29.99
+
+2. **Bill ID:** B002
+   - **Due Date:** 2024-09-05
+   - **Total Amount:** $488.23
+   - **Items:**
+     - Robotic Floor Cleaner M612: $249.99
+     - Dust Filter Cartridge: $15.49
+     - Mop Head Replacement Kit: $22.75
+
+Please let me know which bill you would like to discuss further.
+2025-11-25 02:18:46,241 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 02:18:46,243 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 02:18:46,243 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 02:18:46,243 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 02:18:46,244 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'investigate billing discrepancy', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 02:18:49,324 - support_system - WARNING - JSON parse failed, attempting repair on: To confirm, you mentioned that you would like to process a refund for the bill B002. Can you please specify the amount you would like to have refunded and the reason for the refund?
+2025-11-25 02:20:48,023 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 02:20:48,028 - support_system - INFO - Support graph created successfully.
+2025-11-25 02:21:04,062 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 02:21:16,601 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 02:21:16,603 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 02:21:16,603 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing issue for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 02:21:16,603 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist with billing issue for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 02:21:16,603 - support_system - INFO - (supervisor) - Routing to billing for: Assist with billing issue for bill B002
+2025-11-25 02:21:16,603 - support_system - ERROR - (billing agent) - LLM client not found in billing agent
+2025-11-25 02:21:16,605 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 02:21:16,605 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing issue for bill B002', 'agent': 'billing', 'status': 'completed', 'result': 'Error: LLM client not available', 'dependencies': [], 'priority': 1}]
+2025-11-25 02:21:16,605 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 02:21:16,605 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-25 02:23:01,614 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 02:23:01,619 - support_system - INFO - Support graph created successfully.
+2025-11-25 02:23:02,245 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 02:23:12,697 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 02:23:12,697 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 02:23:12,697 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiry for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 02:23:12,697 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Assist with billing inquiry for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 02:23:12,697 - support_system - INFO - (supervisor) - Routing to billing for: Assist with billing inquiry for bill B002
+2025-11-25 02:23:12,697 - support_system - ERROR - (billing agent) - LLM client not found in billing agent
+2025-11-25 02:23:12,698 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 02:23:12,698 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Assist with billing inquiry for bill B002', 'agent': 'billing', 'status': 'completed', 'result': 'Error: LLM client not available', 'dependencies': [], 'priority': 1}]
+2025-11-25 02:23:12,698 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 02:23:12,698 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-25 02:23:48,938 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 02:23:48,943 - support_system - INFO - Support graph created successfully.
+2025-11-25 02:23:55,275 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 02:23:57,902 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-25 02:23:57,903 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-25 02:24:03,120 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 02:24:05,770 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-25 02:24:05,771 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-25 02:24:29,274 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 02:24:29,279 - support_system - INFO - Support graph created successfully.
+2025-11-25 02:24:32,399 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 02:24:35,095 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 02:24:35,095 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 02:24:35,095 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiry for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 02:24:35,095 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'assist with billing inquiry for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 02:24:35,096 - support_system - INFO - (supervisor) - Routing to billing for: assist with billing inquiry for bill B002
+2025-11-25 02:24:35,096 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'assist with billing inquiry for bill B002', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 02:24:39,392 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-25 02:24:39,393 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 12345678909, 'bill_id': 'B002'}
+2025-11-25 02:24:44,309 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 02:24:44,309 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiry for bill B002', 'agent': 'billing', 'status': 'completed', 'result': 'I found the details for bill B002. It was charged to your credit card, with a total amount of $488.23. If you need further assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
+2025-11-25 02:24:44,309 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 02:24:44,309 - support_system - INFO - (supervisor) - All tasks completed

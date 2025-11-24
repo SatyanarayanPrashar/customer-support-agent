@@ -40,7 +40,6 @@ class InteractiveSupportChatbot:
         """Initialize a new conversation state"""
         self.state = AgentState(
             messages=[],
-            original_query="",
             subtasks=[],
             current_task=None,
             next_agent="supervisor",
@@ -48,7 +47,6 @@ class InteractiveSupportChatbot:
             human_input_prompt=None,
             agent_context={},
             all_tasks_completed=False,
-            final_response=None,
             llm_client=self.llm_client,
             casual_turn_count=0,
             awaiting_real_query=False
@@ -91,18 +89,14 @@ class InteractiveSupportChatbot:
             print("Thank you for contacting support. Have a great day!")
             return False
         
-        if self.state is None or not self.state.get("original_query"):
+        if self.state is None:
             # Check if we were awaiting a real query
             if self.state and self.state.get("awaiting_real_query"):
-                # Continue with existing state to preserve casual_turn_count
-                self.state["original_query"] = user_message
                 self.state["messages"].append({"role": "user", "content": user_message})
                 self.state["all_tasks_completed"] = False
-                self.state["subtasks"] = []  # Reset subtasks
+                self.state["subtasks"] = []
             else:
-                # Fresh start
                 self.initialize_conversation()
-                self.state["original_query"] = user_message
                 self.state["messages"].append({"role": "user", "content": user_message})
         else:
             # Continue existing conversation
@@ -119,7 +113,6 @@ class InteractiveSupportChatbot:
         previous_message_count = len(self.state["messages"])
         
         try:
-            logger.info(f"(main) - Before graph.invoke -> original_query: {self.state.get('original_query')}")
             result = self.graph.invoke(self.state, {"recursion_limit": 100})
             self.state = result
             

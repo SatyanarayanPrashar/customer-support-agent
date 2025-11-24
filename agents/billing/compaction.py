@@ -27,8 +27,7 @@ def compact_conversation_history(state: "AgentState", llm_client) -> dict:
 
     prompt = [
         {"role": "system", "content": SUMMARY_PROMPT},
-        {"role": "user", "content": "original query: " + state["original_query"] + 
-                                  " conversation history to summarize: " + formatted_history}
+        {"role": "user", "content":  "conversation history to summarize: " + formatted_history}
     ]
     
     summary_text = llm_client.invoke(prompt) 

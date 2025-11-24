@@ -3,11 +3,9 @@ Multi-Agent Supervisor System with Task Decomposition and Routing
 Handles complex queries by splitting them into subtasks and routing to specialized agents
 """
 
-from typing import Annotated, Dict, TypedDict, List, Optional
+from typing import Dict, TypedDict, List, Optional
 from langgraph.graph import END, START
 from enum import Enum
-
-from ai_processing.llm_client import LLM_Client
 
 class TaskStatus(str, Enum):
     """Status of individual tasks"""
@@ -46,7 +44,6 @@ class AgentState(TypedDict):
     - Human-in-the-loop requirements
     """
     messages: List[Dict[str, str]]                              # Conversation history
-    original_query: str                                         # Original user query
 
     subtasks: List[SubTask]                                     # Task decomposition
     current_task: Optional[SubTask]                             # Current task being processed
@@ -59,9 +56,6 @@ class AgentState(TypedDict):
     agent_context: dict                                         # Context from previous agents (for passing info between agents)
     
     all_tasks_completed: bool                                   # Completion tracking
-    
-    final_response: Optional[str]                               # Final response to user
-    llm_client: Optional[LLM_Client]                            # LLM client for supervisor
 
     casual_turn_count: int                                      # Track number of casual exchanges
     awaiting_real_query: bool                                   # Flag if waiting for actionable request

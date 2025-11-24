@@ -3,11 +3,16 @@ from agents.returns.return_agent import returns_agent
 from agents.supervisor.supervisor_agent import supervisor_node
 from agents.troubleshoot.troubleshoot_agent import troubleshoot_agent
 from agents.warranty.warranty_agent import warranty_agent
+from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState
 from langgraph.graph import StateGraph, END, START
+from functools import partial
 
+from utils.config_loader import load_config
 from utils.logger import get_logger
 logger = get_logger()
+config = load_config("config.yaml")
+llm_client = LLM_Client(config)
 
 def route_to_human_input(state: AgentState) -> bool:
     """
@@ -39,15 +44,14 @@ def create_support_graph():
     """
     Create the LangGraph workflow for the multi-agent system
     """
-    
+    # supervisor_node_with_client = partial(supervisor_node, llm_client=llm_client)
     # Initialize the graph
     workflow = StateGraph(AgentState)
-    
-    # Add nodes (Notice: No "human_input" node here)
+
     workflow.add_edge(START, "supervisor")
-    workflow.add_node("supervisor", supervisor_node)
+    workflow.add_node("supervisor", partial(supervisor_node, llm_client=llm_client))
+    workflow.add_node("billing", partial(billing_agent, llm_client=llm_client))
     workflow.add_node("troubleshoot", troubleshoot_agent)
-    workflow.add_node("billing", billing_agent)
     workflow.add_node("warranty", warranty_agent)
     workflow.add_node("returns", returns_agent)
     

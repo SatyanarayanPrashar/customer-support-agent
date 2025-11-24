@@ -1,13 +1,13 @@
 import json
 from agents.supervisor.prompt import SUPERVISOR_DECOMPOSITION_PROMPT
 from ai_processing.llm_client import LLM_Client
-from ai_processing.states import AgentState, AgentType, SubTask, TaskStatus
+from ai_processing.states import AgentState, SubTask, TaskStatus
 from typing import List, Optional
 
 from utils.logger import get_logger
 logger = get_logger()
 
-def supervisor_node(state: AgentState) -> AgentState:
+def supervisor_node(state: AgentState, llm_client: LLM_Client) -> AgentState:
     """
     The supervisor agent that:
     1. Analyzes the user query using LLM
@@ -17,16 +17,11 @@ def supervisor_node(state: AgentState) -> AgentState:
     5. Manages casual conversation turns
     """
     
-    llm_client = state.get("llm_client")
-    
     if not llm_client:
         logger.error("(supervisor) - LLM client not found in state")
         state["all_tasks_completed"] = True
         state["next_agent"] = "finish"
-        state["final_response"] = "Error: System not properly configured."
         return state
-    
-    logger.debug(f"(supervisor) - Supervisor received original_query: {state.get('original_query')}")
 
     if "casual_turn_count" not in state:
         state["casual_turn_count"] = 0
@@ -52,7 +47,6 @@ def supervisor_node(state: AgentState) -> AgentState:
             state["messages"].append({"role": "assistant", "content":response})
             state["all_tasks_completed"] = True
             state["next_agent"] = "human_input"
-            state["final_response"] = response
             state["awaiting_real_query"] = True
             return state
         
