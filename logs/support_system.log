@@ -1184,3 +1184,102 @@ Please let me know which bill you would like to discuss further.
 2025-11-25 02:24:44,309 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'assist with billing inquiry for bill B002', 'agent': 'billing', 'status': 'completed', 'result': 'I found the details for bill B002. It was charged to your credit card, with a total amount of $488.23. If you need further assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
 2025-11-25 02:24:44,309 - support_system - INFO - (supervisor) - Next task: None
 2025-11-25 02:24:44,309 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-25 11:23:22,911 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 11:23:22,916 - support_system - INFO - Support graph created successfully.
+2025-11-25 11:23:39,593 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 11:23:42,713 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 11:23:42,713 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 11:23:42,713 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies in charges", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:23:42,713 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies in charges", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 11:23:42,713 - support_system - INFO - (supervisor) - Routing to billing for: check the customer's bill for any discrepancies in charges
+2025-11-25 11:23:42,714 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies in charges", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:25:35,642 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 11:25:35,647 - support_system - INFO - Support graph created successfully.
+2025-11-25 11:25:37,012 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 11:25:40,225 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 11:25:40,225 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 11:25:40,225 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's billing for discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:25:40,225 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "check the customer's billing for discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 11:25:40,225 - support_system - INFO - (supervisor) - Routing to billing for: check the customer's billing for discrepancies
+2025-11-25 11:25:40,226 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's billing for discrepancies", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:25:55,866 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:25:55,867 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's billing for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:25:55,868 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:25:55,868 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 11:25:55,868 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's billing for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:25:55,868 - support_system - ERROR - (billing agent) - error: slice(None, 100, None)
+2025-11-25 11:25:55,869 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:25:55,869 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's billing for discrepancies", 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-25 11:25:55,869 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:25:55,869 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-25 11:25:55,869 - support_system - ERROR -  - (main) - Error processing message: 'str' object has no attribute 'get'
+2025-11-25 11:34:05,156 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 11:34:05,161 - support_system - INFO - Support graph created successfully.
+2025-11-25 11:34:18,724 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 11:34:29,567 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 11:34:29,568 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 11:34:29,568 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:34:29,568 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 11:34:29,568 - support_system - INFO - (supervisor) - Routing to billing for: check the customer's bill for any discrepancies
+2025-11-25 11:34:29,569 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:34:32,648 - support_system - ERROR -  - (main) - Error processing message: 'str' object has no attribute 'get'
+2025-11-25 11:36:22,750 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 11:36:22,755 - support_system - INFO - Support graph created successfully.
+2025-11-25 11:36:23,564 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 11:36:33,384 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 11:36:33,385 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 11:36:33,385 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the user's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:36:33,385 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "check the user's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 11:36:33,385 - support_system - INFO - (supervisor) - Routing to billing for: check the user's bill for any discrepancies
+2025-11-25 11:36:33,385 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the user's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:36:36,085 - support_system - ERROR -  - (main) - Error processing message: string indices must be integers, not 'str'
+2025-11-25 11:43:46,514 - support_system - INFO - using: gpt-4o-mini
+2025-11-25 11:43:46,519 - support_system - INFO - Support graph created successfully.
+2025-11-25 11:43:47,467 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-25 11:43:51,113 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-25 11:43:51,113 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-25 11:43:51,113 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:43:51,113 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-25 11:43:51,113 - support_system - INFO - (supervisor) - Routing to billing for: Check the user's billing details for discrepancies
+2025-11-25 11:43:51,114 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:44:01,211 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:44:01,212 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:44:01,212 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:44:01,212 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 11:44:01,213 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:44:04,531 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-25 11:44:04,531 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-25 11:44:35,519 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:44:35,522 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:44:35,523 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:44:35,523 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 11:44:35,524 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:44:38,605 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-25 11:44:38,606 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-25 11:44:55,662 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:44:55,663 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:44:55,663 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:44:55,663 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 11:44:55,664 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:45:43,188 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:45:43,189 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:45:43,190 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:45:43,190 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 11:45:43,190 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:46:25,719 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:46:25,721 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:46:25,722 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:46:25,722 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 11:46:25,723 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:46:54,249 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:46:54,251 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-25 11:46:54,251 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:46:54,251 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-25 11:46:54,252 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-25 11:46:56,782 - support_system - INFO - (billing agent) - 2 Function calls detected.
+2025-11-25 11:46:56,783 - support_system - INFO - (billing agent) - Executing tool: refund_ticket with params: {'ph_number': 1234567890, 'bill_id': 'B002', 'amount': 200, 'reason': 'Overcharge on the bill'}
+2025-11-25 11:46:56,783 - support_system - INFO - (billing agent) - Executing tool: send_bill with params: {'ph_number': 1234567890, 'bill_id': 'B002', 'mode': 'Email'}
+2025-11-25 11:46:59,219 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-25 11:46:59,219 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'completed', 'result': 'The refund of $200.00 for bill B002 due to an overcharge has been processed. Additionally, the corrected bill has been sent to your email. If you need further assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
+2025-11-25 11:46:59,219 - support_system - INFO - (supervisor) - Next task: None
+2025-11-25 11:46:59,219 - support_system - INFO - (supervisor) - All tasks completed

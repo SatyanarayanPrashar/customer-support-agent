@@ -35,21 +35,21 @@ def billing_agent(state: "AgentState", llm_client: LLM_Client) -> "AgentState":
         if action == "need_info":
             state["needs_human_input"] = True
             state["human_input_prompt"] = message_to_user
-            state["messages"].append({"role": "assistant", "content": message_to_user})
+            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             current_task["status"] = TaskStatus.BLOCKED
             
         elif action == "respond" :
             state["needs_human_input"] = True
             state["human_input_prompt"] = message_to_user
-            state["messages"].append({"role": "assistant", "content": message_to_user})
+            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             current_task["status"] = TaskStatus.BLOCKED
 
         elif action == "completed":
-            state["messages"].append({"role": "assistant", "content": message_to_user})
+            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             mark_task_completed(state, current_task, message_to_user)
         
         else:
-            state["messages"].append({"role": "assistant", "content": message_to_user})
+            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             state["needs_human_input"] = True
 
     except Exception as e:

@@ -1,3 +1,4 @@
+import json
 import os
 import sys
 from typing import Any, Dict
@@ -123,7 +124,15 @@ class InteractiveSupportChatbot:
                 new_messages = current_messages[-new_messages_count:]
                 for msg in new_messages:
                     if msg["role"] == "assistant":
-                        print(f"\nAssistant: {msg["content"]}\n")
+                        content_str = msg["content"]
+                        try:
+                            content_dict = json.loads(content_str)
+                            print(f"\nAssistant: {content_dict.get('message', 'No message provided')}\n")
+                            
+                        except json.JSONDecodeError:
+                            print(f"\nAssistant: {content_str}\n")
+                        except Exception as e:
+                            print(f"\nAssistant (Error parsing response): {content_str}\n")
 
             if result.get("needs_human_input"):
                 return True
