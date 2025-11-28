@@ -1283,3 +1283,434 @@ Please let me know which bill you would like to discuss further.
 2025-11-25 11:46:59,219 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the user's billing details for discrepancies", 'agent': 'billing', 'status': 'completed', 'result': 'The refund of $200.00 for bill B002 due to an overcharge has been processed. Additionally, the corrected bill has been sent to your email. If you need further assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
 2025-11-25 11:46:59,219 - support_system - INFO - (supervisor) - Next task: None
 2025-11-25 11:46:59,219 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-26 13:29:10,590 - support_system - INFO - using: gpt-4o-mini
+2025-11-26 13:29:10,595 - support_system - INFO - Support graph created successfully.
+2025-11-26 13:29:35,628 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:29:47,053 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:29:47,053 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:29:47,053 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy and verify the charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:29:47,053 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy and verify the charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:29:47,053 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the billing discrepancy and verify the charges
+2025-11-26 13:29:47,053 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy and verify the charges', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:29:47,053 - support_system - ERROR - (billing agent) - error: 'Response' object is not subscriptable
+2025-11-26 13:29:47,054 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:29:47,054 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy and verify the charges', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-26 13:29:47,054 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:29:47,054 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-26 13:29:47,054 - support_system - ERROR -  - (main) - Error processing message: 'Response' object is not subscriptable
+2025-11-26 13:32:38,622 - support_system - INFO - using: gpt-4o-mini
+2025-11-26 13:32:38,627 - support_system - INFO - Support graph created successfully.
+2025-11-26 13:32:39,765 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:32:43,271 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:32:43,272 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:32:43,272 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate billing issue for overcharge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:32:43,272 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate billing issue for overcharge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:32:43,272 - support_system - INFO - (supervisor) - Routing to billing for: Investigate billing issue for overcharge
+2025-11-26 13:32:43,272 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate billing issue for overcharge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:32:44,664 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: ''. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[2]', 'code': 'invalid_value'}}
+2025-11-26 13:32:44,664 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-26 13:32:44,665 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:32:44,665 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate billing issue for overcharge', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-26 13:32:44,666 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:32:44,666 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-26 13:32:44,667 - support_system - ERROR -  - (main) - Error processing message: 'Response' object is not subscriptable
+2025-11-26 13:42:37,987 - support_system - INFO - using: gpt-4o-mini
+2025-11-26 13:42:37,992 - support_system - INFO - Support graph created successfully.
+2025-11-26 13:42:48,800 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:42:52,716 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:42:52,716 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:42:52,716 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check the billing details for any discrepancies', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:42:52,716 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Check the billing details for any discrepancies', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:42:52,716 - support_system - INFO - (supervisor) - Routing to billing for: Check the billing details for any discrepancies
+2025-11-26 13:42:52,718 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check the billing details for any discrepancies', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:42:55,802 - support_system - ERROR -  - (main) - Error processing message: 'Response' object is not subscriptable
+2025-11-26 13:45:36,590 - support_system - INFO - using: gpt-4o-mini
+2025-11-26 13:45:36,595 - support_system - INFO - Support graph created successfully.
+2025-11-26 13:45:38,929 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:45:48,653 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:45:48,654 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:45:48,654 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the customer's billing details for discrepancies in charges", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:45:48,654 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "Check the customer's billing details for discrepancies in charges", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:45:48,654 - support_system - INFO - (supervisor) - Routing to billing for: Check the customer's billing details for discrepancies in charges
+2025-11-26 13:45:48,655 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the customer's billing details for discrepancies in charges", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:46:09,875 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:46:09,876 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the customer's billing details for discrepancies in charges", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:46:09,877 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:46:09,877 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:46:09,878 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the customer's billing details for discrepancies in charges", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:46:12,962 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-26 13:46:12,963 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-26 13:46:13,656 - support_system - ERROR - Error generating text: Error code: 400 - {'error': {'message': "Invalid value: 'tool'. Supported values are: 'assistant', 'system', 'developer', and 'user'.", 'type': 'invalid_request_error', 'param': 'input[4]', 'code': 'invalid_value'}}
+2025-11-26 13:46:13,657 - support_system - ERROR - (billing agent) - error: 'str' object has no attribute 'output'
+2025-11-26 13:46:13,662 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:46:13,662 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the customer's billing details for discrepancies in charges", 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-26 13:46:13,662 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:46:13,663 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-26 13:47:58,690 - support_system - INFO - using: gpt-4o-mini
+2025-11-26 13:47:58,695 - support_system - INFO - Support graph created successfully.
+2025-11-26 13:48:02,847 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:48:05,561 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:48:05,562 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:48:05,562 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the customer's billing details for overcharging", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:48:05,562 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "Check the customer's billing details for overcharging", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:48:05,562 - support_system - INFO - (supervisor) - Routing to billing for: Check the customer's billing details for overcharging
+2025-11-26 13:48:05,564 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the customer's billing details for overcharging", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:49:21,519 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:49:21,522 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check the customer's billing details for overcharging", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:49:21,522 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:49:21,522 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:49:21,524 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check the customer's billing details for overcharging", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:49:25,762 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-26 13:49:25,763 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-26 13:49:51,333 - support_system - INFO - using: gpt-4o-mini
+2025-11-26 13:49:51,337 - support_system - INFO - Support graph created successfully.
+2025-11-26 13:49:53,787 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:49:56,898 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:49:56,898 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:49:56,898 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:49:56,899 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:49:56,899 - support_system - INFO - (supervisor) - Routing to billing for: check the customer's bill for any discrepancies
+2025-11-26 13:49:56,899 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:50:06,743 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:50:06,745 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:50:06,745 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:50:06,745 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:50:06,746 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:50:10,200 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-26 13:50:10,200 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-26 13:51:09,935 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:51:09,936 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:51:09,937 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:51:09,937 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:51:09,937 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:51:22,688 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:51:22,689 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'completed', 'result': "I understand your concern. Let's break down the items in Bill ID B002:\n- Robotic Floor Cleaner M612: $249.99\n- Dust Filter Cartridge: $15.49\n- Mop Head Replacement Kit: $22.75\n\nTotal of items: $249.99 + $15.49 + $22.75 = $288.23.\n\nHowever, the total amount for this bill is $488.23. There might be additional charges or fees applied. Would you like me to investigate this further for any discrepancies or provide a refund?", 'dependencies': [], 'priority': 1}]
+2025-11-26 13:51:22,689 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:51:22,689 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-26 13:51:46,876 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:51:49,332 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:51:49,332 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:51:49,332 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:51:49,332 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:51:49,332 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges
+2025-11-26 13:51:49,333 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:51:53,104 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-26 13:51:53,105 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-26 13:52:30,193 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:52:30,193 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:52:30,193 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:52:30,193 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:52:30,194 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:52:59,297 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:52:59,299 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:52:59,299 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:52:59,299 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:52:59,300 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:53:16,182 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:53:16,183 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:53:16,184 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:53:16,184 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:53:16,184 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:53:35,660 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:53:35,661 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:53:35,662 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:53:35,662 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:53:35,662 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:54:12,479 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:54:12,480 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:54:12,480 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:54:12,480 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:54:12,481 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:54:15,114 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-26 13:54:15,114 - support_system - INFO - (billing agent) - Executing tool: refund_ticket with params: {'ph_number': 1234567890, 'bill_id': 'B002', 'amount': 200, 'reason': 'Overcharged on the bill.'}
+2025-11-26 13:54:19,432 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:54:19,433 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the discrepancies in Bill ID B002 for the customer John Doe regarding additional charges', 'agent': 'billing', 'status': 'completed', 'result': 'I have successfully raised a refund ticket for $200.00 for Bill ID B002 due to being overcharged. You should receive confirmation shortly. If you have any further questions or need assistance, feel free to ask!', 'dependencies': [], 'priority': 1}]
+2025-11-26 13:54:19,433 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:54:19,433 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-26 13:54:37,434 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-26 13:54:39,903 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-26 13:54:39,904 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-26 13:54:39,904 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Send the corrected bill reflecting the refund of $200.00.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:54:39,904 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Send the corrected bill reflecting the refund of $200.00.', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-26 13:54:39,904 - support_system - INFO - (supervisor) - Routing to billing for: Send the corrected bill reflecting the refund of $200.00.
+2025-11-26 13:54:39,905 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Send the corrected bill reflecting the refund of $200.00.', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:54:54,519 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:54:54,521 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Send the corrected bill reflecting the refund of $200.00.', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-26 13:54:54,521 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:54:54,521 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-26 13:54:54,522 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Send the corrected bill reflecting the refund of $200.00.', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-26 13:54:57,354 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-26 13:54:57,355 - support_system - INFO - (billing agent) - Executing tool: send_bill with params: {'ph_number': 1234567890, 'bill_id': 'B002', 'mode': 'Email'}
+2025-11-26 13:55:04,444 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-26 13:55:04,444 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Send the corrected bill reflecting the refund of $200.00.', 'agent': 'billing', 'status': 'completed', 'result': 'The corrected bill for Bill ID B002 has been sent to your email. If you need any further assistance, just let me know!', 'dependencies': [], 'priority': 1}]
+2025-11-26 13:55:04,445 - support_system - INFO - (supervisor) - Next task: None
+2025-11-26 13:55:04,445 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-29 01:17:57,888 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:17:57,896 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:18:10,680 - support_system - WARNING - (chat manager) - Failed to add message. Thread t001 may not exist.
+2025-11-29 01:18:10,682 - support_system - WARNING - (chat manager) - Thread t001 for user u001 not found
+2025-11-29 01:18:10,682 - support_system - ERROR -  - (main) - Fatal error in chatbot: object of type 'NoneType' has no len()
+2025-11-29 01:34:56,589 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:34:56,596 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:35:12,916 - support_system - WARNING - (chat manager) - Failed to add message. Thread t001 may not exist.
+2025-11-29 01:35:12,924 - support_system - WARNING - (chat manager) - Thread t001 for user u001 not found
+2025-11-29 01:35:12,925 - support_system - ERROR -  - (main) - Fatal error in chatbot: object of type 'NoneType' has no len()
+2025-11-29 01:37:04,702 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:37:04,708 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:37:16,267 - support_system - INFO - (chat manager) - Thread t001 does not exist. Creating new thread for user u001.
+2025-11-29 01:37:16,272 - support_system - INFO - (chat manager) - Creating new thread t001 for user u001
+2025-11-29 01:37:16,296 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:37:16,298 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:37:16,305 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 01:37:16,305 - support_system - ERROR -  - (main) - Error processing message: Value after * must be an iterable, not NoneType
+2025-11-29 01:39:37,200 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:39:37,205 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:39:39,071 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:39:39,073 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:39:39,075 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 01:39:39,077 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:39:43,175 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-29 01:39:43,175 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-29 01:39:43,180 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:39:43,182 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:44:32,193 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:44:32,199 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:44:42,868 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:44:42,870 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:44:42,871 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 01:44:42,873 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:44:45,737 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-29 01:44:45,737 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-29 01:44:45,737 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'investigate the billing issue and verify the charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 01:44:45,737 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'investigate the billing issue and verify the charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-29 01:44:45,737 - support_system - INFO - (supervisor) - Routing to billing for: investigate the billing issue and verify the charges
+2025-11-29 01:44:45,740 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'investigate the billing issue and verify the charges', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 01:44:45,740 - support_system - ERROR - (billing agent) - error: Value after * must be an iterable, not NoneType
+2025-11-29 01:44:45,747 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:44:45,747 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 01:44:45,747 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'investigate the billing issue and verify the charges', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-29 01:44:45,748 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 01:44:45,748 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-29 01:44:45,750 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:47:19,427 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:47:19,432 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:47:20,634 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:47:20,636 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:47:20,638 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 01:47:20,642 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:47:23,487 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-29 01:47:23,487 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-29 01:47:23,491 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:47:23,494 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:50:13,659 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:50:13,664 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:50:40,859 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:50:40,863 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:50:40,866 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 01:50:40,868 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:50:45,183 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-29 01:50:45,184 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-29 01:50:45,184 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 01:50:45,184 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-29 01:50:45,184 - support_system - INFO - (supervisor) - Routing to billing for: check the customer's bill for any discrepancies
+2025-11-29 01:50:45,184 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 01:50:45,186 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:50:48,170 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:50:48,174 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:51:00,563 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:51:00,565 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:51:00,568 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 01:51:00,568 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 01:51:00,568 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 01:51:00,569 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-29 01:51:00,570 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 01:51:00,571 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:51:03,678 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-29 01:51:03,679 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-29 01:51:03,686 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:51:03,686 - support_system - ERROR - (billing agent) - error: 'messages'
+2025-11-29 01:51:03,690 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:51:03,691 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 01:51:03,691 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "check the customer's bill for any discrepancies", 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-29 01:51:03,691 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 01:51:03,691 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-29 01:51:03,694 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:56:41,294 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:56:41,299 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:56:44,159 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:56:44,161 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:56:44,164 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 01:56:44,167 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:56:48,792 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-29 01:56:48,792 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-29 01:56:48,798 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:56:48,801 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:56:48,801 - support_system - INFO - History length 11 > 10. Attempting compaction...
+2025-11-29 01:56:48,801 - support_system - INFO - --- Compacting oldest 8 messages, keeping last 3 ---
+2025-11-29 01:56:51,550 - support_system - INFO - --- Compaction complete. New message count: 4 ---
+2025-11-29 01:56:51,550 - support_system - ERROR -  - (main) - Error processing message: ChatManager.update_history() takes 2 positional arguments but 4 were given
+2025-11-29 01:58:36,186 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 01:58:36,191 - support_system - INFO - Support graph created successfully.
+2025-11-29 01:58:37,336 - support_system - INFO - (chat manager) - Thread t001 does not exist. Creating new thread for user u001.
+2025-11-29 01:58:37,341 - support_system - INFO - (chat manager) - Creating new thread t001 for user u001
+2025-11-29 01:58:37,357 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:58:37,358 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:58:37,359 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 01:58:37,363 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:58:41,036 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-29 01:58:41,036 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-29 01:58:41,037 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing issue and verify the charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 01:58:41,037 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the billing issue and verify the charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-29 01:58:41,037 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the billing issue and verify the charges
+2025-11-29 01:58:41,037 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing issue and verify the charges', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 01:58:41,040 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:58:44,773 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:58:44,775 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:58:58,759 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:58:58,765 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:58:58,769 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 01:58:58,769 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing issue and verify the charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 01:58:58,769 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 01:58:58,769 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-29 01:58:58,770 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing issue and verify the charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 01:58:58,773 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 01:59:02,266 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-29 01:59:02,266 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-29 01:59:02,271 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:59:02,271 - support_system - ERROR - (billing agent) - error: analyze_billing_request() missing 1 required positional argument: 'chat_manager'
+2025-11-29 01:59:02,277 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 01:59:02,282 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 01:59:02,282 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing issue and verify the charges', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-11-29 01:59:02,282 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 01:59:02,282 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-29 01:59:02,286 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:00:22,308 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 02:00:22,313 - support_system - INFO - Support graph created successfully.
+2025-11-29 02:00:33,138 - support_system - INFO - (chat manager) - Thread t001 does not exist. Creating new thread for user u001.
+2025-11-29 02:00:33,140 - support_system - INFO - (chat manager) - Creating new thread t001 for user u001
+2025-11-29 02:00:33,146 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:00:33,148 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:00:33,150 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 02:00:33,151 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:00:36,093 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-29 02:00:36,093 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-29 02:00:36,093 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:00:36,093 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-29 02:00:36,093 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the billing issue regarding an unfair charge
+2025-11-29 02:00:36,094 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:00:36,097 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:00:38,576 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:00:38,583 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:18,869 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:01:18,873 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:18,878 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 02:01:18,878 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:01:18,878 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 02:01:18,879 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-29 02:01:18,880 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:01:18,883 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:21,488 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-29 02:01:21,489 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-11-29 02:01:21,494 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:01:21,501 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:23,957 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:01:23,963 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:31,888 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:01:31,891 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:31,895 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 02:01:31,895 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:01:31,896 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 02:01:31,896 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-29 02:01:31,897 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:01:31,900 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:34,544 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-29 02:01:34,544 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-29 02:01:34,549 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:01:34,550 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:01:37,967 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:01:37,968 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 02:01:37,968 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing issue regarding an unfair charge', 'agent': 'billing', 'status': 'completed', 'result': "I've found the details for bill B002. The total amount charged is $488.23 for the following items: Robotic Floor Cleaner M612 ($249.99), Dust Filter Cartridge ($15.49), and Mop Head Replacement Kit ($22.75). If you believe there's an error or need further assistance regarding this charge, please let me know!", 'dependencies': [], 'priority': 1}]
+2025-11-29 02:01:37,968 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 02:01:37,968 - support_system - INFO - (supervisor) - All tasks completed
+2025-11-29 02:01:37,971 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:04:19,935 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:04:19,942 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:04:19,947 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 02:04:19,949 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:04:24,673 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-29 02:04:24,673 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-29 02:04:24,674 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:04:24,675 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill B002', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-29 02:04:24,675 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the billing discrepancy for bill B002
+2025-11-29 02:04:24,676 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy for bill B002', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:04:24,683 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:04:27,242 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:04:27,248 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:08:40,205 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:08:40,210 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:08:40,210 - support_system - INFO - History length 11 > 10. Attempting compaction...
+2025-11-29 02:08:40,210 - support_system - INFO - --- Compacting oldest 8 messages, keeping last 3 ---
+2025-11-29 02:08:44,244 - support_system - INFO - --- Compaction complete. New message count: 4 ---
+2025-11-29 02:08:44,245 - support_system - ERROR -  - (main) - Fatal error in chatbot: ChatManager.update_history() takes 2 positional arguments but 4 were given
+2025-11-29 02:11:01,476 - support_system - INFO - using: gpt-4o-mini
+2025-11-29 02:11:01,481 - support_system - INFO - Support graph created successfully.
+2025-11-29 02:11:01,506 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-11-29 02:11:04,486 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:04,487 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:04,489 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 02:11:04,490 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:08,309 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-11-29 02:11:08,310 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-11-29 02:11:08,318 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:08,321 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:30,233 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:30,234 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:30,237 - support_system - INFO - (supervisor) - Analyzing user query
+2025-11-29 02:11:30,239 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:32,894 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-11-29 02:11:32,895 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-11-29 02:11:32,895 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:11:32,895 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-11-29 02:11:32,895 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the billing discrepancy regarding overcharging
+2025-11-29 02:11:32,897 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:11:32,900 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:35,455 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:35,459 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:43,330 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:43,338 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:43,341 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 02:11:43,341 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:11:43,341 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 02:11:43,341 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-29 02:11:43,342 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:11:43,345 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:46,066 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:46,071 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:54,477 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:54,481 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:54,482 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 02:11:54,482 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:11:54,482 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 02:11:54,482 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-29 02:11:54,483 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:11:54,487 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:57,221 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-11-29 02:11:57,221 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'B002'}
+2025-11-29 02:11:57,227 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:57,230 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:11:59,726 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:11:59,729 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:12:45,422 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:12:45,430 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:12:45,434 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-11-29 02:12:45,434 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-11-29 02:12:45,434 - support_system - INFO - (supervisor) - Next task: None
+2025-11-29 02:12:45,434 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-11-29 02:12:45,435 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the billing discrepancy regarding overcharging', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-11-29 02:12:45,437 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:12:49,539 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-11-29 02:12:49,542 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-11-29 02:12:49,542 - support_system - INFO - History length 11 > 10. Attempting compaction...
+2025-11-29 02:12:49,542 - support_system - INFO - --- Compacting oldest 8 messages, keeping last 3 ---
+2025-11-29 02:12:51,959 - support_system - INFO - --- Compaction complete. New message count: 4 ---
+2025-11-29 02:12:51,965 - support_system - INFO - (chat manager) - History replaced for t001. New length: 4

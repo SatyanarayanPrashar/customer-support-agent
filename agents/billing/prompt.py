@@ -29,15 +29,3 @@ Examples:
 - "Thanks for the help" → respond with friendly message
 
 Respond ONLY with JSON. No text or commentary outside the JSON. no additional text or text formatting."""
-
-
-
-SUMMARY_PROMPT = """You have to summarise the conversation between an Customer support AI Agent and the customer.
-
-RULES:
-1. Be concise but donot leave any information which can be helpful for the agent to resolve user's querry
-2. Responed only the summary without any extra comment or message.
-
-Example Response:
-"Because of calculation mistake, user was charged more. User's ph no. 1245667890 and bil id is B002."
-"""

@@ -4,10 +4,11 @@ from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState, SubTask, TaskStatus
 from typing import List, Optional
 
+from memory.chat_manager import ChatManager
 from utils.logger import get_logger
 logger = get_logger()
 
-def supervisor_node(state: AgentState, llm_client: LLM_Client) -> AgentState:
+def supervisor_node(state: AgentState, llm_client: LLM_Client, chat_manager: ChatManager) -> AgentState:
     """
     The supervisor agent that:
     1. Analyzes the user query using LLM
@@ -32,7 +33,7 @@ def supervisor_node(state: AgentState, llm_client: LLM_Client) -> AgentState:
     if not state.get("subtasks"):
         logger.info("(supervisor) - Analyzing user query")
         
-        subtasks, unactionable_msg = decompose_query_with_llm(state, llm_client)
+        subtasks, unactionable_msg = decompose_query_with_llm(llm_client, chat_manager)
         
         # If no tasks (casual conversation), handle it
         if not subtasks:
@@ -44,7 +45,7 @@ def supervisor_node(state: AgentState, llm_client: LLM_Client) -> AgentState:
             if unactionable_msg:
                 response = unactionable_msg
             
-            state["messages"].append({"role": "assistant", "content":response})
+            chat_manager.add_message("assistant", response)
             state["all_tasks_completed"] = True
             state["next_agent"] = "human_input"
             state["awaiting_real_query"] = True
@@ -88,7 +89,7 @@ def supervisor_node(state: AgentState, llm_client: LLM_Client) -> AgentState:
     
     return state
 
-def decompose_query_with_llm(state, llm_client: LLM_Client) -> tuple[List[SubTask], Optional[str]]:
+def decompose_query_with_llm(llm_client: LLM_Client, chat_manager: ChatManager) -> tuple[List[SubTask], Optional[str]]:
     """
     Use LLM to decompose the user query into subtasks.
     Returns (subtasks_list, unactionable_message).
@@ -98,7 +99,7 @@ def decompose_query_with_llm(state, llm_client: LLM_Client) -> tuple[List[SubTas
     """
     conversation = [
         {"role": "system", "content": SUPERVISOR_DECOMPOSITION_PROMPT},
-        *state.get("messages")
+        *chat_manager.get_thread_messages(llm_client)
     ]
     
     try:

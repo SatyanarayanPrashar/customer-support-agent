@@ -43,8 +43,6 @@ class AgentState(TypedDict):
     - Routing decisions
     - Human-in-the-loop requirements
     """
-    messages: List[Dict[str, str]]                              # Conversation history
-
     subtasks: List[SubTask]                                     # Task decomposition
     current_task: Optional[SubTask]                             # Current task being processed
     

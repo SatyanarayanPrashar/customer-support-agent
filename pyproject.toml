@@ -9,5 +9,6 @@ dependencies = [
     "langgraph>=1.0.1",
     "openai>=2.6.1",
     "pillow>=12.0.0",
+    "pymongo>=4.15.4",
     "pyyaml>=6.0.3",
 ]

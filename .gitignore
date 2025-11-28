@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 config.yaml
+
+mongo-data/
+logs/

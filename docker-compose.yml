@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb_cs
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - ./mongo-data:/data/db
+
+  # qdrant:
+  #   image: qdrant/qdrant
+  #   ports:
+  #     - 6333:6333
+  #     - 6334:6334

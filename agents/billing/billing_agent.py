@@ -2,15 +2,15 @@ import json
 import re
 from typing import Dict
 from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refund_ticket, send_bill, tools
-from agents.billing.compaction import _format_messages_to_string, compact_conversation_history
 from agents.billing.prompt import BILLING_ANALYSIS_PROMPT
 from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState, TaskStatus
 
+from memory.chat_manager import ChatManager
 from utils.logger import get_logger
 logger = get_logger()
 
-def billing_agent(state: "AgentState", llm_client: LLM_Client) -> "AgentState":
+def billing_agent(state: "AgentState", llm_client: LLM_Client, chat_manager: ChatManager) -> "AgentState":
     """
     Billing agent that handles:
     - Viewing bills and charges
@@ -28,45 +28,47 @@ def billing_agent(state: "AgentState", llm_client: LLM_Client) -> "AgentState":
     logger.info(f"(billing agent) - Current task: {current_task} recieved")
 
     try:
-        analysis = analyze_billing_request(state, llm_client)
+        analysis = analyze_billing_request(state, llm_client, chat_manager)
         action = analysis.get("action", "respond")
         message_to_user = analysis.get("message", analysis)
+        chat_manager.add_message("assistant", json.dumps(analysis))
         
         if action == "need_info":
             state["needs_human_input"] = True
             state["human_input_prompt"] = message_to_user
-            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
+            # state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             current_task["status"] = TaskStatus.BLOCKED
             
         elif action == "respond" :
             state["needs_human_input"] = True
             state["human_input_prompt"] = message_to_user
-            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
+            # state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             current_task["status"] = TaskStatus.BLOCKED
 
         elif action == "completed":
-            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
+            # state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             mark_task_completed(state, current_task, message_to_user)
         
         else:
-            state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
+            # state["messages"].append({"role": "assistant", "content": json.dumps(analysis)})
             state["needs_human_input"] = True
 
     except Exception as e:
         logger.error(f"(billing agent) - error: {e}")
         error_msg = "I apologize, but I encountered an error accessing billing information. Could you please try again?"
-        state["messages"].append({"role": "assistant", "content": error_msg})
+        # state["messages"].append({"role": "assistant", "content": error_msg})
+        chat_manager.add_message("developer", error_msg)
         mark_task_completed(state, current_task, error_msg)
     
     return state
 
-def analyze_billing_request(state, llm_client) -> Dict:
+def analyze_billing_request(state, llm_client, chat_manager) -> Dict:
     """
     Analyze the billing request and determine what action to take
     """
     conversation = [
         {"role": "system", "content": BILLING_ANALYSIS_PROMPT},
-        *state.get("messages")
+        *chat_manager.get_thread_messages(llm_client)
     ]
     
     response = llm_client.invoke(input_list=conversation, tools=tools)
@@ -77,9 +79,9 @@ def analyze_billing_request(state, llm_client) -> Dict:
         logger.info(f"(billing agent) - {len(tool_calls)} Function calls detected.")
 
         for item in tool_calls:
-            handle_use_tools(state, item, llm_client)
+            handle_use_tools(state, item, chat_manager)
 
-        return analyze_billing_request(state, llm_client)
+        return analyze_billing_request(state, llm_client, chat_manager)
     
     try:
         raw_text = response.output[0].content[0].text
@@ -105,7 +107,7 @@ def analyze_billing_request(state, llm_client) -> Dict:
         except json.JSONDecodeError:
             return {"error": "Failed to parse JSON", "raw_content": clean_text}
 
-def handle_use_tools(state: dict, item, llm_client) -> dict:
+def handle_use_tools(state: dict, item, chat_manager) -> dict:
     """
     Execute a single tool call from the ResponseFunctionToolCall object.
     """
@@ -149,10 +151,9 @@ def handle_use_tools(state: dict, item, llm_client) -> dict:
 
     tool_msg = {
         "role": "developer",
-        "content": str(tool_result_content)
+        "content": "found information through tools: " + str(tool_result_content)
     }
-    
-    state["messages"].append(tool_msg)
+    chat_manager.add_message("developer", "found information through tools: " + str(tool_result_content))
     
     return tool_msg
 

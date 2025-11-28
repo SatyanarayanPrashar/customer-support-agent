@@ -1,0 +1,33 @@
+# API Keys and Authentication
+api_keys:
+  openai_api: "YOUR_OPENAI_API_KEY"
+  google_api: "YOUR_GOOGLE_API_KEY"
+
+# AI Processing
+ai_processing:
+  model: "gpt-4o-mini"
+  temperature: 0.7
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/medbrief.log"
+
+# Database Configuration
+mongodb:
+  host: "localhost"
+  port: 27017
+  database_name: "cs_agent_db"
+  uri: "mongodb://admin:admin@localhost:27017"
+  user: ""
+  password: ""
+
+embedder: 
+  provider: "openai"
+  model: "text-embedding-3-small"
+
+vector_store: 
+  provider: "qdrant"
+  host: "localhost"
+  port: 6333
