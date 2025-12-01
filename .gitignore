@@ -12,3 +12,4 @@ config.yaml
 
 mongo-data/
 logs/
+/qdrant_storage

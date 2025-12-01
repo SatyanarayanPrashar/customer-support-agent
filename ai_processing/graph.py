@@ -9,12 +9,16 @@ from langgraph.graph import StateGraph, END, START
 from functools import partial
 
 from memory.chat_manager import ChatManager
+from memory.retriever import RAGRetriever
 from utils.config_loader import load_config
 from utils.logger import get_logger
+
 logger = get_logger()
+
 config = load_config("config.yaml")
 llm_client = LLM_Client(config)
 chat_manager = ChatManager(config, "u001", "t001")
+retriever = RAGRetriever(config)
 
 def route_to_human_input(state: AgentState) -> bool:
     """
@@ -52,7 +56,7 @@ def create_support_graph():
 
     workflow.add_edge(START, "supervisor")
     workflow.add_node("supervisor", partial(supervisor_node, llm_client=llm_client, chat_manager=chat_manager))
-    workflow.add_node("billing", partial(billing_agent, llm_client=llm_client, chat_manager=chat_manager))
+    workflow.add_node("billing", partial(billing_agent, llm_client=llm_client, chat_manager=chat_manager, retriever=retriever))
     workflow.add_node("troubleshoot", troubleshoot_agent)
     workflow.add_node("warranty", warranty_agent)
     workflow.add_node("returns", returns_agent)

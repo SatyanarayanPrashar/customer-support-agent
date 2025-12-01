@@ -5,12 +5,13 @@ from agents.billing._tools.billing_tools import get_bill_by_id, get_bills, refun
 from agents.billing.prompt import BILLING_ANALYSIS_PROMPT
 from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState, TaskStatus
-
 from memory.chat_manager import ChatManager
+from memory.retriever import RAGRetriever
+
 from utils.logger import get_logger
 logger = get_logger()
 
-def billing_agent(state: "AgentState", llm_client: LLM_Client, chat_manager: ChatManager) -> "AgentState":
+def billing_agent(state: "AgentState", llm_client: LLM_Client, chat_manager: ChatManager, retriever: RAGRetriever) -> "AgentState":
     """
     Billing agent that handles:
     - Viewing bills and charges
@@ -28,7 +29,7 @@ def billing_agent(state: "AgentState", llm_client: LLM_Client, chat_manager: Cha
     logger.info(f"(billing agent) - Current task: {current_task} recieved")
 
     try:
-        analysis = analyze_billing_request(state, llm_client, chat_manager)
+        analysis = analyze_billing_request(state, llm_client, chat_manager, retriever)
         action = analysis.get("action", "respond")
         message_to_user = analysis.get("message", analysis)
         chat_manager.add_message("assistant", json.dumps(analysis))
@@ -62,13 +63,20 @@ def billing_agent(state: "AgentState", llm_client: LLM_Client, chat_manager: Cha
     
     return state
 
-def analyze_billing_request(state, llm_client, chat_manager) -> Dict:
+def analyze_billing_request(state: AgentState, llm_client: LLM_Client, chat_manager: ChatManager, retriever: RAGRetriever) -> Dict:
     """
     Analyze the billing request and determine what action to take
     """
+    history = chat_manager.get_thread_messages(llm_client)
+
+    if not state["agent_context"]:
+        logger.info("(billing agent) - Extracting context for billing agent")
+        user_message = history[0]["content"]
+        state["agent_context"] = retriever.extract(user_message)
+
     conversation = [
-        {"role": "system", "content": BILLING_ANALYSIS_PROMPT},
-        *chat_manager.get_thread_messages(llm_client)
+        {"role": "system", "content": BILLING_ANALYSIS_PROMPT.format(context=state["agent_context"])},
+        *history
     ]
     
     response = llm_client.invoke(input_list=conversation, tools=tools)
@@ -81,7 +89,7 @@ def analyze_billing_request(state, llm_client, chat_manager) -> Dict:
         for item in tool_calls:
             handle_use_tools(state, item, chat_manager)
 
-        return analyze_billing_request(state, llm_client, chat_manager)
+        return analyze_billing_request(state, llm_client, chat_manager, retriever)
     
     try:
         raw_text = response.output[0].content[0].text

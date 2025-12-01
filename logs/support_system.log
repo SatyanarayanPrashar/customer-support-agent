@@ -1714,3 +1714,149 @@ Please let me know which bill you would like to discuss further.
 2025-11-29 02:12:49,542 - support_system - INFO - --- Compacting oldest 8 messages, keeping last 3 ---
 2025-11-29 02:12:51,959 - support_system - INFO - --- Compaction complete. New message count: 4 ---
 2025-11-29 02:12:51,965 - support_system - INFO - (chat manager) - History replaced for t001. New length: 4
+2025-12-01 08:33:05,489 - support_system - INFO - using: gpt-4o-mini
+2025-12-01 08:33:05,532 - support_system - INFO - Support graph created successfully.
+2025-12-01 08:33:05,576 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-01 08:36:21,846 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:36:21,851 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:36:21,861 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-01 08:36:21,866 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:36:27,583 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-01 08:36:27,583 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-01 08:36:27,583 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check billing details for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:36:27,583 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Check billing details for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-01 08:36:27,583 - support_system - INFO - (supervisor) - Routing to billing for: Check billing details for duplicate charges
+2025-12-01 08:36:27,584 - support_system - ERROR -  - (main) - Error processing message: billing_agent() missing 1 required positional argument: 'retriever'
+2025-12-01 08:38:21,523 - support_system - INFO - using: gpt-4o-mini
+2025-12-01 08:38:21,537 - support_system - INFO - Support graph created successfully.
+2025-12-01 08:38:21,565 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-01 08:38:25,817 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:38:25,821 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:38:25,827 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-01 08:38:25,830 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:38:29,439 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-01 08:38:29,439 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-01 08:38:29,439 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check billing details and verify double charge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:38:29,439 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Check billing details and verify double charge', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-01 08:38:29,439 - support_system - INFO - (supervisor) - Routing to billing for: Check billing details and verify double charge
+2025-12-01 08:38:29,440 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check billing details and verify double charge', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:38:29,442 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:38:32,804 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:38:32,807 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:40:39,148 - support_system - INFO - using: gpt-4o-mini
+2025-12-01 08:40:39,163 - support_system - INFO - Support graph created successfully.
+2025-12-01 08:40:39,192 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-01 08:40:40,222 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:40:40,226 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:40:40,232 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-01 08:40:40,234 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:40:42,877 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-01 08:40:42,877 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-01 08:40:42,877 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': "Check for duplicate charges on the customer's bill", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:40:42,877 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': "Check for duplicate charges on the customer's bill", 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-01 08:40:42,878 - support_system - INFO - (supervisor) - Routing to billing for: Check for duplicate charges on the customer's bill
+2025-12-01 08:40:42,879 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': "Check for duplicate charges on the customer's bill", 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:40:42,893 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:40:46,436 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:40:46,439 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:43:15,203 - support_system - INFO - using: gpt-4o-mini
+2025-12-01 08:43:15,214 - support_system - INFO - Support graph created successfully.
+2025-12-01 08:43:15,236 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-01 08:43:17,586 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:43:17,589 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:43:17,592 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-01 08:43:17,594 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:43:21,890 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-01 08:43:21,891 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-01 08:43:21,891 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check if the customer was charged twice', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:43:21,891 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'check if the customer was charged twice', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-01 08:43:21,891 - support_system - INFO - (supervisor) - Routing to billing for: check if the customer was charged twice
+2025-12-01 08:43:21,891 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check if the customer was charged twice', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:43:21,893 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:43:25,371 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:43:25,374 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:45:26,686 - support_system - INFO - using: gpt-4o-mini
+2025-12-01 08:45:26,699 - support_system - INFO - Support graph created successfully.
+2025-12-01 08:45:26,721 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-01 08:45:29,361 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:45:29,364 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:45:29,372 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-01 08:45:29,375 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:45:33,581 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-01 08:45:33,581 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-01 08:45:33,581 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check the customer billing for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:45:33,581 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Check the customer billing for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-01 08:45:33,581 - support_system - INFO - (supervisor) - Routing to billing for: Check the customer billing for duplicate charges
+2025-12-01 08:45:33,582 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Check the customer billing for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:45:33,584 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:45:33,584 - support_system - INFO - (billing agent) - Extracting context for billing agent
+2025-12-01 08:45:33,584 - support_system - INFO - (RAGRetriever) - Retrieving context for query: {'role': 'user', 'content': 'I think I got charged twice, check my bill'}
+2025-12-01 08:45:33,584 - support_system - ERROR - (billing agent) - error: argument 'text': 'dict' object cannot be converted to 'PyString'
+2025-12-01 08:45:33,587 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:45:33,588 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-12-01 08:45:33,588 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Check the customer billing for duplicate charges', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-12-01 08:45:33,588 - support_system - INFO - (supervisor) - Next task: None
+2025-12-01 08:45:33,588 - support_system - INFO - (supervisor) - All tasks completed
+2025-12-01 08:45:33,589 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:47:28,313 - support_system - INFO - using: gpt-4o-mini
+2025-12-01 08:47:28,325 - support_system - INFO - Support graph created successfully.
+2025-12-01 08:47:28,347 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-01 08:47:29,319 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:47:29,320 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:47:29,323 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-01 08:47:29,325 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:47:32,892 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-01 08:47:32,892 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-01 08:47:32,892 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check for duplicate charges on billing account', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:47:32,892 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'check for duplicate charges on billing account', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-01 08:47:32,892 - support_system - INFO - (supervisor) - Routing to billing for: check for duplicate charges on billing account
+2025-12-01 08:47:32,893 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check for duplicate charges on billing account', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:47:32,897 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:47:32,897 - support_system - INFO - (billing agent) - Extracting context for billing agent
+2025-12-01 08:47:32,897 - support_system - INFO - (RAGRetriever) - Retrieving context for query: I think I got charged twice, check my bill
+2025-12-01 08:47:36,140 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:47:36,142 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:51:07,297 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:51:07,301 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:51:07,311 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-12-01 08:51:07,311 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check for duplicate charges on billing account', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:51:07,311 - support_system - INFO - (supervisor) - Next task: None
+2025-12-01 08:51:07,311 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-12-01 08:51:07,314 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check for duplicate charges on billing account', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:51:07,317 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:51:16,458 - support_system - INFO - using: gpt-4o-mini
+2025-12-01 08:51:16,472 - support_system - INFO - Support graph created successfully.
+2025-12-01 08:51:16,495 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-01 08:51:17,592 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:51:17,594 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:51:17,597 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-01 08:51:17,600 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:51:20,479 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-01 08:51:20,479 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-01 08:51:20,479 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check billing for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:51:20,479 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'check billing for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-01 08:51:20,479 - support_system - INFO - (supervisor) - Routing to billing for: check billing for duplicate charges
+2025-12-01 08:51:20,480 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check billing for duplicate charges', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:51:20,484 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:51:20,485 - support_system - INFO - (billing agent) - Extracting context for billing agent
+2025-12-01 08:51:20,485 - support_system - INFO - (RAGRetriever) - Retrieving context for query: I think I got charged twice, check my bill
+2025-12-01 08:51:23,330 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:51:23,336 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:52:00,684 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:52:00,686 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:52:00,694 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-12-01 08:52:00,694 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check billing for duplicate charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-01 08:52:00,694 - support_system - INFO - (supervisor) - Next task: None
+2025-12-01 08:52:00,694 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-12-01 08:52:00,695 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'check billing for duplicate charges', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-01 08:52:00,698 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-01 08:52:03,958 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-01 08:52:03,958 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-12-01 08:52:03,963 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:52:03,963 - support_system - ERROR - (billing agent) - error: analyze_billing_request() missing 1 required positional argument: 'retriever'
+2025-12-01 08:52:03,966 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-01 08:52:03,968 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-12-01 08:52:03,968 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'check billing for duplicate charges', 'agent': 'billing', 'status': 'completed', 'result': 'I apologize, but I encountered an error accessing billing information. Could you please try again?', 'dependencies': [], 'priority': 1}]
+2025-12-01 08:52:03,969 - support_system - INFO - (supervisor) - Next task: None
+2025-12-01 08:52:03,969 - support_system - INFO - (supervisor) - All tasks completed
+2025-12-01 08:52:03,972 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001

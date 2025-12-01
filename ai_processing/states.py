@@ -51,7 +51,7 @@ class AgentState(TypedDict):
     needs_human_input: bool                                     # Human intervention flag
     human_input_prompt: Optional[str]                           # What to ask the user
     
-    agent_context: dict                                         # Context from previous agents (for passing info between agents)
+    agent_context: str                                          # Context from previous agents (for passing info between agents)
     
     all_tasks_completed: bool                                   # Completion tracking
 
