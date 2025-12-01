@@ -1,5 +1,92 @@
 from langchain_core.tools import tool
 
+tools = [
+    {
+        "type": "function",
+        "name": "get_bills",
+        "description": "Retrieve all bills associated with a phone number.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "ph_number": {
+                    "type": "integer",
+                    "description": "The customer's phone number."
+                }
+            },
+            "required": ["ph_number"]
+        }
+    },
+    {
+        "type": "function",
+        "name": "get_bill_by_id",
+        "description": "Retrieve a particular bill by its ID for a given phone number.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "ph_number": {
+                    "type": "integer",
+                    "description": "The customer's phone number."
+                },
+                "bill_id": {
+                    "type": "string",
+                    "description": "The unique identifier of the bill."
+                }
+            },
+            "required": ["ph_number", "bill_id"]
+        }
+    },
+    {
+        "type": "function",
+        "name": "send_bill",
+        "description": "Send a bill to the customer via the specified mode.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "ph_number": {
+                    "type": "integer",
+                    "description": "The customer's phone number."
+                },
+                "bill_id": {
+                    "type": "string",
+                    "description": "The unique identifier of the bill."
+                },
+                "mode": {
+                    "type": "string",
+                    "description": "The mode of sending the bill (e.g., Email, SMS, UPI)."
+                }
+            },
+            "required": ["ph_number", "bill_id", "mode"]
+        }
+    },
+    {
+        "type": "function",
+        "name": "refund_ticket",
+        "description": "Process a refund ticket for a specific bill.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "ph_number": {
+                    "type": "integer",
+                    "description": "The customer's phone number."
+                },
+                "bill_id": {
+                    "type": "string",
+                    "description": "The unique identifier of the bill."
+                },
+                "amount": {
+                    "type": ["number", "string"],
+                    "description": "The amount to be refunded."
+                },
+                "reason": {
+                    "type": "string",
+                    "description": "The reason for the refund."
+                }
+            },
+            "required": ["ph_number", "bill_id", "amount", "reason"]
+        }
+    }
+]
+
 def get_bills(ph_number: int):
     """
     Returns all the bills associated with a phone number.

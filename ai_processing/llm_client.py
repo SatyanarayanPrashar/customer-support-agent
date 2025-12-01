@@ -1,7 +1,10 @@
 from typing import Dict,  Any
 import openai
 
-class Get_response:
+from utils.logger import get_logger
+logger = get_logger()
+
+class LLM_Client:
     def __init__(self, config: Dict[str, Any]):
         """
         Initialize AIWorker with configuration.
@@ -19,23 +22,22 @@ class Get_response:
             api_key=self.api_key
         )
 
-    def invoke(self, conversation: list):
+    def invoke(self, input_list: list, tools = []):
         """
         Generate response from the AI.
         """
+        for i in input_list:
+            if i["role"] == "system":
+                print(f"{i["role"]}: {i["content"][:40]}...")
+            else:
+                print(f"{i['role']}: {i['content'][:100]}...")
         try:
-            # for i in conversation:
-            #     if i['role'] == 'user':
-            #         print("user: ", i['content'][:40], "...")
-            #     elif i['role'] == 'assistant':
-            #         print("assistant: ", i['content'][:40], "...")
-            #     elif i['role'] == 'system':
-            #         print("system: ", i['content'][:40], "...")
-            response = self.client.chat.completions.create(
+            response = self.client.responses.create(
                 model=self.model_name,
-                messages=conversation
+                tools=tools,
+                input=input_list
             )
-            return response.choices[0].message.content
+            return response
         except Exception as e:
-            self.logger.error(f"Error generating text: {e}")
+            logger.error(f"Error generating text: {e}")
             return ""

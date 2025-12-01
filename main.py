@@ -1,10 +1,11 @@
+import json
 import os
 import sys
 from typing import Any, Dict
-from langchain_core.messages import HumanMessage, AIMessage
 
-from ai_processing.get_response import Get_response
+from ai_processing.llm_client import LLM_Client
 from ai_processing.states import AgentState
+from memory.chat_manager import ChatManager
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from ai_processing.graph import create_support_graph
@@ -32,16 +33,16 @@ class InteractiveSupportChatbot:
             config: Configuration with API keys and model settings
         """
         self.config = config
-        self.llm_client = Get_response(config)
+        self.llm_client = LLM_Client(config)
         self.graph = create_support_graph()
         self.conversation_active = True
         self.state = None
+        self.chat_manager = ChatManager(config, "u001", "t001")
+        self.chat_manager.clear_history()
         
     def initialize_conversation(self):
         """Initialize a new conversation state"""
         self.state = AgentState(
-            messages=[],
-            original_query="",
             subtasks=[],
             current_task=None,
             next_agent="supervisor",
@@ -49,7 +50,6 @@ class InteractiveSupportChatbot:
             human_input_prompt=None,
             agent_context={},
             all_tasks_completed=False,
-            final_response=None,
             llm_client=self.llm_client,
             casual_turn_count=0,
             awaiting_real_query=False
@@ -70,11 +70,6 @@ class InteractiveSupportChatbot:
             return user_input
         except (KeyboardInterrupt, EOFError):
             print("\n\nGoodbye!")
-            print("\nconveresation: \n")
-            for i in self.state["messages"]:
-                print(i)
-                print("\n------------------------------------------------------------------------------------------------------------------------\n")
-            print("\n\nagent context:\n", self.state["agent_context"])
             sys.exit(0)
     
     def process_user_message(self, user_message: str) -> bool:
@@ -92,34 +87,51 @@ class InteractiveSupportChatbot:
             print("Thank you for contacting support. Have a great day!")
             return False
         
-        if self.state is None or not self.state.get("original_query"):
-            # Check if we were awaiting a real query
-            if self.state and self.state.get("awaiting_real_query"):
-                # Continue with existing state to preserve casual_turn_count
-                self.state["original_query"] = user_message
-                self.state["messages"].append(HumanMessage(content=user_message))
-                self.state["all_tasks_completed"] = False
-                self.state["subtasks"] = []  # Reset subtasks
-            else:
-                # Fresh start
-                self.initialize_conversation()
-                self.state["original_query"] = user_message
-                self.state["messages"].append(HumanMessage(content=user_message))
+        if self.state is None:
+            self.chat_manager.create_thread()
+            self.initialize_conversation()
+            self.chat_manager.add_message("user", user_message)
         else:
-            # Continue existing conversation
-            self.state["messages"].append(HumanMessage(content=user_message))
+            if self.state and self.state.get("awaiting_real_query"):
+                self.chat_manager.add_message("user", user_message)
+                self.state["all_tasks_completed"] = False
+                self.state["subtasks"] = []
+            else:
+                self.chat_manager.add_message("user", user_message)
+
+        self.state["needs_human_input"] = False 
+        
+        if self.state.get("current_task"):
+            self.state["current_task"]["status"] = "in_progress"
+            for t in self.state["subtasks"]:
+                if t["task_id"] == self.state["current_task"]["task_id"]:
+                    t["status"] = "in_progress"
+
+        previous_message_count = len(self.chat_manager.get_thread_messages(self.llm_client))
         
         try:
-            logger.info(f"(main) - Before graph.invoke -> original_query: {self.state.get('original_query')}")
-            result = self.graph.invoke(self.state)
+            result = self.graph.invoke(self.state, {"recursion_limit": 100})
             self.state = result
             
-            # Display only new messages (messages added after user's last message)
-            # Get the last assistant message
-            for msg in reversed(result["messages"]):
-                if isinstance(msg, AIMessage):
-                    print(f"\nAssistant: {msg.content}\n")
-                    break
+            current_messages = self.chat_manager.get_thread_messages(self.llm_client)
+            new_messages_count = len(current_messages) - previous_message_count
+
+            if new_messages_count > 0:
+                new_messages = current_messages[-new_messages_count:]
+                for msg in new_messages:
+                    if msg["role"] == "assistant":
+                        content_str = msg["content"]
+                        try:
+                            content_dict = json.loads(content_str)
+                            print(f"\nAssistant: {content_dict.get('message', 'No message provided')}\n")
+                            
+                        except json.JSONDecodeError:
+                            print(f"\nAssistant: {content_str}\n")
+                        except Exception as e:
+                            print(f"\nAssistant (Error parsing response): {content_str}\n")
+
+            if result.get("needs_human_input"):
+                return True
             
             # Check if tasks are completed
             if result.get("all_tasks_completed"):
@@ -157,13 +169,10 @@ class InteractiveSupportChatbot:
         self.initialize_conversation()
         
         while self.conversation_active:
-            # Get user input
             user_message = self.get_user_input("You: ")
-            
             if not user_message:
                 continue
             
-            # Process the message
             should_continue = self.process_user_message(user_message)
             
             if not should_continue:
