@@ -1,6 +1,4 @@
-from langchain_core.tools import tool
-
-tools = [
+BILLING_TOOLS_SCHEMA = [
     {
         "type": "function",
         "name": "get_bills",
@@ -163,6 +161,13 @@ def refund_ticket(ph_number: int, bill_id: str, amount, reason: str):
             amount = float(amount)
         except ValueError:
             return "Invalid amount provided. Please enter a numeric value."
-    if amount is None or amount is 0 or amount < 0:
+    if amount is None or amount == 0 or amount < 0:
         return "Please calculate the refund amount before raising a refund ticket."
     return f"A refund ticket of ${amount:.2f} for bill {bill_id} has been raised for phone number {ph_number} due to '{reason}'."
+
+BILLING_TOOL_MAP = {
+    "get_bills": get_bills,
+    "get_bill_by_id": get_bill_by_id,
+    "send_bill": send_bill,
+    "refund_ticket": refund_ticket
+}

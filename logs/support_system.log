@@ -1860,3 +1860,125 @@ Please let me know which bill you would like to discuss further.
 2025-12-01 08:52:03,969 - support_system - INFO - (supervisor) - Next task: None
 2025-12-01 08:52:03,969 - support_system - INFO - (supervisor) - All tasks completed
 2025-12-01 08:52:03,972 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 03:59:30,771 - support_system - INFO - using: gpt-4o-mini
+2025-12-03 03:59:30,787 - support_system - INFO - Support graph created successfully.
+2025-12-03 03:59:30,847 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-03 03:59:34,255 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 03:59:34,257 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 03:59:34,261 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-03 03:59:34,264 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 03:59:38,577 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-03 03:59:38,577 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-03 03:59:38,577 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the double charge on the customer account', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-03 03:59:38,578 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate the double charge on the customer account', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-03 03:59:38,578 - support_system - INFO - (supervisor) - Routing to billing for: Investigate the double charge on the customer account
+2025-12-03 03:59:38,578 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the double charge on the customer account', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-03 03:59:38,580 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 03:59:38,580 - support_system - INFO - (billing agent) - Extracting context for billing agent
+2025-12-03 03:59:38,580 - support_system - INFO - (RAGRetriever) - Retrieving context for query: I think I got charged twice
+2025-12-03 03:59:42,817 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 03:59:42,821 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:01,516 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:01,517 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:01,519 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-12-03 04:00:01,520 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate the double charge on the customer account', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-03 04:00:01,520 - support_system - INFO - (supervisor) - Next task: None
+2025-12-03 04:00:01,520 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-12-03 04:00:01,521 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate the double charge on the customer account', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-03 04:00:01,523 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:04,610 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:04,610 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 123456789, 'bill_id': 'B002'}
+2025-12-03 04:00:04,612 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:04,613 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:07,386 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:07,386 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 123456789}
+2025-12-03 04:00:07,394 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:07,396 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:10,122 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:10,122 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 123456789, 'bill_id': 'B002'}
+2025-12-03 04:00:10,130 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:10,131 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:12,866 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:12,866 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 123456789, 'bill_id': 'B002'}
+2025-12-03 04:00:12,873 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:12,875 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:15,990 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:15,993 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 123456789, 'bill_id': 'B002'}
+2025-12-03 04:00:15,998 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:16,000 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:19,220 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:19,220 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 123456789}
+2025-12-03 04:00:19,228 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:19,230 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:21,860 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:21,860 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 123456789, 'bill_id': 'B002'}
+2025-12-03 04:00:21,866 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:21,868 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:24,445 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:00:24,446 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 123456789, 'bill_id': 'B002'}
+2025-12-03 04:00:24,455 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:24,457 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:24,457 - support_system - INFO - History length 11 > 10. Attempting compaction...
+2025-12-03 04:00:24,457 - support_system - INFO - --- Compacting oldest 8 messages, keeping last 3 ---
+2025-12-03 04:00:49,408 - support_system - INFO - using: gpt-4o-mini
+2025-12-03 04:00:49,419 - support_system - INFO - Support graph created successfully.
+2025-12-03 04:00:49,442 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-03 04:00:50,448 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:50,450 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:50,453 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-03 04:00:50,455 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:53,679 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-03 04:00:53,679 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-03 04:00:53,679 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate double charge on customer account', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-03 04:00:53,679 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'Investigate double charge on customer account', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-03 04:00:53,679 - support_system - INFO - (supervisor) - Routing to billing for: Investigate double charge on customer account
+2025-12-03 04:00:53,680 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate double charge on customer account', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-03 04:00:53,682 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:00:53,682 - support_system - INFO - (billing agent) - Extracting context for billing agent
+2025-12-03 04:00:53,682 - support_system - INFO - (RAGRetriever) - Retrieving context for query: I think I got charged twice
+2025-12-03 04:00:57,699 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:00:57,702 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:01:08,538 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:01:08,541 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:01:08,543 - support_system - INFO - (supervisor) - Continuing with existing subtasks
+2025-12-03 04:01:08,543 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'Investigate double charge on customer account', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-03 04:01:08,543 - support_system - INFO - (supervisor) - Next task: None
+2025-12-03 04:01:08,543 - support_system - INFO - (supervisor) - Tasks in progress; waiting for agent response
+2025-12-03 04:01:08,544 - support_system - INFO - (billing agent) - Current task: {'task_id': 'task_1', 'description': 'Investigate double charge on customer account', 'agent': 'billing', 'status': 'in_progress', 'result': None, 'dependencies': [], 'priority': 1} recieved
+2025-12-03 04:01:08,546 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:01:11,598 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:01:11,598 - support_system - INFO - (billing agent) - Executing tool: get_bill_by_id with params: {'ph_number': 1234567890, 'bill_id': 'b001'}
+2025-12-03 04:01:11,603 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:01:11,605 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:01:16,884 - support_system - INFO - (billing agent) - 1 Function calls detected.
+2025-12-03 04:01:16,884 - support_system - INFO - (billing agent) - Executing tool: get_bills with params: {'ph_number': 1234567890}
+2025-12-03 04:01:16,892 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:01:16,893 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-03 04:01:19,873 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-03 04:01:19,878 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-15 13:26:04,040 - support_system - INFO - using: gpt-4o-mini
+2025-12-15 13:26:04,054 - support_system - INFO - Support graph created successfully.
+2025-12-15 13:26:04,105 - support_system - INFO - (chat manager) - Cleared history for thread t001 of user u001
+2025-12-15 13:26:19,488 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-15 13:26:19,490 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-15 13:26:19,491 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-15 13:26:19,496 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-15 13:26:24,208 - support_system - INFO - (supervisor) - Response is not JSON, treating as casual message
+2025-12-15 13:26:24,208 - support_system - INFO - (supervisor) - Casual conversation detected, no tasks created
+2025-12-15 13:26:24,213 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-15 13:26:24,214 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-15 13:26:37,396 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-15 13:26:37,398 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-15 13:26:37,400 - support_system - INFO - (supervisor) - Analyzing user query
+2025-12-15 13:26:37,402 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-15 13:26:41,198 - support_system - INFO - (supervisor) - Generated 1 actionable subtasks
+2025-12-15 13:26:41,198 - support_system - INFO - (supervisor) - Updated state with 1 subtasks
+2025-12-15 13:26:41,198 - support_system - INFO - (supervisor) - Checking 1 subtasks for next task, task: [{'task_id': 'task_1', 'description': 'process a refund request', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}]
+2025-12-15 13:26:41,198 - support_system - INFO - (supervisor) - Next task: {'task_id': 'task_1', 'description': 'process a refund request', 'agent': 'billing', 'status': <TaskStatus.PENDING: 'pending'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-15 13:26:41,198 - support_system - INFO - (supervisor) - Routing to billing for: process a refund request
+2025-12-15 13:26:41,198 - support_system - INFO - (billing) - Processing task: {'task_id': 'task_1', 'description': 'process a refund request', 'agent': 'billing', 'status': <TaskStatus.IN_PROGRESS: 'in_progress'>, 'result': None, 'dependencies': [], 'priority': 1}
+2025-12-15 13:26:41,200 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
+2025-12-15 13:26:41,200 - support_system - INFO - (billing) - Extracting context
+2025-12-15 13:26:41,200 - support_system - INFO - (RAGRetriever) - Retrieving context for query: hi, can I have a coffee?
+2025-12-15 13:26:53,654 - support_system - INFO - (chat manager) - Message added to thread t001 for user u001
+2025-12-15 13:26:53,655 - support_system - INFO - (chat manager) - Retrieved messages for thread t001 of user u001
