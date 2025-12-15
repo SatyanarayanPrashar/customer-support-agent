@@ -1,4 +1,4 @@
-from agents.billing.billing_agent import billing_agent
+from agents.billing.factory import create_billing_node
 from agents.returns.return_agent import returns_agent
 from agents.supervisor.supervisor_agent import supervisor_node
 from agents.troubleshoot.troubleshoot_agent import troubleshoot_agent
@@ -56,7 +56,7 @@ def create_support_graph():
 
     workflow.add_edge(START, "supervisor")
     workflow.add_node("supervisor", partial(supervisor_node, llm_client=llm_client, chat_manager=chat_manager))
-    workflow.add_node("billing", partial(billing_agent, llm_client=llm_client, chat_manager=chat_manager, retriever=retriever))
+    workflow.add_node("billing", create_billing_node(llm_client, chat_manager, retriever))
     workflow.add_node("troubleshoot", troubleshoot_agent)
     workflow.add_node("warranty", warranty_agent)
     workflow.add_node("returns", returns_agent)
